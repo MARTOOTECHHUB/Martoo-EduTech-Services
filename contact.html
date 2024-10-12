@@ -9,29 +9,31 @@
 <body>
     <header>
         <h1>Contact Us</h1>
+        <div class="hamburger" onclick="toggleMenu()">&#9776;</div> <!-- Hamburger icon -->
         <nav>
-            <a href="index.html">Home</a>
-            <a href="services.html">Services</a>
-            <a href="contact.html">Contact</a>
-            <a href="explore.html">Explore</a> <!-- Added Explore link -->
+            <ul id="menu" class="hidden">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="services.html">Services</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
         </nav>
     </header>
-
+    
     <main>
-        <div class="contact-info">
-            <h2>Get in Touch</h2>
-            <p>For inquiries, please reach out to us through the following contact details:</p>
-            <ul>
-                <li>Email: <a href="mailto:your-email@example.com">your-email@example.com</a></li>
-                <li>Phone: <a href="tel:+260950322498">+260 950 322 498</a></li>
-                <li>YouTube: <a href="https://youtube.com/@martootech?si=WtTmTBtO6VjvajdN" target="_blank">Martoo Tech Channel</a></li>
-                <li>Facebook: <a href="https://www.facebook.com/profile.php?id=61561559594029" target="_blank">Martoo EduTech Services</a></li>
-            </ul>
-        </div>
+        <h2>Get in Touch</h2>
+        <p>Email: <a href="mailto:info@martooedutech.com">info@martooedutech.com</a></p>
+        <p>Phone: +260 950 322 498</p>
     </main>
-
+    
     <footer>
         <p>&copy; 2024 Martoo EduTech Services. All rights reserved.</p>
     </footer>
+
+    <script>
+        function toggleMenu() {
+            const menu = document.getElementById('menu');
+            menu.classList.toggle('show'); // Toggle the 'show' class
+        }
+    </script>
 </body>
 </html>
