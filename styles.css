@@ -1,29 +1,38 @@
+/* styles.css */
+
+/* General styles */
 body {
+    background-color: #005f99; /* Solid blue color */
+    color: #fff; /* White text for contrast */
     font-family: Arial, sans-serif;
-    background-color: #E0F7FA; /* Set a soft blue background */
-    color: #333; /* Dark text color for contrast */
+    margin: 0;
+    padding: 0;
 }
 
 header {
-    background-color: #00796B; /* Dark teal color for header */
-    color: white; /* White text in header */
+    background-color: #004080; /* Darker blue for header */
     padding: 20px;
     text-align: center;
 }
 
+nav {
+    margin: 20px 0;
+}
+
 nav ul {
-    list-style-type: none; /* Remove bullet points */
-    padding: 0; /* Remove padding */
+    list-style-type: none;
+    padding: 0;
 }
 
 nav ul li {
-    display: inline; /* Display list items inline */
-    margin-right: 20px; /* Space between menu items */
+    display: inline;
+    margin: 0 15px;
 }
 
 nav ul li a {
-    color: white; /* White text for links */
-    text-decoration: none; /* Remove underline */
+    color: #fff; /* White for links */
+    text-decoration: none;
+    font-weight: bold;
 }
 
 nav ul li a:hover {
@@ -31,15 +40,13 @@ nav ul li a:hover {
 }
 
 footer {
+    background-color: #003366; /* Darkest blue for footer */
+    color: #fff;
     text-align: center;
-    padding: 10px;
-    background-color: #00796B; /* Same as header */
-    color: white; /* White text in footer */
+    padding: 10px 0;
     position: relative;
     bottom: 0;
     width: 100%;
 }
 
-section {
-    padding: 20px; /* Padding for content */
-}
+/* Additional styles for other elements can go here */
