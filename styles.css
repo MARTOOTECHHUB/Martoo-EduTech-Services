@@ -2,17 +2,25 @@
 
 /* General styles */
 body {
-    background-color: #005f99; /* Solid blue color */
-    color: #fff; /* White text for contrast */
-    font-family: Arial, sans-serif;
+    background-color: #1a1a2e; /* Dark navy blue */
+    color: #f0f0f0; /* Light gray text */
+    font-family: 'Arial', sans-serif;
     margin: 0;
     padding: 0;
+    animation: backgroundAnimation 15s ease infinite; /* Animation for the background */
+}
+
+@keyframes backgroundAnimation {
+    0% { background-color: #1a1a2e; }
+    50% { background-color: #162447; } /* Slightly lighter dark blue */
+    100% { background-color: #1a1a2e; }
 }
 
 header {
-    background-color: #004080; /* Darker blue for header */
+    background-color: #0f3460; /* Deep indigo for header */
     padding: 20px;
     text-align: center;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.4);
 }
 
 nav {
@@ -30,23 +38,36 @@ nav ul li {
 }
 
 nav ul li a {
-    color: #fff; /* White for links */
+    color: #e94560; /* Coral color for links */
     text-decoration: none;
     font-weight: bold;
+    transition: color 0.3s; /* Animation for link color change */
 }
 
 nav ul li a:hover {
+    color: #ffb600; /* Gold for hover effect */
     text-decoration: underline; /* Underline on hover */
 }
 
+main {
+    padding: 20px;
+    text-align: center;
+}
+
+#explore {
+    margin-top: 40px; /* Add margin for spacing */
+    padding: 20px;
+    background-color: #162447; /* Slightly lighter dark blue for the explore section */
+    border-radius: 10px; /* Rounded corners */
+}
+
 footer {
-    background-color: #003366; /* Darkest blue for footer */
-    color: #fff;
+    background-color: #0f3460; /* Deep indigo for footer */
+    color: #ffffff;
     text-align: center;
     padding: 10px 0;
     position: relative;
     bottom: 0;
     width: 100%;
+    box-shadow: 0 -4px 8px rgba(0, 0, 0, 0.4);
 }
-
-/* Additional styles for other elements can go here */
