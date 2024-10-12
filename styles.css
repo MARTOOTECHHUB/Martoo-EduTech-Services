@@ -38,7 +38,7 @@ nav ul li {
 }
 
 nav ul li a {
-    color: #e94560; /* Coral color for links */
+    color: #ffffff; /* Changed to white for better visibility */
     text-decoration: none;
     font-weight: bold;
     transition: color 0.3s; /* Animation for link color change */
