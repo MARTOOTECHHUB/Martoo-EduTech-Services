@@ -9,21 +9,34 @@
 <body>
     <header>
         <h1>Our Services</h1>
+        <div class="hamburger" onclick="toggleMenu()">&#9776;</div> <!-- Hamburger icon -->
         <nav>
-            <a href="index.html">Home</a>
-            <a href="services.html">Services</a>
-            <a href="contact.html">Contact</a>
-            <a href="explore.html">Explore</a> <!-- Added Explore link -->
+            <ul id="menu" class="hidden">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="services.html">Services</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
         </nav>
     </header>
-
+    
     <main>
-        <h2>What We Offer</h2>
-        <p>Explore our range of educational and tech services designed to enhance your learning experience.</p>
+        <h2>Explore Our Offerings</h2>
+        <ul>
+            <li>Typing Assistance</li>
+            <li>VPN Services</li>
+            <li>Educational Materials</li>
+        </ul>
     </main>
-
+    
     <footer>
         <p>&copy; 2024 Martoo EduTech Services. All rights reserved.</p>
     </footer>
+
+    <script>
+        function toggleMenu() {
+            const menu = document.getElementById('menu');
+            menu.classList.toggle('show'); // Toggle the 'show' class
+        }
+    </script>
 </body>
 </html>
