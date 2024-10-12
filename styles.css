@@ -25,29 +25,20 @@ header {
 
 nav {
     margin: 20px 0;
-    position: relative; /* Position relative for the absolute positioned dropdown */
-}
-
-.hamburger {
-    font-size: 30px;
-    cursor: pointer;
-    display: none; /* Hidden by default */
-    color: #ffffff; /* White color for hamburger icon */
 }
 
 nav ul {
     list-style-type: none;
     padding: 0;
-    display: flex; /* Use flexbox to arrange items */
-    justify-content: center; /* Center the items */
 }
 
 nav ul li {
+    display: inline;
     margin: 0 15px;
 }
 
 nav ul li a {
-    color: #ffffff; /* White for better visibility */
+    color: #e94560; /* Coral color for links */
     text-decoration: none;
     font-weight: bold;
     transition: color 0.3s; /* Animation for link color change */
@@ -58,19 +49,16 @@ nav ul li a:hover {
     text-decoration: underline; /* Underline on hover */
 }
 
-nav .nav-links {
-    display: none; /* Hide menu links by default */
-    flex-direction: column; /* Stack items vertically */
-    position: absolute; /* Position absolutely for dropdown effect */
-    background-color: #0f3460; /* Match the header color */
-    top: 100%; /* Position below the header */
-    left: 0;
-    right: 0;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.4);
+/* Styles for hamburger menu */
+.hamburger {
+    display: none; /* Hide on larger screens */
+    cursor: pointer;
+    font-size: 24px;
+    color: #e94560; /* Coral color for the hamburger icon */
 }
 
-nav .nav-links.show {
-    display: flex; /* Show when toggled */
+.hidden {
+    display: none; /* Hide the menu by default */
 }
 
 main {
@@ -90,13 +78,17 @@ footer {
 }
 
 /* Responsive styles */
-@media (max-width: 768px) {
-    .hamburger {
-        display: block; /* Show hamburger on smaller screens */
-    }
-
+@media screen and (max-width: 768px) {
     nav ul {
-        display: none; /* Hide menu by default */
-        flex-direction: column; /* Stack items vertically */
+        display: none; /* Hide menu on small screens */
+        flex-direction: column; /* Stack menu items */
     }
-}
+    
+    nav ul.show {
+        display: flex; /* Show menu when toggled */
+    }
+    
+    .hamburger {
+        display: block; /* Show hamburger icon on small screens */
+    }
+    }
