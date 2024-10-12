@@ -1,53 +1,45 @@
-/* General styles for the body */
 body {
-    margin: 0;
     font-family: Arial, sans-serif;
-    background-color: #e0e7ff; /* Soft blue background */
-    color: #1e3a8a; /* Dark blue text for better readability */
+    background-color: #E0F7FA; /* Set a soft blue background */
+    color: #333; /* Dark text color for contrast */
 }
 
-/* Header styles */
 header {
-    background-color: #3b82f6; /* Bright blue background */
-    color: white;
+    background-color: #00796B; /* Dark teal color for header */
+    color: white; /* White text in header */
     padding: 20px;
     text-align: center;
 }
 
-/* Section styles */
-section {
-    padding: 20px;
-    margin: 20px;
-    background-color: white; /* White background for sections */
-    border-radius: 8px; /* Rounded corners */
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+nav ul {
+    list-style-type: none; /* Remove bullet points */
+    padding: 0; /* Remove padding */
 }
 
-/* Footer styles */
-footer {
-    text-align: center;
-    padding: 10px;
-    background-color: #3b82f6; /* Bright blue background */
-    color: white;
+nav ul li {
+    display: inline; /* Display list items inline */
+    margin-right: 20px; /* Space between menu items */
 }
 
-/* Link styles */
-a {
-    color: #3b82f6; /* Bright blue link color */
+nav ul li a {
+    color: white; /* White text for links */
     text-decoration: none; /* Remove underline */
 }
 
-a:hover {
+nav ul li a:hover {
     text-decoration: underline; /* Underline on hover */
 }
 
-/* Responsive styles */
-@media (max-width: 600px) {
-    body {
-        padding: 10px; /* Smaller padding on mobile */
-    }
+footer {
+    text-align: center;
+    padding: 10px;
+    background-color: #00796B; /* Same as header */
+    color: white; /* White text in footer */
+    position: relative;
+    bottom: 0;
+    width: 100%;
+}
 
-    section {
-        margin: 10px; /* Smaller margins on mobile */
-    }
+section {
+    padding: 20px; /* Padding for content */
 }
