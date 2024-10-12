@@ -38,7 +38,7 @@ nav ul li {
 }
 
 nav ul li a {
-    color: #e94560; /* Coral color for links */
+    color: orange; /* Set link color to orange */
     text-decoration: none;
     font-weight: bold;
     transition: color 0.3s; /* Animation for link color change */
@@ -54,7 +54,7 @@ nav ul li a:hover {
     display: none; /* Hide on larger screens */
     cursor: pointer;
     font-size: 24px;
-    color: #e94560; /* Coral color for the hamburger icon */
+    color: orange; /* Set hamburger color to orange */
 }
 
 .hidden {
@@ -91,4 +91,4 @@ footer {
     .hamburger {
         display: block; /* Show hamburger icon on small screens */
     }
-    }
+}
