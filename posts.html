@@ -3,48 +3,51 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Posts - Martoo EduTech Services</title>
+    <title>Downloads - Martoo EduTech Services</title>
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
     <header>
         <h1>Martoo EduTech Services</h1>
         <nav>
-            <ul>
+            <div class="hamburger" onclick="toggleMenu()">
+                &#9776; <!-- Hamburger icon -->
+            </div>
+            <ul id="menu" class="hidden">
                 <li><a href="index.html">Home</a></li>
                 <li><a href="services.html">Services</a></li>
                 <li><a href="about.html">About</a></li>
                 <li><a href="contact.html">Contact</a></li>
-                <li><a href="posts.html">Posts</a></li> <!-- Link to Posts -->
+                <li><a href="posts.html">Posts</a></li>
             </ul>
         </nav>
     </header>
-
+    
     <main>
-        <section id="posts">
-            <h2>Latest Posts</h2>
-            <article>
-                <h3>VPN Configurations</h3>
-                <p>Check out our latest VPN configuration files for secure browsing:</p>
-                <ul>
-                    <li><a href="files/vpn_config_1.zip" download>VPN Config 1 (ZIP)</a></li>
-                    <li><a href="files/vpn_config_2.zip" download>VPN Config 2 (ZIP)</a></li>
-                    <li><a href="files/vpn_config_3.zip" download>VPN Config 3 (ZIP)</a></li>
-                </ul>
-            </article>
-            <article>
-                <h3>Other Resources</h3>
-                <p>Explore our additional resources:</p>
-                <ul>
-                    <li><a href="files/resource_1.zip" download>Resource 1 (ZIP)</a></li>
-                    <li><a href="files/resource_2.zip" download>Resource 2 (ZIP)</a></li>
-                </ul>
-            </article>
+        <h2>Available Downloads</h2>
+        
+        <section id="vpn-files">
+            <h3>VPN Configuration Files</h3>
+            <ul>
+                <li><a href="path/to/vpn-config.zip" download>Download VPN Configurations</a></li>
+                <li><a href="path/to/vmess-config.zip" download>Download VMess Configurations</a></li>
+                <li><a href="path/to/trojan-config.zip" download>Download Trojan Configurations</a></li>
+                <li><a href="path/to/udp-config.zip" download>Download UDP Configurations</a></li>
+            </ul>
+        </section>
+
+        <section id="school-files">
+            <h3>School Materials</h3>
+            <ul>
+                <li><a href="path/to/school-stuff.zip" download>Download School Materials</a></li>
+            </ul>
         </section>
     </main>
 
     <footer>
         <p>&copy; 2024 Martoo EduTech Services. All rights reserved.</p>
     </footer>
+
+    <script src="script.js"></script>
 </body>
 </html>
