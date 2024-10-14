@@ -67,6 +67,12 @@
             color: blue; /* Link color */
             text-decoration: underline; /* Underline for links */
         }
+
+        .error {
+            color: red; /* Error message color */
+            text-align: center;
+            margin-top: 15px;
+        }
     </style>
 </head>
 <body>
@@ -79,6 +85,7 @@
         <input type="password" id="password" name="password" required>
 
         <input type="submit" value="Log In">
+        <div class="error" id="error-message"></div>
     </form>
 
     <div class="redirect">
@@ -87,11 +94,23 @@
     </div>
 
     <script>
+        // Hardcoded user credentials for demonstration
+        const validEmail = "user@example.com";
+        const validPassword = "password123";
+
         document.getElementById("login-form").addEventListener("submit", function(event) {
             event.preventDefault();
-            alert("Login successful!");
-            // Here, you can also add logic to verify user credentials
-            this.reset(); // Reset the form fields after submission
+            const email = document.getElementById("email").value;
+            const password = document.getElementById("password").value;
+
+            // Simple validation logic
+            if (email === validEmail && password === validPassword) {
+                alert("Login successful!");
+                // Redirect to the dashboard or homepage
+                window.location.href = "index.html"; // Adjust as necessary
+            } else {
+                document.getElementById("error-message").innerText = "Incorrect email or password. Please try again.";
+            }
         });
     </script>
 </body>
