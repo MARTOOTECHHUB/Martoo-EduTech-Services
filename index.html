@@ -24,7 +24,8 @@
             position: absolute;
             bottom: 8px;
             left: 16px;
-            color: white;
+            color: red; /* Change text color to red */
+            font-family: "Times New Roman", Times, serif; /* Use Times New Roman font */
             font-size: 24px;
             background-color: rgba(0, 0, 0, 0.5);
             padding: 10px;
@@ -37,6 +38,13 @@
 
         .fade {
             animation: fade 1.5s;
+        }
+
+        /* Ensure images are fully visible */
+        .slideshow img {
+            width: 100%;
+            height: auto; /* Maintain aspect ratio */
+            display: block; /* Ensures no extra spacing around images */
         }
     </style>
 </head>
