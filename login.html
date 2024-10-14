@@ -3,115 +3,69 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Login</title>
+    <title>Login - Martoo EduTech Services</title>
     <link rel="stylesheet" href="styles.css">
     <style>
         body {
-            font-family: Arial, sans-serif;
-            background-color: white; /* White background for the page */
+            font-family: "Times New Roman", Times, serif;
+            background-color: #f4f4f4;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
         }
-
-        h1 {
-            text-align: center;
-            color: blue; /* Header color */
-        }
-
-        form {
-            max-width: 400px;
-            margin: auto;
+        .login-container {
+            background-color: white;
             padding: 20px;
-            border: 1px solid #ccc;
-            border-radius: 5px;
-            background-color: #f9f9f9;
+            border-radius: 10px;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+            width: 300px;
         }
-
-        label {
-            display: block;
-            margin-bottom: 8px;
-            font-weight: bold; /* Bold labels */
-            color: black; /* Label text color */
+        h2 {
+            margin-bottom: 20px;
+            text-align: center;
         }
-
         input[type="text"],
-        input[type="email"],
         input[type="password"] {
             width: 100%;
             padding: 10px;
-            margin-bottom: 15px;
+            margin: 10px 0;
             border: 1px solid #ccc;
-            border-radius: 4px;
-            background-color: white; /* White background for input fields */
-            color: black; /* Input text color */
+            border-radius: 5px;
         }
-
         input[type="submit"] {
-            background-color: blue; /* Button background color */
-            color: white; /* Button text color */
+            background-color: navy;
+            color: white;
             padding: 10px;
             border: none;
-            border-radius: 4px;
+            border-radius: 5px;
             cursor: pointer;
-            font-weight: bold; /* Bold button text */
+            width: 100%;
         }
-
         input[type="submit"]:hover {
-            background-color: darkblue; /* Darker blue on hover */
+            background-color: darkblue;
         }
-
-        .redirect {
+        .forgot-password {
+            display: block;
             text-align: center;
-            margin-top: 15px;
-        }
-
-        .redirect a {
-            color: blue; /* Link color */
-            text-decoration: underline; /* Underline for links */
-        }
-
-        .error {
-            color: red; /* Error message color */
-            text-align: center;
-            margin-top: 15px;
+            margin-top: 10px;
         }
     </style>
 </head>
 <body>
-    <h1>Sign In</h1>
-    <form id="login-form">
-        <label for="email">Email</label>
-        <input type="email" id="email" name="email" required>
+    <div class="login-container">
+        <h2>Login</h2>
+        <form action="#" method="POST">
+            <label for="username">Username:</label>
+            <input type="text" id="username" name="username" required>
 
-        <label for="password">Password</label>
-        <input type="password" id="password" name="password" required>
+            <label for="password">Password:</label>
+            <input type="password" id="password" name="password" required>
 
-        <input type="submit" value="Log In">
-        <div class="error" id="error-message"></div>
-    </form>
-
-    <div class="redirect">
-        <p>Forgot your password? <a href="#">Reset Password</a></p>
-        <p>Don't have an account? <a href="create-account.html">Create Account</a></p>
+            <input type="submit" value="Login">
+            <a href="forgot-password.html" class="forgot-password">Forgot Password?</a>
+        </form>
     </div>
-
-    <script>
-        // Hardcoded user credentials for demonstration
-        const validEmail = "user@example.com";
-        const validPassword = "password123";
-
-        document.getElementById("login-form").addEventListener("submit", function(event) {
-            event.preventDefault();
-            const email = document.getElementById("email").value;
-            const password = document.getElementById("password").value;
-
-            // Simple validation logic
-            if (email === validEmail && password === validPassword) {
-                alert("Login successful!");
-                // Redirect to the dashboard or homepage
-                window.location.href = "index.html"; // Adjust as necessary
-            } else {
-                document.getElementById("error-message").innerText = "Incorrect email or password. Please try again.";
-            }
-        });
-    </script>
 </body>
 </html>
