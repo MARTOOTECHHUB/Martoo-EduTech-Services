@@ -8,7 +8,7 @@
 </head>
 <body>
     <header style="background-color: inherit;">
-        <h1>Welcome to Martoo EduTech Services</h1>
+        <h1 class="sliding-header">Welcome to Martoo EduTech Services</h1>
         <nav>
             <div class="hamburger" onclick="toggleMenu()" style="position: absolute; top: 10px; right: 10px;">
                 &#9776; <!-- Hamburger icon -->
@@ -26,6 +26,37 @@
     <main>
         <h2>Your gateway to education and technology</h2>
         <p>At Martoo EduTech Services, we provide innovative educational resources and technology solutions to enhance your learning experience.</p>
+
+        <section id="slideshow">
+            <div class="slideshow-container">
+                <div class="slide fade">
+                    <img src="images/image 1.jpeg" alt="Image 1">
+                </div>
+                <div class="slide fade">
+                    <img src="images/image 2.jpeg" alt="Image 2">
+                </div>
+                <div class="slide fade">
+                    <img src="images/image 3.jpeg" alt="Image 3">
+                </div>
+                <div class="slide fade">
+                    <img src="images/image 4.jpeg" alt="Image 4">
+                </div>
+                <div class="slide fade">
+                    <img src="images/image 5.jpeg" alt="Image 5">
+                </div>
+                <div class="slide fade">
+                    <img src="images/image 6.jpeg" alt="Image 6">
+                </div>
+            </div>
+            <div style="text-align:center;">
+                <span class="dot" onclick="currentSlide(1)"></span> 
+                <span class="dot" onclick="currentSlide(2)"></span> 
+                <span class="dot" onclick="currentSlide(3)"></span> 
+                <span class="dot" onclick="currentSlide(4)"></span>
+                <span class="dot" onclick="currentSlide(5)"></span>
+                <span class="dot" onclick="currentSlide(6)"></span>
+            </div>
+        </section>
 
         <section id="key-services">
             <h3>Key Services</h3>
@@ -48,5 +79,31 @@
     </footer>
 
     <script src="script.js"></script>
+    <script>
+        let slideIndex = 0;
+        showSlides();
+
+        function showSlides() {
+            let i;
+            let slides = document.getElementsByClassName("slide");
+            let dots = document.getElementsByClassName("dot");
+            for (i = 0; i < slides.length; i++) {
+                slides[i].style.display = "none";  
+            }
+            slideIndex++;
+            if (slideIndex > slides.length) {slideIndex = 1}    
+            for (i = 0; i < dots.length; i++) {
+                dots[i].className = dots[i].className.replace(" active", "");
+            }
+            slides[slideIndex - 1].style.display = "block";  
+            dots[slideIndex - 1].className += " active";
+            setTimeout(showSlides, 3000); // Change image every 3 seconds
+        }
+
+        function currentSlide(n) {
+            slideIndex = n - 1;
+            showSlides();
+        }
+    </script>
 </body>
 </html>
