@@ -1,5 +1,3 @@
-/* styles.css */
-
 /* General styles */
 body {
     background-color: #1a1a2e; /* Dark navy blue */
@@ -30,10 +28,11 @@ nav {
 nav ul {
     list-style-type: none;
     padding: 0;
+    display: flex; /* Show menu items in a row */
+    justify-content: center; /* Center the menu items */
 }
 
 nav ul li {
-    display: inline;
     margin: 0 15px;
 }
 
@@ -57,27 +56,6 @@ nav ul li a:hover {
     color: orange; /* Set hamburger color to orange */
 }
 
-.hidden {
-    display: none; /* Hide the menu by default */
-}
-
-main {
-    padding: 20px;
-    text-align: center;
-}
-
-footer {
-    background-color: #0f3460; /* Deep indigo for footer */
-    color: #ffffff;
-    text-align: center;
-    padding: 10px 0;
-    position: relative;
-    bottom: 0;
-    width: 100%;
-    box-shadow: 0 -4px 8px rgba(0, 0, 0, 0.4);
-}
-
-/* Responsive styles */
 @media screen and (max-width: 768px) {
     nav ul {
         display: none; /* Hide menu on small screens */
@@ -91,4 +69,15 @@ footer {
     .hamburger {
         display: block; /* Show hamburger icon on small screens */
     }
+}
+
+footer {
+    background-color: #0f3460; /* Deep indigo for footer */
+    color: #ffffff;
+    text-align: center;
+    padding: 10px 0;
+    position: relative;
+    bottom: 0;
+    width: 100%;
+    box-shadow: 0 -4px 8px rgba(0, 0, 0, 0.4);
 }
