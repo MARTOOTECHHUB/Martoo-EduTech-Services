@@ -20,6 +20,7 @@
             padding: 20px;
             border-radius: 8px;
             box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            width: 300px; /* Set a fixed width for the container */
         }
         h2 {
             text-align: center;
@@ -48,6 +49,16 @@
         button:hover {
             background-color: #218838;
         }
+        .link {
+            display: block;
+            text-align: center;
+            margin-top: 10px;
+            color: #007bff;
+            text-decoration: none;
+        }
+        .link:hover {
+            text-decoration: underline;
+        }
     </style>
 </head>
 <body>
@@ -60,6 +71,8 @@
             <label for="password">Password:</label>
             <input type="password" id="password" name="password" required>
             <button type="submit">Login</button>
+            <a href="#" class="link" onclick="showForgotPassword()">Forgot Password?</a>
+            <a href="create-account.html" class="link">Create Account</a>
         </form>
         <p id="message" style="color:red; text-align:center;"></p>
     </div>
@@ -78,6 +91,10 @@
             // Redirect to the main page after successful login
             window.location.href = 'index.html';
             return false; // Prevent the default form submission
+        }
+
+        function showForgotPassword() {
+            alert("Functionality for 'Forgot Password' is not implemented yet.");
         }
     </script>
 </body>
