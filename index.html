@@ -5,10 +5,47 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Martoo EduTech Services</title>
     <link rel="stylesheet" href="styles.css">
+    <style>
+        /* Additional CSS for the sliding text and image */
+        .slideshow-container {
+            position: relative;
+            max-width: 100%;
+            margin: auto;
+        }
+
+        .mySlides {
+            display: none;
+            position: relative;
+            width: 100%;
+        }
+
+        .sliding-text {
+            position: absolute;
+            bottom: 20px;
+            left: 20px;
+            color: white;
+            font-size: 24px;
+            font-weight: bold;
+            animation: slide 10s ease-in-out infinite;
+        }
+
+        @keyframes slide {
+            0% { transform: translateX(100%); opacity: 0; }
+            10% { opacity: 1; }
+            90% { opacity: 1; }
+            100% { transform: translateX(-100%); opacity: 0; }
+        }
+
+        /* Adjustments to the existing CSS for the images */
+        img {
+            width: 100%;
+            height: auto;
+        }
+    </style>
 </head>
 <body>
     <header style="background-color: inherit;">
-        <h1 class="sliding-header">Welcome to Martoo EduTech Services</h1>
+        <h1>Welcome to Martoo EduTech Services</h1>
         <nav>
             <div class="hamburger" onclick="toggleMenu()" style="position: absolute; top: 10px; right: 10px;">
                 &#9776; <!-- Hamburger icon -->
@@ -27,34 +64,30 @@
         <h2>Your gateway to education and technology</h2>
         <p>At Martoo EduTech Services, we provide innovative educational resources and technology solutions to enhance your learning experience.</p>
 
-        <section id="slideshow">
-            <div class="slideshow-container">
-                <div class="slide fade">
-                    <img src="images/image 1.jpeg" alt="Image 1">
-                </div>
-                <div class="slide fade">
-                    <img src="images/image 2.jpeg" alt="Image 2">
-                </div>
-                <div class="slide fade">
-                    <img src="images/image 3.jpeg" alt="Image 3">
-                </div>
-                <div class="slide fade">
-                    <img src="images/image 4.jpeg" alt="Image 4">
-                </div>
-                <div class="slide fade">
-                    <img src="images/image 5.jpeg" alt="Image 5">
-                </div>
-                <div class="slide fade">
-                    <img src="images/image 6.jpeg" alt="Image 6">
-                </div>
+        <section class="slideshow-container">
+            <div class="mySlides">
+                <img src="image1.jpeg" alt="Image 1">
+                <div class="sliding-text">Slide 1: Welcome to Martoo EduTech!</div>
             </div>
-            <div style="text-align:center;">
-                <span class="dot" onclick="currentSlide(1)"></span> 
-                <span class="dot" onclick="currentSlide(2)"></span> 
-                <span class="dot" onclick="currentSlide(3)"></span> 
-                <span class="dot" onclick="currentSlide(4)"></span>
-                <span class="dot" onclick="currentSlide(5)"></span>
-                <span class="dot" onclick="currentSlide(6)"></span>
+            <div class="mySlides">
+                <img src="image2.jpeg" alt="Image 2">
+                <div class="sliding-text">Slide 2: Enhancing Your Learning Experience!</div>
+            </div>
+            <div class="mySlides">
+                <img src="image3.jpeg" alt="Image 3">
+                <div class="sliding-text">Slide 3: Innovative Educational Resources!</div>
+            </div>
+            <div class="mySlides">
+                <img src="image4.jpeg" alt="Image 4">
+                <div class="sliding-text">Slide 4: Technology Solutions for Everyone!</div>
+            </div>
+            <div class="mySlides">
+                <img src="image5.jpeg" alt="Image 5">
+                <div class="sliding-text">Slide 5: Join Us Today!</div>
+            </div>
+            <div class="mySlides">
+                <img src="image6.jpeg" alt="Image 6">
+                <div class="sliding-text">Slide 6: Your Success is Our Mission!</div>
             </div>
         </section>
 
@@ -80,29 +113,20 @@
 
     <script src="script.js"></script>
     <script>
+        // JavaScript for sliding images
         let slideIndex = 0;
         showSlides();
 
         function showSlides() {
             let i;
-            let slides = document.getElementsByClassName("slide");
-            let dots = document.getElementsByClassName("dot");
+            const slides = document.getElementsByClassName("mySlides");
             for (i = 0; i < slides.length; i++) {
                 slides[i].style.display = "none";  
             }
             slideIndex++;
             if (slideIndex > slides.length) {slideIndex = 1}    
-            for (i = 0; i < dots.length; i++) {
-                dots[i].className = dots[i].className.replace(" active", "");
-            }
             slides[slideIndex - 1].style.display = "block";  
-            dots[slideIndex - 1].className += " active";
-            setTimeout(showSlides, 3000); // Change image every 3 seconds
-        }
-
-        function currentSlide(n) {
-            slideIndex = n - 1;
-            showSlides();
+            setTimeout(showSlides, 8000); // Change image every 8 seconds
         }
     </script>
 </body>
