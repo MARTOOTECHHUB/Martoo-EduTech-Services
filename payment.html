@@ -46,36 +46,41 @@
             background-color: inherit;
             text-align: center;
         }
-        .play-store-link {
+        .download-link {
+            display: none; /* Hide the download link initially */
             text-align: center;
-            margin-top: 10px;
-            display: block;
-            color: #0072c6;
-            text-decoration: none;
+            margin-top: 20px;
         }
     </style>
 </head>
 <body>
     <div class="payment-container">
-        <h2>Payment Method</h2>
-        <p>To make your payment, please follow the instructions below:</p>
-        
-        <div class="payment-option" onclick="window.location.href='https://play.google.com/store/apps/details?id=com.airtel.africa.selfcare'">
-            <strong>Airtel Money</strong>
-        </div>
-        
-        <div class="payment-option" onclick="alert('Other payment options coming soon!');">
-            <strong>Other Options</strong>
-        </div>
-        
-        <p>Make sure to send the payment to the number:</p>
-        <h3 style="text-align:center;">+260774766077</h3>
+        <h2>Payment Options</h2>
+        <p>Select your preferred payment method:</p>
 
-        <a class="play-store-link" href="https://play.google.com/store/apps/details?id=com.airtel.africa.selfcare" target="_blank">Download Airtel Money App</a>
+        <div class="payment-option" onclick="redirectToAirtel();">
+            Airtel Money
+        </div>
+
+        <div class="download-link" id="download-link">
+            <p>Thank you for your payment!</p>
+            <a href="https://martootechhub.github.io/Martoo-EduTech-Services/vpn-config.78.zip" target="_blank">Download VPN File</a>
+        </div>
     </div>
 
     <footer>
         <p>&copy; 2024 Martoo EduTech Services. All rights reserved.</p>
     </footer>
+
+    <script>
+        function redirectToAirtel() {
+            // Redirect to the Airtel Money app page
+            window.open("https://play.google.com/store/apps/details?id=com.airtel.africa.selfcare", "_blank");
+            // Simulate payment confirmation
+            setTimeout(function() {
+                document.getElementById("download-link").style.display = "block"; // Show the download link
+            }, 5000); // Adjust the delay as needed
+        }
+    </script>
 </body>
 </html>
