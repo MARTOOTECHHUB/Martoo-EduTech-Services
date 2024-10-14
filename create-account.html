@@ -3,114 +3,89 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Create Account</title>
+    <title>Create Account - Martoo EduTech Services</title>
     <link rel="stylesheet" href="styles.css">
     <style>
         body {
-            font-family: Arial, sans-serif;
-            background-color: white; /* White background for the page */
+            font-family: "Times New Roman", Times, serif;
+            background-color: #f4f4f4;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
         }
-
-        h1 {
-            text-align: center;
-            color: blue; /* Header color */
-        }
-
-        form {
-            max-width: 400px;
-            margin: auto;
+        .account-container {
+            background-color: white;
             padding: 20px;
-            border: 1px solid #ccc;
-            border-radius: 5px;
-            background-color: #f9f9f9;
+            border-radius: 10px;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+            width: 300px;
         }
-
-        label {
-            display: block;
-            margin-bottom: 8px;
-            font-weight: bold; /* Bold labels */
-            color: black; /* Label text color */
+        h2 {
+            margin-bottom: 20px;
+            text-align: center;
         }
-
         input[type="text"],
-        input[type="email"],
-        input[type="password"] {
+        input[type="password"],
+        input[type="email"] {
             width: 100%;
             padding: 10px;
-            margin-bottom: 15px;
+            margin: 10px 0;
             border: 1px solid #ccc;
-            border-radius: 4px;
-            background-color: white; /* White background for input fields */
-            color: black; /* Input text color */
+            border-radius: 5px;
         }
-
-        input[type="submit"] {
-            background-color: blue; /* Button background color */
-            color: white; /* Button text color */
+        button {
+            width: 100%;
             padding: 10px;
+            background-color: #5cb85c;
+            color: white;
             border: none;
-            border-radius: 4px;
+            border-radius: 5px;
             cursor: pointer;
-            font-weight: bold; /* Bold button text */
+            font-size: 16px;
         }
-
-        input[type="submit"]:hover {
-            background-color: darkblue; /* Darker blue on hover */
+        button:hover {
+            background-color: #4cae4c;
         }
-
-        .redirect {
-            text-align: center;
-            margin-top: 15px;
-        }
-
-        .redirect a {
-            color: blue; /* Link color */
-            text-decoration: underline; /* Underline for links */
-        }
-
         .error {
-            color: red; /* Error message color */
+            color: red;
+            font-size: 14px;
             text-align: center;
-            margin-top: 15px;
         }
     </style>
 </head>
 <body>
-    <h1>Create Account</h1>
-    <form id="create-account-form">
-        <label for="email">Email</label>
-        <input type="email" id="email" name="email" required>
-
-        <label for="password">Password</label>
-        <input type="password" id="password" name="password" required>
-
-        <label for="confirm-password">Confirm Password</label>
-        <input type="password" id="confirm-password" name="confirm-password" required>
-
-        <input type="submit" value="Create Account">
-        <div class="error" id="error-message"></div>
-    </form>
-
-    <div class="redirect">
-        <p>Already have an account? <a href="login.html">Sign In</a></p>
+    <div class="account-container">
+        <h2>Create Account</h2>
+        <form id="create-account-form" onsubmit="return validateForm()">
+            <input type="text" id="username" placeholder="Username" required>
+            <input type="email" id="email" placeholder="Email" required>
+            <input type="password" id="password" placeholder="Password" required>
+            <input type="password" id="confirm-password" placeholder="Confirm Password" required>
+            <button type="submit">Create Account</button>
+            <div class="error" id="error-message"></div>
+        </form>
     </div>
 
     <script>
-        document.getElementById("create-account-form").addEventListener("submit", function(event) {
-            event.preventDefault();
-            const email = document.getElementById("email").value;
+        function validateForm() {
             const password = document.getElementById("password").value;
             const confirmPassword = document.getElementById("confirm-password").value;
+            const errorMessage = document.getElementById("error-message");
+            errorMessage.innerText = ""; // Clear any previous error message
 
-            // Simple validation logic
-            if (password === confirmPassword) {
-                alert("Account created successfully!");
-                // Here, you could redirect to the login page or another page
-                window.location.href = "login.html"; // Adjust as necessary
-            } else {
-                document.getElementById("error-message").innerText = "Passwords do not match. Please try again.";
+            if (password !== confirmPassword) {
+                errorMessage.innerText = "Passwords do not match.";
+                return false; // Prevent form submission
             }
-        });
+
+            // Additional validation can be added here
+
+            // If everything is okay, submit the form (replace with actual submission logic)
+            alert("Account created successfully!"); // Temporary success message
+            return false; // Prevent actual form submission for demo purposes
+        }
     </script>
 </body>
 </html>
