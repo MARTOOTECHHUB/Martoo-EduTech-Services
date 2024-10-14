@@ -46,6 +46,13 @@
             background-color: inherit;
             text-align: center;
         }
+        .play-store-link {
+            text-align: center;
+            margin-top: 10px;
+            display: block;
+            color: #0072c6;
+            text-decoration: none;
+        }
     </style>
 </head>
 <body>
@@ -53,12 +60,14 @@
         <h2>Payment Method</h2>
         <p>To make your payment, please follow the instructions below:</p>
         
-        <div class="payment-option" onclick="window.location.href='https://www.airtel.co.zm/airtelmoney/getting_started'">
+        <div class="payment-option" onclick="window.location.href='intent://send?phone=260774766077#Intent;scheme=airtelmoney;package=com.airtel.africa.selfcare;end'">
             <strong>Airtel Money</strong>
         </div>
         
         <p>Make sure to send the payment to the number:</p>
         <h3 style="text-align:center;">+260774766077</h3>
+
+        <a class="play-store-link" href="https://play.google.com/store/apps/details?id=com.airtel.africa.selfcare" target="_blank">Download Airtel Money App</a>
     </div>
 
     <footer>
