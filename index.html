@@ -6,41 +6,36 @@
     <title>Martoo EduTech Services</title>
     <link rel="stylesheet" href="styles.css">
     <style>
-        /* Additional CSS for the sliding text and image */
+        /* Add styles for the slideshow */
         .slideshow-container {
             position: relative;
             max-width: 100%;
             margin: auto;
-            overflow: hidden; /* Ensure images do not overflow */
+            overflow: hidden;
         }
 
-        .mySlides {
+        .slides {
             display: none;
-            position: relative;
-            width: 100%;
-        }
-
-        .sliding-text {
             position: absolute;
-            bottom: 20px;
-            left: 20px;
-            color: white;
-            font-size: 24px;
-            font-weight: bold;
-            animation: slide 10s ease-in-out infinite;
-        }
-
-        @keyframes slide {
-            0% { transform: translateX(100%); opacity: 0; }
-            10% { opacity: 1; }
-            90% { opacity: 1; }
-            100% { transform: translateX(-100%); opacity: 0; }
-        }
-
-        /* Adjustments to the existing CSS for the images */
-        img {
             width: 100%;
             height: auto;
+        }
+
+        .slides img {
+            width: 100%;
+            height: auto;
+        }
+
+        .text {
+            position: absolute;
+            bottom: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            color: white;
+            font-size: 24px;
+            text-align: center;
+            background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent background */
+            padding: 10px;
         }
     </style>
 </head>
@@ -65,30 +60,32 @@
         <h2>Your gateway to education and technology</h2>
         <p>At Martoo EduTech Services, we provide innovative educational resources and technology solutions to enhance your learning experience.</p>
 
-        <section class="slideshow-container">
-            <div class="mySlides">
-                <img src="image1.jpeg" alt="Image 1">
-                <div class="sliding-text">Welcome to Martoo EduTech!</div>
-            </div>
-            <div class="mySlides">
-                <img src="image2.jpeg" alt="Image 2">
-                <div class="sliding-text">Enhancing Your Learning Experience!</div>
-            </div>
-            <div class="mySlides">
-                <img src="image3.jpeg" alt="Image 3">
-                <div class="sliding-text">Innovative Educational Resources!</div>
-            </div>
-            <div class="mySlides">
-                <img src="image4.jpeg" alt="Image 4">
-                <div class="sliding-text">Technology Solutions for Everyone!</div>
-            </div>
-            <div class="mySlides">
-                <img src="image5.jpeg" alt="Image 5">
-                <div class="sliding-text">Join Us Today!</div>
-            </div>
-            <div class="mySlides">
-                <img src="image6.jpeg" alt="Image 6">
-                <div class="sliding-text">Your Success is Our Mission!</div>
+        <section id="slideshow">
+            <div class="slideshow-container">
+                <div class="slides">
+                    <img src="images/image 1.jpeg" alt="Educational Resource 1">
+                    <div class="text">Explore innovative educational resources that enhance your learning experience.</div>
+                </div>
+                <div class="slides">
+                    <img src="images/image 2.jpeg" alt="Educational Resource 2">
+                    <div class="text">Access reliable technology solutions that support your academic journey.</div>
+                </div>
+                <div class="slides">
+                    <img src="images/image 3.jpeg" alt="Educational Resource 3">
+                    <div class="text">Join us in bridging the gap between education and technology for all learners.</div>
+                </div>
+                <div class="slides">
+                    <img src="images/image 4.jpeg" alt="Educational Resource 4">
+                    <div class="text">Download essential school materials to help you succeed in your studies.</div>
+                </div>
+                <div class="slides">
+                    <img src="images/image 5.jpeg" alt="Educational Resource 5">
+                    <div class="text">Stay updated with the latest educational tools and resources available online.</div>
+                </div>
+                <div class="slides">
+                    <img src="images/image 6.jpeg" alt="Educational Resource 6">
+                    <div class="text">Explore innovative educational resources that enhance your learning experience.</div>
+                </div>
             </div>
         </section>
 
@@ -114,20 +111,19 @@
 
     <script src="script.js"></script>
     <script>
-        // JavaScript for sliding images
+        // JavaScript for slideshow functionality
         let slideIndex = 0;
         showSlides();
 
         function showSlides() {
-            let i;
-            const slides = document.getElementsByClassName("mySlides");
-            for (i = 0; i < slides.length; i++) {
-                slides[i].style.display = "none";  
+            let slides = document.getElementsByClassName("slides");
+            for (let i = 0; i < slides.length; i++) {
+                slides[i].style.display = "none";  // Hide all slides
             }
             slideIndex++;
-            if (slideIndex > slides.length) {slideIndex = 1}    
-            slides[slideIndex - 1].style.display = "block";  
-            setTimeout(showSlides, 8000); // Change image every 8 seconds
+            if (slideIndex > slides.length) {slideIndex = 1}  // Reset to first slide
+            slides[slideIndex - 1].style.display = "block";  // Show the current slide
+            setTimeout(showSlides, 3000); // Change image every 3 seconds
         }
     </script>
 </body>
