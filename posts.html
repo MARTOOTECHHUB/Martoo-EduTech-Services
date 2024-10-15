@@ -5,11 +5,15 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Downloads - Martoo EduTech Services</title>
     <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"> <!-- Font Awesome for icons -->
     <style>
         body {
             font-family: Arial, sans-serif;
-            background-color: #f4f4f4;
-            color: #333;
+            background-color: #333333; /* Dark background for consistency */
+            color: #f0f0f0; /* Light text color for better visibility */
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh; /* Ensure footer is pushed to the bottom */
         }
         header {
             background-color: #0072c6;
@@ -31,9 +35,7 @@
         }
         main {
             padding: 20px;
-        }
-        #download-link {
-            display: none;
+            flex: 1; /* Allow main content to expand and push footer down */
         }
         .payment-option {
             background-color: #0072c6;
@@ -44,6 +46,32 @@
             margin: 10px 0;
             text-align: center;
             border-radius: 5px;
+            transition: background-color 0.3s;
+        }
+        .payment-option:hover {
+            background-color: #005999; /* Darker blue on hover */
+        }
+        footer {
+            background-color: #0072c6;
+            color: white;
+            text-align: center;
+            padding: 10px;
+        }
+        /* Styling for social media icons in footer */
+        .social-icons {
+            list-style-type: none;
+            padding: 0;
+            margin: 10px 0;
+            display: flex;
+            justify-content: center;
+        }
+        .social-icons li {
+            margin: 0 10px;
+        }
+        .social-icons a {
+            color: white;
+            text-decoration: none;
+            font-size: 24px; /* Size of the icons */
         }
     </style>
 </head>
@@ -70,7 +98,7 @@
         <section id="vpn-files">
             <h3>VPN Configuration Files</h3>
             <button class="payment-option" onclick="redirectToPayment()">Make Payment (K 25)</button>
-            <div id="download-link">
+            <div id="download-link" style="display: none;">
                 <p>Thank you for your payment!</p>
                 <a id="vpn-download" href="#" target="_blank">Download VPN Configurations</a>
             </div>
@@ -94,6 +122,11 @@
 
     <footer>
         <p>&copy; 2024 Martoo EduTech Services. All rights reserved.</p>
+        <ul class="social-icons">
+            <li><a href="https://youtube.com/@martootech?si=WtTmTBtO6VjvajdN" target="_blank"><i class="fab fa-youtube"></i></a></li>
+            <li><a href="https://www.facebook.com/profile.php?id=61561559594029" target="_blank"><i class="fab fa-facebook"></i></a></li>
+            <li><a href="https://wa.me/260950322498" target="_blank"><i class="fab fa-whatsapp"></i></a></li>
+        </ul>
     </footer>
 
     <script>
