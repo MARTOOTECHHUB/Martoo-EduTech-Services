@@ -72,9 +72,9 @@
         /* Adjusting sliding text position and movement */
         .text {
             position: absolute;
-            top: 70%;  /* Slightly lower on the screen */
+            top: 50%;  /* Center vertically */
             left: 100%;  /* Start off-screen on the right */
-            transform: translateY(-50%); /* Adjust vertical position */
+            transform: translateY(-50%); /* Center align vertically */
             color: white; /* White text */
             font-size: 48px; /* Large font size */
             font-weight: bold;
@@ -82,8 +82,8 @@
             background-color: rgba(0, 0, 0, 0.7); /* Semi-transparent background */
             padding: 20px;
             border-radius: 5px;
-            width: 80%;
-            animation: slideIn 10s linear infinite; /* Smooth sliding animation */
+            width: 100%; /* Cover entire width for proper sliding */
+            animation: slideIn 15s linear infinite; /* Smooth sliding animation */
         }
 
         @keyframes slideIn {
@@ -91,7 +91,7 @@
                 left: 100%;  /* Start from the far right */
             }
             to {
-                left: -100%;  /* Move completely to the left */
+                left: -100%;  /* Move completely off-screen to the left */
             }
         }
 
@@ -197,7 +197,7 @@
             slideIndex++;
             if (slideIndex > slides.length) {slideIndex = 1}    
             slides[slideIndex-1].style.display = "block";  
-            setTimeout(showSlides, 3000); // Change image every 3 seconds
+            setTimeout(showSlides, 5000); // Change image every 5 seconds
         }
     </script>
 </body>
