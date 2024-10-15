@@ -51,6 +51,11 @@
             font-weight: bold;
         }
 
+        /* Key Services styles */
+        #key-services {
+            margin: 40px 0; /* Add margin to separate from other sections */
+        }
+
         /* Slideshow styles */
         .slideshow-container {
             position: relative;
@@ -71,8 +76,7 @@
 
         /* Adjusting sliding text position and movement */
         .text {
-            position: absolute;
-            bottom: 20px; /* Positioned just above the footer */
+            position: relative; /* Use relative positioning */
             left: 50%;  /* Start from the center */
             transform: translate(-50%, 0); /* Center align horizontally */
             color: white; /* White text */
@@ -83,7 +87,8 @@
             padding: 20px;
             border-radius: 5px;
             width: auto; /* Adjust width for proper alignment */
-            animation: slideIn 25s linear infinite; /* Smooth sliding animation */
+            animation: slideIn 30s linear infinite; /* Smooth sliding animation */
+            margin-top: 20px; /* Add some space above */
         }
 
         @keyframes slideIn {
@@ -152,6 +157,14 @@
         <h2>Your gateway to education and technology</h2>
         <p>At Martoo EduTech Services, we provide innovative educational resources and technology solutions to enhance your learning experience.</p>
 
+        <section id="key-services">
+            <h3>Key Services</h3>
+            <ul>
+                <li><a href="posts.html#vpn-files">Download VPN Configurations</a></li>
+                <li><a href="posts.html#school-files">Download School Materials</a></li>
+            </ul>
+        </section>
+
         <section id="slideshow-container">
             <div class="slideshow">
                 <div class="slide">
@@ -167,14 +180,6 @@
                     <div class="text">Connecting education with technology for a brighter future.</div>
                 </div>
             </div>
-        </section>
-
-        <section id="key-services">
-            <h3>Key Services</h3>
-            <ul>
-                <li><a href="posts.html#vpn-files">Download VPN Configurations</a></li>
-                <li><a href="posts.html#school-files">Download School Materials</a></li>
-            </ul>
         </section>
     </main>
 
