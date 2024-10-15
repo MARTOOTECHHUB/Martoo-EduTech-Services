@@ -72,7 +72,7 @@
         /* Adjusting sliding text position and movement */
         .text {
             position: absolute;
-            top: 50%;  /* Center vertically */
+            bottom: 100px;  /* Positioned just above the footer */
             left: 100%;  /* Start off-screen on the right */
             transform: translateY(-50%); /* Center align vertically */
             color: white; /* White text */
@@ -91,7 +91,7 @@
                 left: 100%;  /* Start from the far right */
             }
             to {
-                left: -100%;  /* Move completely off-screen to the left */
+                left: -100%;  /* Move completely off-screen to the left edge */
             }
         }
 
