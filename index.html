@@ -51,45 +51,46 @@
             font-weight: bold;
         }
 
-        /* Slideshow styles - now above the intro text */
+        /* Key Services styles */
+        #key-services {
+            margin: 40px 0; /* Add margin to separate from other sections */
+        }
+
+        /* Slideshow styles */
         .slideshow-container {
             position: relative;
             max-width: 100%;
             margin: auto;
-            height: auto; /* Adjust height to auto for better responsiveness */
-            padding: 10px 0;
-            overflow: hidden;
-            margin-bottom: 20px;
+            height: 200px; /* Reduced height of the slideshow area */
+            overflow: hidden; /* Hide overflow for sliding effect */
         }
 
-        /* Centering the sliding text */
+        /* Adjusting the sliding text */
         .text {
             position: absolute;
-            left: 50%;
-            transform: translateX(-50%);
-            color: white;
-            font-size: 36px; /* Smaller but still large */
+            left: 50%; /* Start from the center */
+            transform: translateX(-50%); /* Center horizontally */
+            color: white; /* White text */
+            font-size: 32px; /* Reduced font size */
             font-weight: bold;
             text-align: center;
             background-color: rgba(0, 0, 0, 0.7); /* Semi-transparent background */
-            padding: 10px;
+            padding: 10px; /* Reduced padding */
             border-radius: 5px;
-            width: 80%; /* Adjust width for mobile responsiveness */
-            animation: slideIn 15s linear infinite; /* Faster animation */
+            width: auto; /* Adjust width for proper alignment */
+            animation: slideLeft 15s linear infinite; /* Slide from middle to left */
+            margin-top: 20px; /* Add some space above */
         }
 
-        @keyframes slideIn {
-            0%, 100% {
-                left: 100%;
+        @keyframes slideLeft {
+            0% {
+                transform: translateX(-50%); /* Centered at the beginning */
+                left: 50%; /* Middle of the screen */
             }
-            50% {
-                left: 50%;
+            100% {
+                transform: translateX(-100%); /* Move left out of the screen */
+                left: 0%; /* Move towards left edge */
             }
-        }
-
-        /* Intro text section */
-        main h2, main p {
-            text-align: center;
         }
 
         /* Footer styles */
@@ -124,11 +125,6 @@
             nav ul li {
                 margin: 10px 0;
             }
-
-            .text {
-                font-size: 24px; /* Reduce font size for smaller screens */
-                width: 90%; /* Adjust width for smaller screens */
-            }
         }
     </style>
 </head>
@@ -148,15 +144,15 @@
         </nav>
     </header>
 
-    <section id="slideshow-container">
-        <div class="slideshow">
-            <div class="text">Empowering students with innovative tools for success.</div>
-            <div class="text">Access a wealth of resources to enhance your learning journey.</div>
-            <div class="text">Connecting education with technology for a brighter future.</div>
-        </div>
-    </section>
-
     <main>
+        <section id="slideshow-container">
+            <div class="slideshow">
+                <div class="text">Empowering students with innovative tools for success.</div>
+                <div class="text">Access a wealth of resources to enhance your learning journey.</div>
+                <div class="text">Connecting education with technology for a brighter future.</div>
+            </div>
+        </section>
+
         <h2>Your gateway to education and technology</h2>
         <p>At Martoo EduTech Services, we provide innovative educational resources and technology solutions to enhance your learning experience.</p>
 
