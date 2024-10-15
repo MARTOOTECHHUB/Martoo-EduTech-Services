@@ -69,11 +69,11 @@
             height: 100%; /* Fill the slideshow area */
         }
 
-        /* Centering the sliding text */
+        /* Adjusting sliding text position and movement */
         .text {
             position: absolute;
-            top: 50%;  /* Center vertically */
-            left: 100%;  /* Start off-screen */
+            top: 70%;  /* Slightly lower on the screen */
+            left: 100%;  /* Start off-screen on the right */
             transform: translateY(-50%); /* Adjust vertical position */
             color: white; /* White text */
             font-size: 48px; /* Large font size */
@@ -83,12 +83,12 @@
             padding: 20px;
             border-radius: 5px;
             width: 80%;
-            animation: slideIn 10s linear infinite; /* Sliding animation */
+            animation: slideIn 10s linear infinite; /* Smooth sliding animation */
         }
 
         @keyframes slideIn {
             from {
-                left: 100%;  /* Start from off-screen on the right */
+                left: 100%;  /* Start from the far right */
             }
             to {
                 left: -100%;  /* Move completely to the left */
