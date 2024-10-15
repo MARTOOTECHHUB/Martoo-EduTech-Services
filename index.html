@@ -101,6 +101,26 @@
             }
         }
 
+        /* Subscribe Section styles */
+        #subscribe {
+            margin: 40px 0;
+            text-align: center;
+        }
+
+        #subscribe input[type="email"] {
+            padding: 10px;
+            width: 250px;
+            margin-right: 10px;
+        }
+
+        #subscribe button {
+            padding: 10px 15px;
+            background-color: #4d4d4d; /* Metallic gray */
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
+
         /* Footer styles */
         footer {
             background-color: #4d4d4d; /* Metallic gray */
@@ -186,6 +206,16 @@
                 <div class="text">Access a wealth of resources to enhance your learning journey.</div>
                 <div class="text">Connecting education with technology for a brighter future.</div>
             </div>
+        </section>
+
+        <!-- Subscription Section -->
+        <section id="subscribe">
+            <h3>Subscribe for Updates</h3>
+            <p>Stay updated with our latest services and resources. Enter your email below to subscribe.</p>
+            <form action="https://example.com/subscribe" method="POST"> <!-- Replace with your form handling URL -->
+                <input type="email" name="email" placeholder="Your Email" required>
+                <button type="submit">Subscribe</button>
+            </form>
         </section>
     </main>
 
