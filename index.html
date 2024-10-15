@@ -76,9 +76,9 @@
 
         /* Adjusting sliding text position and movement */
         .text {
-            position: relative; /* Use relative positioning */
-            left: 50%;  /* Start from the center */
-            transform: translate(-50%, 0); /* Center align horizontally */
+            position: absolute; /* Use absolute positioning */
+            left: 0;  /* Start from the left edge */
+            transform: translateY(0); /* No vertical translation */
             color: white; /* White text */
             font-size: 48px; /* Large font size */
             font-weight: bold;
@@ -93,12 +93,12 @@
 
         @keyframes slideIn {
             from {
-                left: 100%;  /* Start from the far right */
-                transform: translate(50%, 0); /* Adjust starting position */
+                left: -100%;  /* Start completely off-screen to the left */
+                transform: translateY(0); /* Center vertically */
             }
             to {
-                left: -100%;  /* Move completely off-screen to the left edge */
-                transform: translate(-50%, 0); /* Keep centered on exit */
+                left: 100%;  /* Move completely off-screen to the right */
+                transform: translateY(0); /* Keep centered vertically on exit */
             }
         }
 
