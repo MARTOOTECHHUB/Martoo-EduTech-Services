@@ -17,49 +17,72 @@
             margin: 0;
         }
         .payment-container {
-            background-color: white;
+            background-color: #f4f4f4; /* Changed to a light background color */
             padding: 20px;
             border-radius: 10px;
             box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
             width: 400px;
+            text-align: center; /* Center text in the container */
         }
         h2 {
             margin-bottom: 20px;
-            text-align: center;
         }
         .payment-option {
             margin: 15px 0;
             padding: 10px;
             border: 1px solid #0072c6;
             border-radius: 5px;
-            text-align: center;
-            background-color: #f4f4f4;
+            background-color: #0072c6; /* Primary color for buttons */
+            color: white; /* Text color */
             cursor: pointer;
+            transition: background-color 0.3s; /* Smooth transition */
         }
         .payment-option:hover {
-            background-color: #e0e0e0;
+            background-color: #005fa3; /* Darker shade on hover */
+        }
+        .download-link {
+            display: none; /* Hide the download link initially */
+            margin-top: 20px;
+        }
+        .instructions {
+            margin: 10px 0;
+            font-size: 0.9em; /* Smaller font for instructions */
+            color: #666; /* Grey color for instructions */
         }
         footer {
             position: fixed;
             bottom: 0;
             width: 100%;
-            background-color: inherit;
+            background-color: #0072c6; /* Footer background color */
+            color: white; /* Footer text color */
             text-align: center;
+            padding: 10px 0; /* Padding for footer */
         }
-        .download-link {
-            display: none; /* Hide the download link initially */
-            text-align: center;
-            margin-top: 20px;
+        .footer-icons {
+            margin-top: 5px; /* Space between text and icons */
+        }
+        .footer-icons a {
+            color: white; /* Icon color */
+            margin: 0 10px; /* Spacing between icons */
+            text-decoration: none; /* No underline */
+        }
+        .footer-icons i {
+            font-size: 1.5em; /* Icon size */
         }
     </style>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"> <!-- Font Awesome for icons -->
 </head>
 <body>
     <div class="payment-container">
         <h2>Payment Options</h2>
         <p>Select your preferred payment method:</p>
-
+        
         <div class="payment-option" onclick="redirectToAirtel();">
             Airtel Money
+        </div>
+        
+        <div class="instructions">
+            After making your payment, please return here. You will be able to download the configurations after 20 seconds.
         </div>
 
         <div class="download-link" id="download-link">
@@ -70,6 +93,11 @@
 
     <footer>
         <p>&copy; 2024 Martoo EduTech Services. All rights reserved.</p>
+        <div class="footer-icons">
+            <a href="https://youtube.com/@martootech?si=WtTmTBtO6VjvajdN" target="_blank"><i class="fab fa-youtube"></i></a>
+            <a href="https://www.facebook.com/profile.php?id=61561559594029" target="_blank"><i class="fab fa-facebook"></i></a>
+            <a href="https://wa.me/260950322498" target="_blank"><i class="fab fa-whatsapp"></i></a>
+        </div>
     </footer>
 
     <script>
@@ -79,7 +107,7 @@
             // Simulate payment confirmation
             setTimeout(function() {
                 document.getElementById("download-link").style.display = "block"; // Show the download link
-            }, 5000); // Adjust the delay as needed
+            }, 20000); // Adjust the delay to 20 seconds
         }
     </script>
 </body>
