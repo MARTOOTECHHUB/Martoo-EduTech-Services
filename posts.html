@@ -74,7 +74,7 @@
             font-size: 24px; /* Size of the icons */
         }
         .instruction {
-            margin-top: 10px; /* Space above the instruction */
+            margin-bottom: 10px; /* Space below the instruction */
             font-size: 14px; /* Slightly smaller font for the instruction */
             color: #FFD700; /* Gold color for visibility */
         }
@@ -102,20 +102,20 @@
 
         <section id="vpn-files">
             <h3>VPN Configuration Files</h3>
+            <p class="instruction">After making your payment, please return here. You will be able to download the configurations after 20 seconds.</p>
             <button class="payment-option" onclick="redirectToPayment('vpn')">Make Payment (K 25)</button>
             <div id="download-link-vpn" style="display: none;">
                 <p>Thank you for your payment!</p>
-                <p class="instruction">After making your payment, please return here. You will be able to download the configurations after 20 seconds.</p>
                 <a id="vpn-download" href="#" target="_blank">Download VPN Configurations</a>
             </div>
         </section>
 
         <section id="school-files">
             <h3>School Materials</h3>
+            <p class="instruction">After making your payment, please return here. You will be able to download the materials after 20 seconds.</p>
             <button class="payment-option" onclick="redirectToPayment('school')">Make Payment (K 25)</button>
             <div id="download-link-school" style="display: none;">
                 <p>Thank you for your payment!</p>
-                <p class="instruction">After making your payment, please return here. You will be able to download the materials after 20 seconds.</p>
                 <a id="school-download" href="https://martootechhub.github.io/Martoo-EduTech-Services/school-supplies78.zip" target="_blank">Download School Materials</a>
             </div>
         </section>
