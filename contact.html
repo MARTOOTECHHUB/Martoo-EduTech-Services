@@ -5,6 +5,81 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Contact - Martoo EduTech Services</title>
     <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"> <!-- Font Awesome for icons -->
+    <style>
+        body {
+            background-color: #333333; /* Dark earthy color */
+            color: #f0f0f0;
+            margin: 0;
+            font-family: Arial, sans-serif;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh; /* Ensure footer is pushed to the bottom */
+        }
+
+        header {
+            background-color: #4d4d4d; /* Metallic gray */
+            color: white;
+            text-align: center;
+            padding: 20px;
+            position: relative;
+        }
+
+        nav {
+            position: relative;
+        }
+
+        nav ul {
+            list-style-type: none;
+            padding: 0;
+            margin: 0;
+            display: flex;
+            justify-content: center;
+        }
+
+        nav ul li {
+            margin: 0 15px;
+        }
+
+        nav ul li a {
+            text-decoration: none;
+            color: white;
+            font-weight: bold;
+        }
+
+        main {
+            text-align: center;
+            margin: 40px 0;
+            flex: 1; /* Allow main content to expand and push footer down */
+        }
+
+        footer {
+            background-color: #4d4d4d; /* Metallic gray */
+            color: white;
+            text-align: center;
+            padding: 20px;
+            position: relative;
+        }
+
+        /* Styling for social media icons */
+        .social-icons {
+            list-style-type: none;
+            padding: 0;
+            margin: 20px 0 0;
+            display: flex;
+            justify-content: center;
+        }
+
+        .social-icons li {
+            margin: 0 15px;
+        }
+
+        .social-icons a {
+            color: white;
+            text-decoration: none;
+            font-size: 24px; /* Size of the icons */
+        }
+    </style>
 </head>
 <body>
     <header>
@@ -28,9 +103,11 @@
         <p>Feel free to reach out to us for any inquiries or support:</p>
         <ul>
             <li><a href="mailto:infomartooedutech@gmail.com">Email: infomartooedutech@gmail.com</a></li>
-            <li><a href="https://youtube.com/@martootech?si=WtTmTBtO6VjvajdN">YouTube</a></li>
-            <li><a href="https://www.facebook.com/profile.php?id=61561559594029">Facebook</a></li>
-            <li><a href="https://wa.me/260950322498">WhatsApp</a></li>
+        </ul>
+        <ul class="social-icons">
+            <li><a href="https://youtube.com/@martootech?si=WtTmTBtO6VjvajdN" target="_blank"><i class="fab fa-youtube"></i></a></li>
+            <li><a href="https://www.facebook.com/profile.php?id=61561559594029" target="_blank"><i class="fab fa-facebook"></i></a></li>
+            <li><a href="https://wa.me/260950322498" target="_blank"><i class="fab fa-whatsapp"></i></a></li>
         </ul>
     </main>
 
