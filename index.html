@@ -51,18 +51,15 @@
             font-weight: bold;
         }
 
-        /* Key Services styles */
-        #key-services {
-            margin: 40px 0; /* Add margin to separate from other sections */
-        }
-
-        /* Slideshow styles */
+        /* Slideshow styles - now above the intro text */
         .slideshow-container {
             position: relative;
             max-width: 100%;
             margin: auto;
-            height: 400px; /* Height of the slideshow area */
-            overflow: hidden; /* Hide overflow for sliding effect */
+            height: auto; /* Adjust height to auto for better responsiveness */
+            padding: 10px 0;
+            overflow: hidden;
+            margin-bottom: 20px;
         }
 
         /* Centering the sliding text */
@@ -71,15 +68,28 @@
             left: 50%;
             transform: translateX(-50%);
             color: white;
-            font-size: 36px; /* Adjusted font size for smaller screens */
+            font-size: 36px; /* Smaller but still large */
             font-weight: bold;
             text-align: center;
-            background-color: rgba(0, 0, 0, 0.7);
-            padding: 20px;
+            background-color: rgba(0, 0, 0, 0.7); /* Semi-transparent background */
+            padding: 10px;
             border-radius: 5px;
-            width: auto;
-            animation: slideIn 30s linear infinite;
-            margin-top: 20px;
+            width: 80%; /* Adjust width for mobile responsiveness */
+            animation: slideIn 15s linear infinite; /* Faster animation */
+        }
+
+        @keyframes slideIn {
+            0%, 100% {
+                left: 100%;
+            }
+            50% {
+                left: 50%;
+            }
+        }
+
+        /* Intro text section */
+        main h2, main p {
+            text-align: center;
         }
 
         /* Footer styles */
@@ -93,47 +103,8 @@
             width: 100%;
         }
 
-        /* Social icons styles */
-        .footer-icons {
-            margin-top: 5px;
-        }
-
-        .footer-icons a {
-            color: white;
-            margin: 0 10px;
-            text-decoration: none;
-        }
-
-        .footer-icons i {
-            font-size: 1.5em;
-        }
-
-        /* Keyframes for slideshow text */
-        @keyframes slideIn {
-            0% {
-                transform: translateX(-50%);
-                left: 50%;
-            }
-            25% {
-                transform: translateX(-50%);
-                left: 0%;
-            }
-            75% {
-                transform: translateX(-50%);
-                left: 100%;
-            }
-            100% {
-                transform: translateX(-50%);
-                left: 50%;
-            }
-        }
-
         /* Media Query for smaller screens */
         @media (max-width: 768px) {
-            .text {
-                font-size: 24px; /* Smaller font size for mobile screens */
-            }
-
             .hamburger {
                 display: block; /* Show hamburger icon on small screens */
             }
@@ -153,9 +124,13 @@
             nav ul li {
                 margin: 10px 0;
             }
+
+            .text {
+                font-size: 24px; /* Reduce font size for smaller screens */
+                width: 90%; /* Adjust width for smaller screens */
+            }
         }
     </style>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"> <!-- Font Awesome for icons -->
 </head>
 <body>
     <header>
@@ -173,6 +148,14 @@
         </nav>
     </header>
 
+    <section id="slideshow-container">
+        <div class="slideshow">
+            <div class="text">Empowering students with innovative tools for success.</div>
+            <div class="text">Access a wealth of resources to enhance your learning journey.</div>
+            <div class="text">Connecting education with technology for a brighter future.</div>
+        </div>
+    </section>
+
     <main>
         <h2>Your gateway to education and technology</h2>
         <p>At Martoo EduTech Services, we provide innovative educational resources and technology solutions to enhance your learning experience.</p>
@@ -184,23 +167,10 @@
                 <li><a href="posts.html#school-files">Download School Materials</a></li>
             </ul>
         </section>
-
-        <section id="slideshow-container">
-            <div class="slideshow">
-                <div class="text">Empowering students with innovative tools for success.</div>
-                <div class="text">Access a wealth of resources to enhance your learning journey.</div>
-                <div class="text">Connecting education with technology for a brighter future.</div>
-            </div>
-        </section>
     </main>
 
     <footer>
         <p>&copy; 2024 Martoo EduTech Services - All rights reserved.</p>
-        <div class="footer-icons">
-            <a href="https://youtube.com/@martootech?si=WtTmTBtO6VjvajdN" target="_blank"><i class="fab fa-youtube"></i></a>
-            <a href="https://www.facebook.com/profile.php?id=61561559594029" target="_blank"><i class="fab fa-facebook"></i></a>
-            <a href="https://wa.me/260950322498" target="_blank"><i class="fab fa-whatsapp"></i></a>
-        </div>
     </footer>
 
     <script>
