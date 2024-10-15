@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Downloads - Martoo EduTech Services</title>
+    <title>Posts - Martoo EduTech Services</title>
     <link rel="stylesheet" href="styles.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"> <!-- Font Awesome for icons -->
     <style>
@@ -37,19 +37,17 @@
             padding: 20px;
             flex: 1; /* Allow main content to expand and push footer down */
         }
-        .payment-option {
-            background-color: #0072c6;
-            color: white;
-            padding: 10px;
-            border: none;
-            cursor: pointer;
+        .post {
+            background-color: #444444; /* Slightly lighter background for posts */
             margin: 10px 0;
-            text-align: center;
+            padding: 15px;
             border-radius: 5px;
-            transition: background-color 0.3s;
         }
-        .payment-option:hover {
-            background-color: #005999; /* Darker blue on hover */
+        .post h3 {
+            margin: 0 0 10px;
+        }
+        .post p {
+            margin: 0;
         }
         footer {
             background-color: #0072c6;
@@ -93,31 +91,27 @@
     </header>
     
     <main>
-        <h2>Available Downloads</h2>
+        <h2>Latest Posts</h2>
 
-        <section id="vpn-files">
-            <h3>VPN Configuration Files</h3>
-            <button class="payment-option" onclick="redirectToPayment()">Make Payment (K 25)</button>
-            <div id="download-link" style="display: none;">
-                <p>Thank you for your payment!</p>
-                <a id="vpn-download" href="#" target="_blank">Download VPN Configurations</a>
-            </div>
-        </section>
+        <div class="post">
+            <h3>Post Title 1</h3>
+            <p>Date: October 15, 2024</p>
+            <p>This is a brief description of the first post. It covers important topics related to Martoo EduTech Services.</p>
+        </div>
 
-        <section id="school-files">
-            <h3>School Materials</h3>
-            <button class="payment-option" onclick="redirectToPayment()">Make Payment (K 25)</button>
-            <div id="download-link-school" style="display: none;">
-                <p>Thank you for your payment!</p>
-                <a id="school-download" href="https://martootechhub.github.io/Martoo-EduTech-Services/school-supplies78.zip" target="_blank">Download School Materials</a>
-            </div>
-        </section>
+        <div class="post">
+            <h3>Post Title 2</h3>
+            <p>Date: October 14, 2024</p>
+            <p>This is a brief description of the second post. It highlights recent developments and announcements.</p>
+        </div>
 
-        <section id="video">
-            <h3>Watch Our Video</h3>
-            <p>Learn how to create V2Ray configuration files step-by-step in this informative video!</p>
-            <iframe width="560" height="315" src="https://www.youtube.com/embed/J-DNnARdB8E" frameborder="0" allowfullscreen></iframe>
-        </section>
+        <div class="post">
+            <h3>Post Title 3</h3>
+            <p>Date: October 13, 2024</p>
+            <p>This is a brief description of the third post. It discusses features and tips for using our services effectively.</p>
+        </div>
+
+        <!-- You can add more posts here -->
     </main>
 
     <footer>
@@ -130,22 +124,9 @@
     </footer>
 
     <script>
-        function redirectToPayment() {
-            // Redirect to Airtel Money app
-            window.open("https://play.google.com/store/apps/details?id=com.airtel.africa.selfcare", "_blank");
-            // Simulate payment confirmation after a delay (you'll want real payment verification logic)
-            setTimeout(function() {
-                // For testing, let's assume payment is confirmed
-                confirmPayment();
-            }, 10000); // Wait for 10 seconds before confirming payment
-        }
-
-        function confirmPayment() {
-            // For real-world application, you should verify payment on your backend
-            // Here, we just simulate it for the purpose of this example
-            document.getElementById("download-link").style.display = "block";
-            document.getElementById("vpn-download").href = "https://martootechhub.github.io/Martoo-EduTech-Services/vpn-config.78.zip";
-            alert('Payment confirmed! You can now download the VPN configurations.');
+        function toggleMenu() {
+            var menu = document.getElementById("menu");
+            menu.classList.toggle("hidden");
         }
     </script>
 </body>
