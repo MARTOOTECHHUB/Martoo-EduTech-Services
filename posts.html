@@ -100,6 +100,7 @@
             <button class="payment-option" onclick="redirectToPayment('vpn')">Make Payment (K 25)</button>
             <div id="download-link-vpn" style="display: none;">
                 <p>Thank you for your payment!</p>
+                <p>After making your payment, please return here. You will be able to download the configurations after 20 seconds.</p>
                 <a id="vpn-download" href="#" target="_blank">Download VPN Configurations</a>
             </div>
         </section>
@@ -109,6 +110,7 @@
             <button class="payment-option" onclick="redirectToPayment('school')">Make Payment (K 25)</button>
             <div id="download-link-school" style="display: none;">
                 <p>Thank you for your payment!</p>
+                <p>After making your payment, please return here. You will be able to download the materials after 20 seconds.</p>
                 <a id="school-download" href="https://martootechhub.github.io/Martoo-EduTech-Services/school-supplies78.zip" target="_blank">Download School Materials</a>
             </div>
         </section>
@@ -136,7 +138,7 @@
             // Simulate payment confirmation after a delay
             setTimeout(function() {
                 confirmPayment(type);
-            }, 25000); // Wait for 25 seconds before confirming payment
+            }, 20000); // Wait for 20 seconds before confirming payment
         }
 
         function confirmPayment(type) {
@@ -152,4 +154,4 @@
         }
     </script>
 </body>
-</html>
+    </html>
