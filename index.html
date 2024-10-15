@@ -72,9 +72,9 @@
         /* Adjusting sliding text position and movement */
         .text {
             position: absolute;
-            bottom: 0; /* Positioned at the bottom */
-            left: 100%;  /* Start off-screen on the right */
-            transform: translateY(-50%); /* Center align vertically */
+            bottom: 20px; /* Positioned just above the footer */
+            left: 50%;  /* Start from the center */
+            transform: translate(-50%, 0); /* Center align horizontally */
             color: white; /* White text */
             font-size: 48px; /* Large font size */
             font-weight: bold;
@@ -82,16 +82,18 @@
             background-color: rgba(0, 0, 0, 0.7); /* Semi-transparent background */
             padding: 20px;
             border-radius: 5px;
-            width: 100%; /* Cover entire width for proper sliding */
+            width: auto; /* Adjust width for proper alignment */
             animation: slideIn 25s linear infinite; /* Smooth sliding animation */
         }
 
         @keyframes slideIn {
             from {
                 left: 100%;  /* Start from the far right */
+                transform: translate(50%, 0); /* Adjust starting position */
             }
             to {
                 left: -100%;  /* Move completely off-screen to the left edge */
+                transform: translate(-50%, 0); /* Keep centered on exit */
             }
         }
 
