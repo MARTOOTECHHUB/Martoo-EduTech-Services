@@ -5,6 +5,47 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Downloads - Martoo EduTech Services</title>
     <link rel="stylesheet" href="styles.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            color: #333;
+        }
+        header {
+            background-color: #0072c6;
+            color: white;
+            padding: 10px 0;
+            text-align: center;
+        }
+        nav ul {
+            list-style-type: none;
+            padding: 0;
+        }
+        nav ul li {
+            display: inline;
+            margin: 0 15px;
+        }
+        nav ul li a {
+            color: white;
+            text-decoration: none;
+        }
+        main {
+            padding: 20px;
+        }
+        #download-link {
+            display: none;
+        }
+        .payment-option {
+            background-color: #0072c6;
+            color: white;
+            padding: 10px;
+            border: none;
+            cursor: pointer;
+            margin: 10px 0;
+            text-align: center;
+            border-radius: 5px;
+        }
+    </style>
 </head>
 <body>
     <header>
@@ -25,19 +66,23 @@
     
     <main>
         <h2>Available Downloads</h2>
-        
+
         <section id="vpn-files">
             <h3>VPN Configuration Files</h3>
-            <ul>
-                <li><a href="https://martootechhub.github.io/Martoo-EduTech-Services/vpn-config.78.zip" download>Download VPN Configurations</a></li>
-            </ul>
+            <button class="payment-option" onclick="redirectToPayment()">Make Payment (K 25)</button>
+            <div id="download-link">
+                <p>Thank you for your payment!</p>
+                <a id="vpn-download" href="#" target="_blank">Download VPN Configurations</a>
+            </div>
         </section>
 
         <section id="school-files">
             <h3>School Materials</h3>
-            <ul>
-                <li><a href="https://martootechhub.github.io/Martoo-EduTech-Services/school-supplies78.zip" download>Download School Materials</a></li>
-            </ul>
+            <button class="payment-option" onclick="redirectToPayment()">Make Payment (K 25)</button>
+            <div id="download-link-school" style="display: none;">
+                <p>Thank you for your payment!</p>
+                <a id="school-download" href="https://martootechhub.github.io/Martoo-EduTech-Services/school-supplies78.zip" target="_blank">Download School Materials</a>
+            </div>
         </section>
 
         <section id="video">
@@ -51,6 +96,24 @@
         <p>&copy; 2024 Martoo EduTech Services. All rights reserved.</p>
     </footer>
 
-    <script src="script.js"></script>
+    <script>
+        function redirectToPayment() {
+            // Redirect to Airtel Money app
+            window.open("https://play.google.com/store/apps/details?id=com.airtel.africa.selfcare", "_blank");
+            // Simulate payment confirmation after a delay (you'll want real payment verification logic)
+            setTimeout(function() {
+                // For testing, let's assume payment is confirmed
+                confirmPayment();
+            }, 10000); // Wait for 10 seconds before confirming payment
+        }
+
+        function confirmPayment() {
+            // For real-world application, you should verify payment on your backend
+            // Here, we just simulate it for the purpose of this example
+            document.getElementById("download-link").style.display = "block";
+            document.getElementById("vpn-download").href = "https://martootechhub.github.io/Martoo-EduTech-Services/vpn-config.78.zip";
+            alert('Payment confirmed! You can now download the VPN configurations.');
+        }
+    </script>
 </body>
 </html>
