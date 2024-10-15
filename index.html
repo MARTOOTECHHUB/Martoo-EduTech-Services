@@ -1,76 +1,4 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Martoo EduTech Services</title>
-    <link rel="stylesheet" href="styles.css">
-    <style>
-        * {
-            box-sizing: border-box;
-        }
-
-        .slideshow {
-            position: relative;
-            max-width: 100%;
-            margin: auto;
-        }
-
-        .slide {
-            display: none;
-        }
-
-        .text {
-            position: absolute;
-            bottom: 8px;
-            left: 16px;
-            color: gold;
-            font-family: "Times New Roman", Times, serif;
-            font-size: 28px;
-            background-color: rgba(0, 0, 0, 0.7);
-            padding: 20px;
-            border-radius: 5px;
-            box-shadow: 2px 2px 12px rgba(0, 0, 0, 0.7);
-        }
-
-        @keyframes fade {
-            from {opacity: 0.4}
-            to {opacity: 1}
-        }
-
-        .fade {
-            animation: fade 1.5s;
-        }
-    </style>
-</head>
-<body>
-    <header style="background-color: inherit;">
-        <h1>Welcome to Martoo EduTech Services</h1>
-        <nav>
-            <div class="hamburger" onclick="toggleMenu()" style="position: absolute; top: 10px; right: 10px;">
-                &#9776; <!-- Hamburger icon -->
-            </div>
-            <ul id="menu">
-                <li><a href="index.html">Home</a></li>
-                <li><a href="services.html">Services</a></li>
-                <li><a href="about.html">About</a></li>
-                <li><a href="contact.html">Contact</a></li>
-                <li><a href="posts.html">Posts</a></li>
-                <!-- Removed Sign In and Create Account Links -->
-                <li><a href="payment.html">Payment</a></li> <!-- Link to Payment -->
-            </ul>
-        </nav>
-    </header>
-    
-    <main>
-        <h2>Your gateway to education and technology</h2>
-        <p>At Martoo EduTech Services, we provide innovative educational resources and technology solutions to enhance your learning experience.</p>
-
-        <section id="slideshow-container">
-            <div class="slideshow">
-                <div class="slide fade">
-                    <img src="images/image1.jpeg" style="width:100%">
-                    <div class="text">Empowering students with innovative tools for success.</div>
+<div class="text">Empowering students with innovative tools for success.</div>
                 </div>
                 <div class="slide fade">
                     <img src="images/image2.jpeg" style="width:100%">
@@ -105,18 +33,17 @@
 
         <section id="latest-updates">
             <h3>Latest Updates</h3>
-            <ul>
-                <li><a href="posts.html">Check out the latest uploads in our posts!</a></li>
-            </ul>
+            <p>Stay tuned for our upcoming resources and services to help you in your learning journey!</p>
         </section>
     </main>
 
-    <footer style="position: fixed; bottom: 0; width: 100%; background-color: inherit;">
+    <footer>
         <p>&copy; 2024 Martoo EduTech Services. All rights reserved.</p>
     </footer>
 
     <script src="script.js"></script>
     <script>
+        // Slideshow script
         let slideIndex = 0;
         showSlides();
 
@@ -129,6 +56,11 @@
             if (slideIndex > slides.length) {slideIndex = 1}    
             slides[slideIndex - 1].style.display = "block";  
             setTimeout(showSlides, 3000); // Change image every 3 seconds
+        }
+
+        function toggleMenu() {
+            const menu = document.getElementById('menu');
+            menu.classList.toggle('hidden');
         }
     </script>
 </body>
