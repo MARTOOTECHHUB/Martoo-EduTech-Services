@@ -8,19 +8,18 @@
     <style>
         /* General body background and layout settings */
         body {
-            background: linear-gradient(180deg, #1a1a2e, #0f3460); /* Gradient background */
+            background-color: #333333; /* Dark earthy color */
+            color: #f0f0f0;
             margin: 0;
             font-family: Arial, sans-serif;
-            color: #f0f0f0;
         }
 
         /* Header styles */
         header {
-            background-color: #162447; /* Dark blue */
+            background-color: #4d4d4d; /* Metallic gray */
             color: white;
             text-align: center;
             padding: 20px;
-            position: relative;
         }
 
         /* Hamburger menu styling */
@@ -31,7 +30,7 @@
             top: 20px;
             right: 20px;
             color: orange;
-            display: none; /* Hide by default, will show on small screens */
+            display: none;
         }
 
         /* Navigation styles */
@@ -50,11 +49,6 @@
             text-decoration: none;
             color: white;
             font-weight: bold;
-        }
-
-        /* Hide the navigation menu on smaller screens */
-        nav ul.show {
-            display: block; /* Show menu when hamburger is clicked */
         }
 
         /* Slideshow styles */
@@ -79,9 +73,9 @@
         .text {
             position: absolute;
             top: 50%;  /* Center vertically */
-            left: 50%;  /* Center horizontally */
-            transform: translate(-50%, -50%); /* Adjust position */
-            color: #ffb600; /* Bright gold text */
+            left: 100%;  /* Start off-screen */
+            transform: translateY(-50%); /* Adjust vertical position */
+            color: white; /* White text */
             font-size: 48px; /* Large font size */
             font-weight: bold;
             text-align: center;
@@ -89,15 +83,25 @@
             padding: 20px;
             border-radius: 5px;
             width: 80%;
+            animation: slideIn 10s linear infinite; /* Sliding animation */
         }
 
-        /* Footer styles with license at the bottom */
+        @keyframes slideIn {
+            from {
+                left: 100%;  /* Start from off-screen on the right */
+            }
+            to {
+                left: -100%;  /* Move completely to the left */
+            }
+        }
+
+        /* Footer styles */
         footer {
-            background-color: #162447; /* Dark indigo */
+            background-color: #4d4d4d; /* Metallic gray */
             color: white;
             text-align: center;
             padding: 20px;
-            position: fixed; /* Make footer stick to the bottom */
+            position: fixed;
             bottom: 0;
             width: 100%;
         }
@@ -197,4 +201,4 @@
         }
     </script>
 </body>
-                        </html>
+</html>
