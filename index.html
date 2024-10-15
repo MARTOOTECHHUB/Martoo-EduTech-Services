@@ -1,4 +1,13 @@
-</div>
+<section id="slideshow-container">
+            <div class="slideshow">
+                <div class="slide">
+                    <img src="images/image1.jpeg" style="width:100%">
+                    <div class="text">Empowering students with innovative tools for success.</div>
+                </div>
+                <div class="slide">
+                    <img src="images/image2.jpeg" style="width:100%">
+                    <div class="text">Access a wealth of resources to enhance your learning journey.</div>
+                </div>
                 <div class="slide">
                     <img src="images/image3.jpeg" style="width:100%">
                     <div class="text">Connecting education with technology for a brighter future.</div>
@@ -22,11 +31,7 @@
     <script>
         function toggleMenu() {
             const menu = document.getElementById("menu");
-            if (menu.classList.contains("show")) {
-                menu.classList.remove("show");
-            } else {
-                menu.classList.add("show");
-            }
+            menu.classList.toggle("show");
         }
 
         let slideIndex = 0;
