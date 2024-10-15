@@ -61,20 +61,8 @@
             position: relative;
             max-width: 100%;
             margin: auto;
-            height: 400px;
+            height: 400px; /* Height of the slideshow area */
             overflow: hidden; /* Hide overflow for sliding effect */
-        }
-
-        .slide {
-            display: none;
-            position: relative;
-            width: 100%;
-            height: 100%; /* Fill the slideshow area */
-        }
-
-        .slide img {
-            width: 100%;
-            height: 100%; /* Fill the slideshow area */
         }
 
         /* Centering the sliding text */
@@ -178,18 +166,9 @@
 
         <section id="slideshow-container">
             <div class="slideshow">
-                <div class="slide">
-                    <img src="images/image1.jpeg" alt="Image 1">
-                    <div class="text">Empowering students with innovative tools for success.</div>
-                </div>
-                <div class="slide">
-                    <img src="images/image2.jpeg" alt="Image 2">
-                    <div class="text">Access a wealth of resources to enhance your learning journey.</div>
-                </div>
-                <div class="slide">
-                    <img src="images/image3.jpeg" alt="Image 3">
-                    <div class="text">Connecting education with technology for a brighter future.</div>
-                </div>
+                <div class="text">Empowering students with innovative tools for success.</div>
+                <div class="text">Access a wealth of resources to enhance your learning journey.</div>
+                <div class="text">Connecting education with technology for a brighter future.</div>
             </div>
         </section>
     </main>
@@ -208,14 +187,14 @@
         showSlides();
 
         function showSlides() {
-            let slides = document.getElementsByClassName("slide");
+            let slides = document.getElementsByClassName("text");
             for (let i = 0; i < slides.length; i++) {
                 slides[i].style.display = "none";  
             }
             slideIndex++;
             if (slideIndex > slides.length) {slideIndex = 1}    
             slides[slideIndex-1].style.display = "block";  
-            setTimeout(showSlides, 5000); // Change image every 5 seconds
+            setTimeout(showSlides, 5000); // Change text every 5 seconds
         }
     </script>
 </body>
