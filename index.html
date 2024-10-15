@@ -5,10 +5,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Martoo EduTech Services</title>
     <link rel="stylesheet" href="styles.css">
-    
-    <!-- Font Awesome CDN -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-
     <style>
         /* General body background and layout settings */
         body {
@@ -65,55 +61,43 @@
             position: relative;
             max-width: 100%;
             margin: auto;
-            height: 200px; /* Reduced height of the slideshow area */
+            height: 400px; /* Height of the slideshow area */
             overflow: hidden; /* Hide overflow for sliding effect */
         }
 
-        /* Adjusting the sliding text */
+        /* Centering the sliding text */
         .text {
             position: absolute;
-            left: 50%; /* Start from the center */
-            transform: translateX(-50%); /* Center horizontally */
+            left: 50%; /* Center horizontally */
+            transform: translateX(-50%); /* Adjust for width */
             color: white; /* White text */
-            font-size: 32px; /* Reduced font size */
+            font-size: 36px; /* Adjusted font size */
             font-weight: bold;
             text-align: center;
             background-color: rgba(0, 0, 0, 0.7); /* Semi-transparent background */
-            padding: 10px; /* Reduced padding */
+            padding: 20px;
             border-radius: 5px;
-            width: auto; /* Adjust width for proper alignment */
-            animation: slideLeft 15s linear infinite; /* Slide from middle to left */
+            animation: slideIn 30s linear infinite; /* Smooth sliding animation */
             margin-top: 20px; /* Add some space above */
         }
 
-        @keyframes slideLeft {
+        @keyframes slideIn {
             0% {
-                transform: translateX(-50%); /* Centered at the beginning */
-                left: 50%; /* Middle of the screen */
+                transform: translateX(-50%) translateY(0); /* Center vertically */
+                left: 50%; /* Stay centered */
+            }
+            25% {
+                transform: translateX(-50%) translateY(0); /* Stay centered */
+                left: 0%; /* Move to left edge */
+            }
+            75% {
+                transform: translateX(-50%) translateY(0); /* Stay centered */
+                left: 100%; /* Move to right edge */
             }
             100% {
-                transform: translateX(-100%); /* Move left out of the screen */
-                left: 0%; /* Move towards left edge */
+                transform: translateX(-50%) translateY(0); /* Center vertically */
+                left: 50%; /* Go back to center */
             }
-        }
-
-        /* Social Icons styling */
-        .social-icons {
-            display: flex;
-            justify-content: center;
-            margin: 20px 0;
-        }
-
-        .social-icons a {
-            margin: 0 10px;
-            color: white;
-            font-size: 30px;
-            text-decoration: none;
-            transition: color 0.3s ease;
-        }
-
-        .social-icons a:hover {
-            color: #ff9800; /* Change color on hover */
         }
 
         /* Footer styles */
@@ -122,9 +106,21 @@
             color: white;
             text-align: center;
             padding: 20px;
-            position: fixed;
+            position: relative;
             bottom: 0;
             width: 100%;
+        }
+
+        /* Social icons styling */
+        .social-icons {
+            margin-top: 10px;
+        }
+
+        .social-icons a {
+            margin: 0 10px;
+            color: white;
+            text-decoration: none;
+            font-size: 24px; /* Icon size */
         }
 
         /* Media Query for smaller screens */
@@ -148,6 +144,10 @@
             nav ul li {
                 margin: 10px 0;
             }
+
+            .text {
+                font-size: 24px; /* Smaller font size for mobile */
+            }
         }
     </style>
 </head>
@@ -168,14 +168,6 @@
     </header>
 
     <main>
-        <section id="slideshow-container">
-            <div class="slideshow">
-                <div class="text">Empowering students with innovative tools for success.</div>
-                <div class="text">Access a wealth of resources to enhance your learning journey.</div>
-                <div class="text">Connecting education with technology for a brighter future.</div>
-            </div>
-        </section>
-
         <h2>Your gateway to education and technology</h2>
         <p>At Martoo EduTech Services, we provide innovative educational resources and technology solutions to enhance your learning experience.</p>
 
@@ -187,18 +179,23 @@
             </ul>
         </section>
 
-        <!-- Social Icons -->
-        <div class="social-icons">
-            <a href="https://youtube.com/@martootech?si=WtTmTBtO6VjvajdN" target="_blank" class="fab fa-youtube"></a>
-            <a href="https://www.facebook.com/profile.php?id=61561559594029" target="_blank" class="fab fa-facebook"></a>
-            <a href="https://wa.me/260950322498" target="_blank" class="fab fa-whatsapp"></a>
-            <a href="mailto:martoo@example.com" target="_blank" class="fas fa-envelope"></a>
-        </div>
-
+        <section id="slideshow-container">
+            <div class="slideshow">
+                <div class="text">Empowering students with innovative tools for success.</div>
+                <div class="text">Access a wealth of resources to enhance your learning journey.</div>
+                <div class="text">Connecting education with technology for a brighter future.</div>
+            </div>
+        </section>
     </main>
 
     <footer>
         <p>&copy; 2024 Martoo EduTech Services - All rights reserved.</p>
+        <div class="social-icons">
+            <a href="https://youtube.com/@martootech?si=WtTmTBtO6VjvajdN">YouTube</a>
+            <a href="https://www.facebook.com/profile.php?id=61561559594029">Facebook</a>
+            <a href="https://wa.me/260950322498">WhatsApp</a>
+            <a href="mailto:infomartooedutech@gmail.com">Email</a>
+        </div>
     </footer>
 
     <script>
