@@ -72,7 +72,7 @@
         /* Adjusting sliding text position and movement */
         .text {
             position: absolute;
-            bottom: 100px;  /* Positioned just above the footer */
+            bottom: 0; /* Positioned at the bottom */
             left: 100%;  /* Start off-screen on the right */
             transform: translateY(-50%); /* Center align vertically */
             color: white; /* White text */
@@ -83,7 +83,7 @@
             padding: 20px;
             border-radius: 5px;
             width: 100%; /* Cover entire width for proper sliding */
-            animation: slideIn 15s linear infinite; /* Smooth sliding animation */
+            animation: slideIn 25s linear infinite; /* Smooth sliding animation */
         }
 
         @keyframes slideIn {
