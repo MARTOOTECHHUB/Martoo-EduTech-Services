@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Posts - Martoo EduTech Services</title>
+    <title>Downloads - Martoo EduTech Services</title>
     <link rel="stylesheet" href="styles.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"> <!-- Font Awesome for icons -->
     <style>
@@ -37,17 +37,19 @@
             padding: 20px;
             flex: 1; /* Allow main content to expand and push footer down */
         }
-        .post {
-            background-color: #444444; /* Slightly lighter background for posts */
+        .payment-option {
+            background-color: #0072c6;
+            color: white;
+            padding: 10px;
+            border: none;
+            cursor: pointer;
             margin: 10px 0;
-            padding: 15px;
+            text-align: center;
             border-radius: 5px;
+            transition: background-color 0.3s;
         }
-        .post h3 {
-            margin: 0 0 10px;
-        }
-        .post p {
-            margin: 0;
+        .payment-option:hover {
+            background-color: #005999; /* Darker blue on hover */
         }
         footer {
             background-color: #0072c6;
@@ -91,27 +93,31 @@
     </header>
     
     <main>
-        <h2>Latest Posts</h2>
+        <h2>Available Downloads</h2>
 
-        <div class="post">
-            <h3>Post Title 1</h3>
-            <p>Date: October 15, 2024</p>
-            <p>This is a brief description of the first post. It covers important topics related to Martoo EduTech Services.</p>
-        </div>
+        <section id="vpn-files">
+            <h3>VPN Configuration Files</h3>
+            <button class="payment-option" onclick="redirectToPayment('vpn')">Make Payment (K 25)</button>
+            <div id="download-link-vpn" style="display: none;">
+                <p>Thank you for your payment!</p>
+                <a id="vpn-download" href="#" target="_blank">Download VPN Configurations</a>
+            </div>
+        </section>
 
-        <div class="post">
-            <h3>Post Title 2</h3>
-            <p>Date: October 14, 2024</p>
-            <p>This is a brief description of the second post. It highlights recent developments and announcements.</p>
-        </div>
+        <section id="school-files">
+            <h3>School Materials</h3>
+            <button class="payment-option" onclick="redirectToPayment('school')">Make Payment (K 25)</button>
+            <div id="download-link-school" style="display: none;">
+                <p>Thank you for your payment!</p>
+                <a id="school-download" href="https://martootechhub.github.io/Martoo-EduTech-Services/school-supplies78.zip" target="_blank">Download School Materials</a>
+            </div>
+        </section>
 
-        <div class="post">
-            <h3>Post Title 3</h3>
-            <p>Date: October 13, 2024</p>
-            <p>This is a brief description of the third post. It discusses features and tips for using our services effectively.</p>
-        </div>
-
-        <!-- You can add more posts here -->
+        <section id="video">
+            <h3>Watch Our Video</h3>
+            <p>Learn how to create V2Ray configuration files step-by-step in this informative video!</p>
+            <iframe width="560" height="315" src="https://www.youtube.com/embed/J-DNnARdB8E" frameborder="0" allowfullscreen></iframe>
+        </section>
     </main>
 
     <footer>
@@ -124,9 +130,25 @@
     </footer>
 
     <script>
-        function toggleMenu() {
-            var menu = document.getElementById("menu");
-            menu.classList.toggle("hidden");
+        function redirectToPayment(type) {
+            // Redirect to Airtel Money app
+            window.open("https://play.google.com/store/apps/details?id=com.airtel.africa.selfcare", "_blank");
+            // Simulate payment confirmation after a delay
+            setTimeout(function() {
+                confirmPayment(type);
+            }, 25000); // Wait for 25 seconds before confirming payment
+        }
+
+        function confirmPayment(type) {
+            // Show the relevant download link based on the type
+            if (type === 'vpn') {
+                document.getElementById("download-link-vpn").style.display = "block";
+                document.getElementById("vpn-download").href = "https://martootechhub.github.io/Martoo-EduTech-Services/vpn-config.78.zip";
+                alert('Payment confirmed! You can now download the VPN configurations.');
+            } else if (type === 'school') {
+                document.getElementById("download-link-school").style.display = "block";
+                alert('Payment confirmed! You can now download the school materials.');
+            }
         }
     </script>
 </body>
