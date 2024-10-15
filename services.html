@@ -5,6 +5,86 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="styles.css">
     <title>Services - Martoo EduTech Services</title>
+    <style>
+        body {
+            background-color: #333333; /* Dark earthy color */
+            color: #f0f0f0;
+            margin: 0;
+            font-family: Arial, sans-serif;
+        }
+
+        header {
+            background-color: #4d4d4d; /* Metallic gray */
+            color: white;
+            text-align: center;
+            padding: 20px;
+            position: relative;
+        }
+
+        .hamburger {
+            font-size: 30px;
+            cursor: pointer;
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            color: orange;
+            display: none; /* Hidden by default, shown in media query */
+        }
+
+        nav ul {
+            list-style-type: none;
+            padding: 0;
+            margin: 0;
+            display: flex;
+            justify-content: center;
+        }
+
+        nav ul li {
+            margin: 0 15px;
+        }
+
+        nav ul li a {
+            text-decoration: none;
+            color: white;
+            font-weight: bold;
+        }
+
+        main {
+            text-align: center;
+            margin: 40px 0;
+        }
+
+        footer {
+            background-color: #4d4d4d; /* Metallic gray */
+            color: white;
+            text-align: center;
+            padding: 20px;
+            position: relative;
+        }
+
+        /* Media Query for smaller screens */
+        @media (max-width: 768px) {
+            .hamburger {
+                display: block; /* Show hamburger icon on small screens */
+            }
+
+            nav ul {
+                display: none; /* Hide menu items */
+                flex-direction: column;
+                text-align: center;
+                background-color: #162447;
+                padding: 10px 0;
+            }
+
+            nav ul.show {
+                display: flex; /* Show menu items when hamburger is clicked */
+            }
+
+            nav ul li {
+                margin: 10px 0;
+            }
+        }
+    </style>
 </head>
 <body>
     <header>
@@ -22,9 +102,9 @@
     <main>
         <h2>Explore Our Offerings</h2>
         <ul>
-            <li>Typing Assistance</li>
-            <li>VPN Services</li>
-            <li>Educational Materials</li>
+            <li><a href="downloads/typing_assistance.pdf" download>Typing Assistance</a></li>
+            <li><a href="downloads/vpn_service.pdf" download>VPN Services</a></li>
+            <li><a href="downloads/educational_materials.pdf" download>Educational Materials</a></li>
         </ul>
     </main>
     
