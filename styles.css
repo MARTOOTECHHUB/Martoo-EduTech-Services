@@ -29,7 +29,7 @@ body {
 }
 
 header {
-    background-color: #0f3460; /* Deep indigo for header */
+    background-color: #008080; /* Teal for header */
     padding: 20px;
     text-align: center;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.4);
@@ -50,7 +50,7 @@ nav ul li {
 }
 
 nav ul li a {
-    color: orange; /* Set link color to orange */
+    color: #9370DB; /* Rebecca Purple */
     text-decoration: none;
     font-weight: bold;
     transition: color 0.3s; /* Animation for link color change */
@@ -66,7 +66,7 @@ nav ul li a:hover {
     display: none; /* Hide on larger screens */
     cursor: pointer;
     font-size: 24px;
-    color: orange; /* Set hamburger color to orange */
+    color: #9370DB; /* Rebecca Purple */
 }
 
 .hidden {
@@ -87,11 +87,18 @@ main {
 
 .slide {
     display: none;
+    animation: fadeIn 1s ease-in-out; /* Fade in animation for slides */
 }
 
 .slide img {
     width: 100%;
     height: auto;
+    border-radius: 10px; /* Rounded corners for images */
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
 }
 
 .dot {
@@ -109,7 +116,7 @@ main {
 }
 
 footer {
-    background-color: #0f3460; /* Deep indigo for footer */
+    background-color: #008080; /* Teal for footer */
     color: #ffffff;
     text-align: center;
     padding: 10px 0;
