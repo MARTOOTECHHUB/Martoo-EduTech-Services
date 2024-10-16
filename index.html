@@ -15,6 +15,16 @@
             font-family: Arial, sans-serif;
         }
 
+        /* Profile Picture Icon */
+        .profile-pic {
+            position: absolute;
+            top: 10px;
+            left: 10px;
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+        }
+
         /* Header styles */
         header {
             background-color: #4d4d4d; /* Metallic gray */
@@ -176,6 +186,7 @@
     <header>
         <h1>Welcome to Martoo EduTech Services</h1>
         <div class="hamburger" onclick="toggleMenu()">&#9776;</div> <!-- Hamburger menu icon -->
+        <img src="https://drive.google.com/uc?export=view&id=1I7cgQxFrXIn9UB4_75CrQultrto6GKVK" alt="Profile Pic" class="profile-pic"> <!-- Profile picture icon -->
         <nav>
             <ul id="menu">
                 <li><a href="index.html">Home</a></li>
@@ -243,8 +254,4 @@
             slideIndex++;
             if (slideIndex > slides.length) {slideIndex = 1}    
             slides[slideIndex-1].style.display = "block";  
-            setTimeout(showSlides, 5000); // Change text every 5 seconds
-        }
-    </script>
-</body>
-</html>
+            setTimeout(show
