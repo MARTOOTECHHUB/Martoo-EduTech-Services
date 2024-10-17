@@ -29,7 +29,7 @@
             position: absolute;
             top: 20px;
             left: 20px;
-            width: 80px; /* Increased size for better visibility */
+            width: 80px; /* Image size */
             height: 80px;
             border-radius: 50%; /* Makes the image circular */
         }
@@ -185,7 +185,7 @@
 </head>
 <body>
     <header>
-        <img src="https://drive.google.com/uc?id=1I7cgQxFrXIn9UB4_75CrQultrto6GKVK" class="profile-pic"> <!-- Profile picture displayed here -->
+        <img src="https://drive.google.com/uc?id=1I7cgQxFrXIn9UB4_75CrQultrto6GKVK" class="profile-pic" alt="Profile Picture"> <!-- Profile picture visible here -->
         <h1>Welcome to Martoo EduTech Services</h1>
         <div class="hamburger" onclick="toggleMenu()">&#9776;</div> <!-- Hamburger menu icon -->
         <nav>
@@ -254,4 +254,5 @@
             }
             slideIndex++;
             if (slideIndex > slides.length) {slideIndex = 1}    
-            slides[slideIndex-1].
+            slides[slideIndex-1].style.display = "block";  
+            setTimeout(show
