@@ -21,17 +21,17 @@
             color: white;
             text-align: center;
             padding: 20px;
-            position: relative; /* Ensure the header is relative for absolute positioning of the profile image */
+            position: relative;
         }
 
-        /* Profile picture styling */
-        img.profile-pic {
+        /* Profile Picture */
+        .profile-pic {
             position: absolute;
-            top: 20px;
-            left: 20px;
-            width: 80px; /* Image size */
-            height: 80px;
-            border-radius: 50%; /* Makes the image circular */
+            top: 10px;
+            left: 10px;
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
         }
 
         /* Hamburger menu styling */
@@ -185,8 +185,10 @@
 </head>
 <body>
     <header>
-        <img src="https://drive.google.com/uc?id=1I7cgQxFrXIn9UB4_75CrQultrto6GKVK" class="profile-pic" alt="Profile Picture"> <!-- Profile picture visible here -->
         <h1>Welcome to Martoo EduTech Services</h1>
+        <!-- Profile Picture -->
+        <img src="https://drive.google.com/uc?export=view&id=1I7cgQxFrXIn9UB4_75CrQultrto6GKVK" alt="Profile Picture" class="profile-pic">
+        
         <div class="hamburger" onclick="toggleMenu()">&#9776;</div> <!-- Hamburger menu icon -->
         <nav>
             <ul id="menu">
@@ -255,4 +257,4 @@
             slideIndex++;
             if (slideIndex > slides.length) {slideIndex = 1}    
             slides[slideIndex-1].style.display = "block";  
-            setTimeout(show
+            setTimeout(showSlides, 5000); // Change text
