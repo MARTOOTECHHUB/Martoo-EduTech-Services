@@ -180,6 +180,7 @@
                 </select>
                 
                 <button type="button" onclick="generateConfig()">Generate Config</button>
+                <button type="button" onclick="downloadConfig()">Download Config</button>
             </form>
 
             <h3>Generated Code:</h3>
@@ -216,10 +217,36 @@
             const port = document.getElementById("port").value;
             const protocol = document.getElementById("protocol").value;
 
-            let generatedConfig = `Protocol: ${protocol}\nServer: ${server}\nPort: ${port}\n`;
-            // Customize the generated config string as needed
+            if (protocol === "vmess") {
+                const vmessConfig = {
+                    v: "2",
+                    ps: "Martoo VMess",
+                    add: server,
+                    port: port,
+                    id: "e.g., UUID-GOES-HERE", // Ideally, this would be dynamically generated or user-provided
+                    aid: "0",
+                    net: "tcp",
+                    type: "none",
+                    host: "",
+                    path: "",
+                    tls: "none"
+                };
 
-            document.getElementById("generatedCode").value = generatedConfig;
+                const configString = JSON.stringify(vmessConfig, null, 2); // Pretty-print JSON
+                document.getElementById("generatedCode").value = configString;
+            } else {
+                let generatedConfig = `Protocol: ${protocol}\nServer: ${server}\nPort: ${port}\n`;
+                document.getElementById("generatedCode").value = generatedConfig;
+            }
+        }
+
+        function downloadConfig() {
+            const configData = document.getElementById("generatedCode").value;
+            const blob = new Blob([configData], { type: "application/json" });
+            const link = document.createElement('a');
+            link.href = URL.createObjectURL(blob);
+            link.download = "vmess_config.json"; // File name
+            link.click();
         }
     </script>
 </body>
