@@ -78,6 +78,43 @@
             font-size: 20px; /* Icon size */
         }
 
+        /* VPN Configuration Generator Styles */
+        .config-generator {
+            background-color: #444444; /* Slightly lighter dark color */
+            padding: 20px;
+            margin: 20px auto;
+            border-radius: 8px;
+            width: 80%;
+            max-width: 600px;
+        }
+
+        .config-generator input,
+        .config-generator select,
+        .config-generator button {
+            width: 100%;
+            margin: 10px 0;
+            padding: 10px;
+            border: none;
+            border-radius: 5px;
+        }
+
+        .config-generator button {
+            background-color: #ff9800; /* Orange color for button */
+            color: white;
+            cursor: pointer;
+        }
+
+        .config-generator textarea {
+            width: 100%;
+            height: 150px;
+            margin-top: 10px;
+            padding: 10px;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+            background-color: #222; /* Dark background for textarea */
+            color: #f0f0f0; /* Text color */
+        }
+
         /* Media Query for smaller screens */
         @media (max-width: 768px) {
             .hamburger {
@@ -123,6 +160,31 @@
             <li><a href="posts.html#vpn_services">VPN Services</a></li>
             <li><a href="posts.html#educational_materials">Educational Materials</a></li>
         </ul>
+
+        <!-- VPN Configuration Generator Section -->
+        <div class="config-generator">
+            <h3>VPN Configuration Generator</h3>
+            <p>Generate your VPN configuration codes for different protocols.</p>
+            <form id="configGenerator">
+                <label for="server">Server Address:</label>
+                <input type="text" id="server" name="server" required>
+                
+                <label for="port">Port:</label>
+                <input type="number" id="port" name="port" required>
+                
+                <label for="protocol">Protocol:</label>
+                <select id="protocol" name="protocol" required>
+                    <option value="trojan">Trojan</option>
+                    <option value="vmess">VMess</option>
+                    <option value="udp">UDP</option>
+                </select>
+                
+                <button type="button" onclick="generateConfig()">Generate Config</button>
+            </form>
+
+            <h3>Generated Code:</h3>
+            <textarea id="generatedCode" readonly></textarea>
+        </div>
     </main>
     
     <footer>
@@ -147,6 +209,17 @@
         function toggleMenu() {
             const menu = document.getElementById('menu');
             menu.classList.toggle('show'); // Toggle the 'show' class
+        }
+
+        function generateConfig() {
+            const server = document.getElementById("server").value;
+            const port = document.getElementById("port").value;
+            const protocol = document.getElementById("protocol").value;
+
+            let generatedConfig = `Protocol: ${protocol}\nServer: ${server}\nPort: ${port}\n`;
+            // Customize the generated config string as needed
+
+            document.getElementById("generatedCode").value = generatedConfig;
         }
     </script>
 </body>
