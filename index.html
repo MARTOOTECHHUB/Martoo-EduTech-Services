@@ -3,248 +3,105 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Martoo EduTech Services</title>
-    <link rel="stylesheet" href="styles.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"> <!-- Font Awesome CSS -->
+    <title>Category Selection - Martoo</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <style>
-        /* General body background and layout settings */
         body {
-            background-color: #333333; /* Dark earthy color */
-            color: #f0f0f0;
             margin: 0;
-            font-family: Arial, sans-serif;
-        }
-
-        /* Header styles */
-        header {
-            background-color: #4d4d4d; /* Metallic gray */
-            color: white;
-            text-align: center;
-            padding: 20px;
-            position: relative;
-        }
-
-        /* Profile Picture */
-        .profile-pic {
-            position: absolute;
-            top: 10px;
-            left: 10px;
-            width: 50px;
-            height: 50px;
-            border-radius: 50%;
-        }
-
-        /* Hamburger menu styling */
-        .hamburger {
-            font-size: 30px;
-            cursor: pointer;
-            position: absolute;
-            top: 20px;
-            right: 20px;
-            color: orange;
-            display: none;
-        }
-
-        /* Navigation styles */
-        nav ul {
-            list-style-type: none;
             padding: 0;
-            margin: 0;
-        }
-
-        nav ul li {
-            display: inline;
-            margin-right: 15px;
-        }
-
-        nav ul li a {
-            text-decoration: none;
+            font-family: Arial, sans-serif;
+            background: url('your-background-image.jpg') no-repeat center center fixed;
+            background-size: cover;
             color: white;
-            font-weight: bold;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            text-align: center;
         }
 
-        /* Key Services styles */
-        #key-services {
-            margin: 40px 0; /* Add margin to separate from other sections */
+        h2 {
+            margin-bottom: 50px;
+            font-size: 2rem;
         }
 
-        /* Slideshow styles */
-        .slideshow-container {
-            position: relative;
-            max-width: 100%;
-            margin: auto;
-            height: 400px; /* Height of the slideshow area */
-            overflow: hidden; /* Hide overflow for sliding effect */
+        .category-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 30px;
+            background: rgba(0, 0, 0, 0.6);
+            padding: 20px;
+            border-radius: 10px;
         }
 
-        /* Centering the sliding text */
-        .text {
+        .category-grid div {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            font-size: 1.2rem;
+        }
+
+        .category-grid i {
+            font-size: 2.5rem;
+            margin-bottom: 10px;
+            color: #fff;
+        }
+
+        .category-grid div:hover {
+            transform: scale(1.1);
+            transition: transform 0.3s;
+        }
+
+        .footer {
             position: absolute;
-            left: 50%; /* Center horizontally */
-            transform: translateX(-50%); /* Adjust for width */
-            color: white; /* White text */
-            font-size: 36px; /* Adjusted font size */
-            font-weight: bold;
-            text-align: center;
-            background-color: rgba(0, 0, 0, 0.7); /* Semi-transparent background */
-            padding: 20px;
-            border-radius: 5px;
-            animation: slideIn 30s linear infinite; /* Smooth sliding animation */
-            margin-top: 20px; /* Add some space above */
+            bottom: 20px;
+            display: flex;
+            gap: 20px;
         }
 
-        @keyframes slideIn {
-            0% {
-                transform: translateX(-50%) translateY(0); /* Center vertically */
-                left: 50%; /* Stay centered */
-            }
-            25% {
-                transform: translateX(-50%) translateY(0); /* Stay centered */
-                left: 0%; /* Move to left edge */
-            }
-            75% {
-                transform: translateX(-50%) translateY(0); /* Stay centered */
-                left: 100%; /* Move to right edge */
-            }
-            100% {
-                transform: translateX(-50%) translateY(0); /* Center vertically */
-                left: 50%; /* Go back to center */
-            }
-        }
-
-        /* Subscribe Section styles */
-        #subscribe {
-            margin: 40px 0;
-            text-align: center;
-        }
-
-        #subscribe input[type="email"] {
-            padding: 10px;
-            width: 250px;
-            margin-right: 10px;
-        }
-
-        #subscribe button {
-            padding: 10px 15px;
-            background-color: #4d4d4d; /* Metallic gray */
+        .footer a {
             color: white;
-            border: none;
-            cursor: pointer;
-        }
-
-        /* Footer styles */
-        footer {
-            background-color: #4d4d4d; /* Metallic gray */
-            color: white;
-            text-align: center;
-            padding: 20px;
-            position: relative;
-            bottom: 0;
-            width: 100%;
-        }
-
-        /* Social icons styling */
-        .social-icons {
-            margin-top: 10px;
-        }
-
-        .social-icons a {
-            margin: 0 10px;
-            color: white;
-            text-decoration: none;
-            font-size: 24px; /* Icon size */
-        }
-
-        /* Media Query for smaller screens */
-        @media (max-width: 768px) {
-            .hamburger {
-                display: block; /* Show hamburger icon on small screens */
-            }
-
-            nav ul {
-                display: none; /* Hide menu items */
-                flex-direction: column;
-                text-align: center;
-                background-color: #162447;
-                padding: 10px 0;
-            }
-
-            nav ul.show {
-                display: flex; /* Show menu items when hamburger is clicked */
-            }
-
-            nav ul li {
-                margin: 10px 0;
-            }
-
-            .text {
-                font-size: 24px; /* Smaller font size for mobile */
-            }
+            font-size: 1.5rem;
         }
     </style>
 </head>
 <body>
-    <header>
-        <h1>Welcome to Martoo EduTech Services</h1>
-        <!-- Profile Picture -->
-        <img src="https://drive.google.com/uc?export=view&id=1I7cgQxFrXIn9UB4_75CrQultrto6GKVK" alt="Profile Picture" class="profile-pic">
-        
-        <div class="hamburger" onclick="toggleMenu()">&#9776;</div> <!-- Hamburger menu icon -->
-        <nav>
-            <ul id="menu">
-                <li><a href="index.html">Home</a></li>
-                <li><a href="services.html">Services</a></li>
-                <li><a href="about.html">About</a></li>
-                <li><a href="contact.html">Contact</a></li>
-                <li><a href="posts.html">Posts</a></li>
-                <li><a href="payment.html">Payment</a></li>
-            </ul>
-        </nav>
-    </header>
 
-    <main>
-        <h2>Your gateway to education and technology</h2>
-        <p>At Martoo EduTech Services, we provide innovative educational resources and technology solutions to enhance your learning experience.</p>
+    <h2>CHOOSE A CATEGORY</h2>
 
-        <section id="key-services">
-            <h3>Key Services</h3>
-            <ul>
-                <li><a href="posts.html#vpn-files">Download VPN Configurations</a></li>
-                <li><a href="posts.html#school-files">Download School Materials</a></li>
-            </ul>
-        </section>
-
-        <section class="slideshow-container">
-            <div class="slideshow">
-                <div class="text">Empowering students with innovative tools for success.</div>
-                <div class="text">Access a wealth of resources to enhance your learning journey.</div>
-                <div class="text">Connecting education with technology for a brighter future.</div>
-            </div>
-        </section>
-
-        <!-- Subscription Section with Google Form -->
-        <section id="subscribe">
-            <h3>Subscribe for Updates</h3>
-            <p>Stay updated with our latest services and resources. Enter your email below to subscribe.</p>
-            <iframe src="https://forms.gle/QNGy6R6UrbEZZcBC7" width="640" height="600" frameborder="0" marginheight="0" marginwidth="0">Loading…</iframe>
-        </section>
-    </main>
-
-    <footer>
-        <p>&copy; 2024 Martoo EduTech Services - All rights reserved.</p>
-        <div class="social-icons">
-            <a href="https://youtube.com/@martootech?si=WtTmTBtO6VjvajdN"><i class="fab fa-youtube"></i></a>
-            <a href="https://www.facebook.com/profile.php?id=61561559594029"><i class="fab fa-facebook-f"></i></a>
-            <a href="https://wa.me/260950322498"><i class="fab fa-whatsapp"></i></a>
-            <a href="mailto:infomartooedutech@gmail.com"><i class="fas fa-envelope"></i></a>
+    <div class="category-grid">
+        <div>
+            <i class="fas fa-print"></i>
+            <span>Printers</span>
         </div>
-    </footer>
+        <div>
+            <i class="fas fa-desktop"></i>
+            <span>Monitors</span>
+        </div>
+        <div>
+            <i class="fas fa-headphones"></i>
+            <span>Headsets</span>
+        </div>
+        <div>
+            <i class="fas fa-cloud"></i>
+            <span>Storage</span>
+        </div>
+        <div>
+            <i class="fas fa-microchip"></i>
+            <span>Processors</span>
+        </div>
+        <div>
+            <i class="fas fa-mouse"></i>
+            <span>Mouse</span>
+        </div>
+    </div>
 
-    <script>
-        function toggleMenu() {
-            const menu = document.getElementById("menu");
-            menu.classList.toggle("show");
-        }
-    </script>
+    <div class="footer">
+        <a href="#"><i class="fab fa-instagram"></i></a>
+        <a href="#"><i class="fab fa-facebook-f"></i></a>
+        <a href="#"><i class="fab fa-twitter"></i></a>
+    </div>
+
 </body>
-</html>
+    </html>
