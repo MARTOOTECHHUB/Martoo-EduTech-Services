@@ -177,8 +177,12 @@
     <div class="config-generator">
         <h3>VPN Configuration Generator</h3>
         <form id="configGenerator">
-            <label for="sni">SNI (Server Name Indication):</label>
-            <input type="text" id="sni" placeholder="e.g., be3.vmess.site" required>
+            <h4>CREATE NEW ACCOUNT</h4>
+            <label for="username">Username:</label>
+            <input type="text" id="username" placeholder="Enter username" required>
+            
+            <label for="sni">SNI/Bug Host:</label>
+            <input type="text" id="sni" placeholder="bug.hostname.com" required>
             
             <label for="protocol">Protocol:</label>
             <select id="protocol" required>
@@ -223,27 +227,23 @@
             return result;
         }
 
-        function generateUserId() {
-            const uniqueId = generateRandomString(12); // Generate a unique ID for the username
-            return `Martoo_Love_SSHMax_${uniqueId}`; // Username format
-        }
-
         function generateConfig() {
+            const username = document.getElementById("username").value;
             const sni = document.getElementById("sni").value;
             const protocol = document.getElementById("protocol").value;
-
-            // Generate unique username and password
-            const username = generateUserId(); // Generate username
-            const id = generateRandomString(36); // Unique ID for VMess config
 
             let generatedConfig = '';
 
             if (protocol === "vmess") {
+                // Generate unique ID for VMess config
+                const id = generateRandomString(36); // Unique ID for VMess config
                 // VMess configuration in the specified format
-                generatedConfig = `vmess://eyJhZGQiOiAi${sni.replace(/\./g, '%2E')}, "aid": "0", "host": "${sni.replace(/\./g, '%2E')}", "id": "${id}", "net": "ws", "path": "/vpn", "port": "443", "ps": "${username}", "tls": "true", "v": "2"}`;
+                generatedConfig = `vmess://eyJhZGQiOi "${sni.replace(/\./g, '%2E')}", "aid": "0", "host": "${sni.replace(/\./g, '%2E')}", "id": "${id}", "net": "ws", "path": "/vpn", "port": "443", "ps": "${username}", "tls": "true", "v": "2"}`;
             } else if (protocol === "trojan") {
                 // Trojan configuration
-                generatedConfig = `trojan://${username}@${sni}:443?security=tls&type=ws&path=%2Fvpn&sni=${sni}#Martoo-Trojan`;
+                const trojanAddress = "is1.trojanvpn.xyz"; // Change this based on server location
+                const password = "4cb274d4-1f5f-40ed-a1e9-8e4bfcd9e0c1"; // Fixed password for Trojan
+                generatedConfig = `trojan://${username}@${trojanAddress}:443?security=tls&type=ws&path=%2Fvpn&sni=${sni}#Martoo-Trojan`;
             }
 
             document.getElementById("generatedCode").value = generatedConfig;
