@@ -69,19 +69,28 @@
             display: block;
         }
 
-        /* Slideshow container styles with background image */
-        .slideshow-container {
+        /* Section for key content with a background image */
+        #content-section {
             position: relative;
-            max-width: 100%;
-            margin: auto;
-            height: 400px;
-            background-image: url('2bAeeplNUPEkhqlhqUlJqmDZM6Y.jpg'); /* Add your slideshow background image */
+            background-image: url('Picsart_24-10-14_17-15-30-797.jpg'); /* Add the new image */
             background-size: cover;
             background-position: center;
-            overflow: hidden; /* Hide overflow for sliding effect */
+            color: #333333; /* Darker text to contrast with the white image */
+            text-align: center;
+            padding: 60px 20px;
         }
 
-        /* Key Services styles with background image */
+        #content-section h2,
+        #content-section p {
+            background-color: rgba(255, 255, 255, 0.7); /* Adding a white semi-transparent background for better visibility */
+            padding: 20px;
+            border-radius: 10px;
+            display: inline-block;
+            margin: 20px auto;
+            max-width: 800px;
+        }
+
+        /* Section for key services */
         #key-services {
             margin: 40px 0;
             background-color: rgba(0, 0, 0, 0.7); /* Adding a semi-transparent overlay */
@@ -89,31 +98,7 @@
             border-radius: 5px;
         }
 
-        /* Centering the sliding text */
-        .text {
-            position: absolute;
-            left: 50%;
-            transform: translateX(-50%);
-            color: white;
-            font-size: 36px;
-            font-weight: bold;
-            text-align: center;
-            background-color: rgba(0, 0, 0, 0.7); /* Semi-transparent background */
-            padding: 20px;
-            border-radius: 5px;
-            animation: slideIn 30s linear infinite; /* Smooth sliding animation */
-            margin-top: 20px;
-        }
-
-        /* Subscribe Section styles */
-        #subscribe {
-            margin: 40px 0;
-            text-align: center;
-            background-color: rgba(0, 0, 0, 0.7); /* Adding a semi-transparent overlay */
-            padding: 20px;
-            border-radius: 5px;
-        }
-
+        /* Footer styles */
         footer {
             background-color: #4d4d4d; /* Metallic gray */
             color: white;
@@ -124,13 +109,13 @@
             width: 100%;
         }
 
+        /* Social media icons */
         .social-icons a {
             margin: 0 10px;
             color: white;
             text-decoration: none;
             font-size: 24px; /* Icon size */
         }
-
     </style>
 </head>
 <body>
@@ -149,24 +134,19 @@
         </nav>
     </header>
 
-    <main>
+    <!-- New Section with Background Image -->
+    <section id="content-section">
         <h2>Your gateway to education and technology</h2>
         <p>At Martoo EduTech Services, we provide innovative educational resources and technology solutions to enhance your learning experience.</p>
+    </section>
 
+    <main>
         <section id="key-services">
             <h3>Key Services</h3>
             <ul>
                 <li><a href="posts.html#vpn-files">Download VPN Configurations</a></li>
                 <li><a href="posts.html#school-files">Download School Materials</a></li>
             </ul>
-        </section>
-
-        <section class="slideshow-container">
-            <div class="slideshow">
-                <div class="text">Empowering students with innovative tools for success.</div>
-                <div class="text">Access a wealth of resources to enhance your learning journey.</div>
-                <div class="text">Connecting education with technology for a brighter future.</div>
-            </div>
         </section>
 
         <!-- Subscription Section with Google Form -->
