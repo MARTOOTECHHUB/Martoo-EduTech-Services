@@ -5,7 +5,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="styles.css">
     <title>VPN Config Generator - Martoo</title>
-    <!-- Link to Font Awesome for social media icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <style>
         body {
@@ -15,7 +14,6 @@
             margin: 0;
         }
 
-        /* Hamburger menu styles */
         .hamburger {
             position: fixed;
             top: 15px;
@@ -30,7 +28,7 @@
         .hamburger div {
             width: 30px;
             height: 3px;
-            background-color: orange; /* Changed hamburger color */
+            background-color: orange;
         }
 
         .nav-links {
@@ -94,7 +92,6 @@
             color: #f0f0f0;
         }
 
-        /* Social icons styling */
         .social-icons {
             display: flex;
             justify-content: center;
@@ -148,14 +145,12 @@
     </style>
 </head>
 <body>
-    <!-- Hamburger menu -->
     <div class="hamburger" id="hamburger">
         <div></div>
         <div></div>
         <div></div>
     </div>
 
-    <!-- Navigation links -->
     <nav class="nav-links" id="navLinks">
         <a href="index.html">Home</a>
         <a href="services.html">Services</a>
@@ -163,7 +158,6 @@
         <a href="contact.html">Contact</a>
     </nav>
 
-    <!-- Header with profile pic -->
     <div class="header">
         <img src="Picsart_24-10-14_17-15-30-797.jpg" alt="Header Background">
         <div class="profile-pic">
@@ -183,11 +177,8 @@
     <div class="config-generator">
         <h3>VPN Configuration Generator</h3>
         <form id="configGenerator">
-            <label for="username">Username:</label>
-            <input type="text" id="username" placeholder="Enter username" required>
-
             <label for="sni">SNI (Server Name Indication):</label>
-            <input type="text" id="sni" placeholder="home.mtn.zm" required>
+            <input type="text" id="sni" placeholder="e.g., is1.trojanvpn.xyz" required>
             
             <label for="protocol">Protocol:</label>
             <select id="protocol" required>
@@ -202,7 +193,6 @@
         <textarea id="generatedCode" readonly></textarea>
     </div>
 
-    <!-- Social Media Icons -->
     <div class="social-icons">
         <a href="https://youtube.com/@martootech?si=WtTmTBtO6VjvajdN" target="_blank">
             <i class="fab fa-youtube"></i>
@@ -216,44 +206,6 @@
     </div>
 
     <script>
-        // Define server locations
-        const servers = [
-            { name: "Iceland Server 1", address: "is1.trojanvpn.xyz" },
-            { name: "Iceland Server 2", address: "is2.trojanvpn.xyz" },
-            { name: "USA Server 1", address: "us1.trojanvpn.xyz" },
-            { name: "USA Server 2", address: "us2.trojanvpn.xyz" },
-            { name: "UK Server 1", address: "uk1.trojanvpn.xyz" },
-            { name: "UK Server 2", address: "uk2.trojanvpn.xyz" },
-            // Add more servers as needed
-        ];
-
-        // Function to generate a unique password
-        function generatePassword() {
-            return 'xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx'.replace(/x/g, () => {
-                return Math.floor(Math.random() * 16).toString(16);
-            });
-        }
-
-        function generateConfig() {
-            const username = document.getElementById("username").value;
-            const sni = document.getElementById("sni").value;
-            const protocol = document.getElementById("protocol").value;
-
-            // Randomly select a server
-            const server = servers[Math.floor(Math.random() * servers.length)];
-            const generatedPassword = generatePassword();
-            
-            let generatedConfig = '';
-
-            if (protocol === "vmess") {
-                generatedConfig = `vmess://eyJhZGQiOi "${server.address}","haIiIiwiaWQiOi "${generatedPassword}","port":"443"}`
-            } else if (protocol === "trojan") {
-                generatedConfig = `trojan://${generatedPassword}@${server.address}:443?security=tls&type=ws&path=%2Fvpn&sni=${sni}&host=${sni}#${server.name}`;
-            }
-
-            document.getElementById("generatedCode").value = generatedConfig;
-        }
-
         // Hamburger menu toggle
         const hamburger = document.getElementById('hamburger');
         const navLinks = document.getElementById('navLinks');
@@ -261,6 +213,37 @@
         hamburger.addEventListener('click', () => {
             navLinks.classList.toggle('nav-active');
         });
+
+        function generateRandomString(length) {
+            const chars = '0123456789abcdef';
+            let result = '';
+            for (let i = 0; i < length; i++) {
+                result += chars.charAt(Math.floor(Math.random() * chars.length));
+            }
+            return result;
+        }
+
+        function generateConfig() {
+            const sni = document.getElementById("sni").value;
+            const protocol = document.getElementById("protocol").value;
+
+            // Generate unique username and password
+            const uniqueId = generateRandomString(24); // Unique ID for username
+            const username = `Martoo_${uniqueId}`; // Username format
+            const password = generateRandomString(36); // Password format
+            
+            let generatedConfig = '';
+
+            if (protocol === "vmess") {
+                // VMess configuration
+                generatedConfig = `vmess://eyJhZGQiOiAi${sni},"username":"${username}","alterId":0,"id":"${password}"}`
+            } else if (protocol === "trojan") {
+                // Trojan configuration
+                generatedConfig = `trojan://${username}@${sni}:443?security=tls&type=ws&path=%2Fvpn&sni=${sni}#Martoo-Trojan`;
+            }
+
+            document.getElementById("generatedCode").value = generatedConfig;
+        }
     </script>
 </body>
 </html>
