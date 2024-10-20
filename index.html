@@ -13,6 +13,7 @@
             padding: 0;
             font-family: Arial, sans-serif;
             color: white;
+            background-color: #111;
         }
 
         /* Header styling */
@@ -100,6 +101,7 @@
             height: 400px;
             object-fit: cover;
             border-radius: 10px;
+            loading: lazy;
         }
 
         /* Subscription form */
@@ -181,15 +183,15 @@
 
         <section class="slideshow-container">
             <div class="slideshow">
-                <img src="https://source.unsplash.com/1600x900/?vpn,network" alt="VPN Image">
+                <img src="https://source.unsplash.com/1600x900/?vpn,network" alt="VPN Services">
                 <div class="text-slide">Secure and Fast VPN Services</div>
             </div>
             <div class="slideshow">
-                <img src="https://source.unsplash.com/1600x900/?typing,work" alt="Typing Image">
+                <img src="https://source.unsplash.com/1600x900/?typing,work" alt="Typing Services">
                 <div class="text-slide">Typing Services for Students</div>
             </div>
             <div class="slideshow">
-                <img src="https://source.unsplash.com/1600x900/?technology,learning" alt="Tech Image">
+                <img src="https://source.unsplash.com/1600x900/?technology,learning" alt="Tech Learning">
                 <div class="text-slide">Technology Meets Education</div>
             </div>
         </section>
@@ -213,7 +215,7 @@
         <p>&copy; 2024 Martoo EduTech Services. All rights reserved.</p>
     </footer>
 
-    <script>
+    <script defer>
         // Hamburger menu toggle function
         function toggleMenu() {
             const menu = document.getElementById('menu');
