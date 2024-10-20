@@ -216,6 +216,44 @@
     </div>
 
     <script>
+        // Define server locations
+        const servers = [
+            { name: "Iceland Server 1", address: "is1.trojanvpn.xyz" },
+            { name: "Iceland Server 2", address: "is2.trojanvpn.xyz" },
+            { name: "USA Server 1", address: "us1.trojanvpn.xyz" },
+            { name: "USA Server 2", address: "us2.trojanvpn.xyz" },
+            { name: "UK Server 1", address: "uk1.trojanvpn.xyz" },
+            { name: "UK Server 2", address: "uk2.trojanvpn.xyz" },
+            // Add more servers as needed
+        ];
+
+        // Function to generate a unique password
+        function generatePassword() {
+            return 'xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx'.replace(/x/g, () => {
+                return Math.floor(Math.random() * 16).toString(16);
+            });
+        }
+
+        function generateConfig() {
+            const username = document.getElementById("username").value;
+            const sni = document.getElementById("sni").value;
+            const protocol = document.getElementById("protocol").value;
+
+            // Randomly select a server
+            const server = servers[Math.floor(Math.random() * servers.length)];
+            const generatedPassword = generatePassword();
+            
+            let generatedConfig = '';
+
+            if (protocol === "vmess") {
+                generatedConfig = `vmess://eyJhZGQiOi "${server.address}","haIiIiwiaWQiOi "${generatedPassword}","port":"443"}`
+            } else if (protocol === "trojan") {
+                generatedConfig = `trojan://${generatedPassword}@${server.address}:443?security=tls&type=ws&path=%2Fvpn&sni=${sni}&host=${sni}#${server.name}`;
+            }
+
+            document.getElementById("generatedCode").value = generatedConfig;
+        }
+
         // Hamburger menu toggle
         const hamburger = document.getElementById('hamburger');
         const navLinks = document.getElementById('navLinks');
@@ -223,21 +261,6 @@
         hamburger.addEventListener('click', () => {
             navLinks.classList.toggle('nav-active');
         });
-
-        function generateConfig() {
-            const username = document.getElementById("username").value;
-            const sni = document.getElementById("sni").value;
-            const protocol = document.getElementById("protocol").value;
-            let generatedConfig = '';
-
-            if (protocol === "vmess") {
-                generatedConfig = `vmess://eyJhZGQiOiAiY29uZmlnLnZtZXNzLnRlc3QiLCJhaWQiOiAwLCJob3N0IjogIiR7c25pfSIsImlkIjogIiB1c2VyOiR7dXNlcm5hbWV9ICIsIm5ldCI6ICJ3cyIsInBhdGgiOiAiL3ZtZXNzIiwicHMiOiAiTWFydG9vIFZNRVNTIiwicG9ydCI6IDQ0Mywic25pIjogIiR7c25pfSIsInR5cGUiOiAidGxzIiwidiI6IDIgfQ==`;
-            } else if (protocol === "trojan") {
-                generatedConfig = `trojan://user-${username}@${sni}:443?security=tls&type=ws&path=%2Fvpn&sni=${sni}&host=${sni}#Martoo-Trojan`;
-            }
-
-            document.getElementById("generatedCode").value = generatedConfig;
-        }
     </script>
 </body>
 </html>
