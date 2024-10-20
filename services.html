@@ -58,6 +58,9 @@
     <div class="config-generator">
         <h3>VPN Configuration Generator</h3>
         <form id="configGenerator">
+            <label for="username">Username:</label>
+            <input type="text" id="username" placeholder="Enter username" required>
+
             <label for="sni">SNI (Server Name Indication):</label>
             <input type="text" id="sni" placeholder="home.mtn.zm" required>
             
@@ -76,16 +79,17 @@
 
     <script>
         function generateConfig() {
+            const username = document.getElementById("username").value;
             const sni = document.getElementById("sni").value;
             const protocol = document.getElementById("protocol").value;
             let generatedConfig = '';
 
             if (protocol === "vmess") {
                 // VMess configuration
-                generatedConfig = `vmess://eyJhZGQiOiJiZTMudm1lc3Muc2l0ZSIsImFpZCI6IjAiLCJob3N0IjoiYmUzLnZtZXNzLnNpdGUiLCJpZCI6IkI1MkU1LUY0NzgtMTI0Mi1BNEUyLUUyNTMiLCJuZXQiOiJ3cyIsInBhdGgiOiJcL3ZtZXNzI0RFVk9URVIiLCJwb3J0IjoiNDQzIiwicHMiOiJNQVJUT08gVEVDSCIsInRscyI6InRscyIsInNuaSI6IiR7c25pfSIsInR5cGUiOiJub25lIiwidiI6IjIifQ==`;
+                generatedConfig = `vmess://eyJhZGQiOiAiY29uZmlnLnZtZXNzLnRlc3QiLCJhaWQiOiAwLCJob3N0IjogIiR7c25pfSIsImlkIjogIiB1c2VyOiR7dXNlcm5hbWV9ICIsIm5ldCI6ICJ3cyIsInBhdGgiOiAiL3ZtZXNzIiwicHMiOiAiTWFydG9vIFZNRVNTIiwicG9ydCI6IDQ0Mywic25pIjogIiR7c25pfSIsInR5cGUiOiAidGxzIiwidiI6IDIgfQ==`;
             } else if (protocol === "trojan") {
                 // Trojan configuration
-                generatedConfig = `trojan://deb85a65-2222-436f-9b7c-9e97fd9c4ffd@is2.trojanvpn.xyz:443?security=tls&type=ws&headerType=none&path=%252F&sni=${sni}&host=is2.trojanvpn.xyz#Martoo-Trojan`;
+                generatedConfig = `trojan://user-${username}@${sni}:443?security=tls&type=ws&path=%2Fvpn&sni=${sni}&host=${sni}#Martoo-Trojan`;
             }
 
             document.getElementById("generatedCode").value = generatedConfig;
