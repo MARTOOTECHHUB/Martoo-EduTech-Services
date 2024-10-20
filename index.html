@@ -40,6 +40,24 @@
             border: 2px solid #ffcc00; /* Add a gold border for contrast */
         }
 
+        /* Circular profile picture in the top left corner */
+        .profile-pic {
+            position: absolute;
+            top: 20px;
+            left: 20px; /* Position in top left */
+            width: 100px;
+            height: 100px;
+            border-radius: 50%; /* Circle shape */
+            overflow: hidden;
+            border: 3px solid #ffcc00; /* Add a gold border for visibility */
+        }
+
+        .profile-pic img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
         /* Navigation styles */
         nav ul {
             list-style-type: none;
@@ -122,6 +140,9 @@
     <header>
         <h1>Welcome to Martoo EduTech Services</h1>
         <div class="hamburger" onclick="toggleMenu()">&#9776;</div>
+        <div class="profile-pic">
+            <img src="Picsart_24-10-14_17-15-30-797.jpg" alt="Profile Picture"> <!-- Image path for the profile pic -->
+        </div>
         <nav>
             <ul id="menu">
                 <li><a href="index.html">Home</a></li>
