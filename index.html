@@ -40,16 +40,17 @@
             border: 2px solid #ffcc00; /* Add a gold border for contrast */
         }
 
-        /* Circular profile picture in the top left corner */
+        /* Circular profile picture in the background of the header */
         .profile-pic {
             position: absolute;
-            top: 20px;
-            left: 20px; /* Position in top left */
-            width: 100px;
-            height: 100px;
+            top: 50%;
+            left: 5%;
+            transform: translate(-50%, -50%);
+            width: 150px;
+            height: 150px;
             border-radius: 50%; /* Circle shape */
             overflow: hidden;
-            border: 3px solid #ffcc00; /* Add a gold border for visibility */
+            opacity: 0.5; /* Make the profile picture transparent so it blends in */
         }
 
         .profile-pic img {
@@ -153,8 +154,9 @@
     <header>
         <h1>Welcome to Martoo EduTech Services</h1>
         <div class="hamburger" onclick="toggleMenu()">&#9776;</div>
+        <!-- Profile pic as part of the header background -->
         <div class="profile-pic">
-            <img src="Picsart_24-10-14_17-15-30-797.jpg" alt="Profile Picture"> <!-- Image path for the profile pic -->
+            <img src="Picsart_24-10-14_17-15-30-797.jpg" alt="Profile Picture">
         </div>
         <nav>
             <ul id="menu">
