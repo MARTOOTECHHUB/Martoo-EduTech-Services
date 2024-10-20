@@ -32,11 +32,12 @@
             top: 10px;
             right: 10px; /* Position it in the top-right corner */
             font-size: 30px;
-            color: #fff; /* Light color for visibility */
+            color: #ffcc00; /* Yellow/Gold color for better contrast */
             cursor: pointer;
-            background-color: rgba(255, 255, 255, 0.1); /* Slightly transparent background */
+            background-color: rgba(0, 0, 0, 0.5); /* Dark transparent background */
             padding: 10px;
             border-radius: 5px;
+            border: 2px solid #ffcc00; /* Add a gold border for contrast */
         }
 
         /* Navigation styles */
@@ -51,16 +52,16 @@
         }
 
         nav ul li a {
-            color: #fff; /* White text */
+            color: #ffcc00; /* Yellow text */
             text-decoration: none;
             padding: 10px;
             display: block;
-            background-color: rgba(255, 255, 255, 0.1); /* Slight background for better visibility */
+            background-color: rgba(0, 0, 0, 0.7); /* Darker background */
             border-radius: 5px;
         }
 
         nav ul li a:hover {
-            background-color: rgba(255, 255, 255, 0.3); /* Light hover effect */
+            background-color: rgba(255, 204, 0, 0.5); /* Light hover effect with yellow tint */
         }
 
         /* Show the menu when toggled */
@@ -91,8 +92,8 @@
         /* Centering the sliding text */
         .text {
             position: absolute;
-            left: 50%; /* Center horizontally */
-            transform: translateX(-50%); /* Adjust for width */
+            left: 50%;
+            transform: translateX(-50%);
             color: white;
             font-size: 36px;
             font-weight: bold;
@@ -182,4 +183,14 @@
             <a href="https://youtube.com/@martootech?si=WtTmTBtO6VjvajdN"><i class="fab fa-youtube"></i></a>
             <a href="https://www.facebook.com/profile.php?id=61561559594029"><i class="fab fa-facebook-f"></i></a>
             <a href="https://wa.me/260950322498"><i class="fab fa-whatsapp"></i></a>
-            <a href
+        </div>
+    </footer>
+
+    <script>
+        function toggleMenu() {
+            var menu = document.getElementById("menu");
+            menu.classList.toggle("show");
+        }
+    </script>
+</body>
+</html>
