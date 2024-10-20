@@ -4,87 +4,25 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="styles.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"> <!-- Font Awesome CDN -->
-    <title>Services - Martoo EduTech Services</title>
+    <title>VPN Config Generator - Martoo</title>
     <style>
         body {
-            background-color: #333333; /* Dark earthy color */
-            color: #f0f0f0;
-            margin: 0;
+            background-color: #333;
+            color: #fff;
             font-family: Arial, sans-serif;
             display: flex;
             flex-direction: column;
-            min-height: 100vh; /* Ensure footer is pushed to the bottom */
-        }
-
-        header {
-            background-color: #4d4d4d; /* Metallic gray */
-            color: white;
-            text-align: center;
-            padding: 20px;
-            position: relative;
-        }
-
-        .hamburger {
-            font-size: 30px;
-            cursor: pointer;
-            position: absolute;
-            top: 20px;
-            right: 20px;
-            color: orange;
-            display: none; /* Hidden by default, shown in media query */
-        }
-
-        nav ul {
-            list-style-type: none;
-            padding: 0;
-            margin: 0;
-            display: flex;
+            align-items: center;
             justify-content: center;
+            min-height: 100vh;
+            margin: 0;
         }
 
-        nav ul li {
-            margin: 0 15px;
-        }
-
-        nav ul li a {
-            text-decoration: none;
-            color: white;
-            font-weight: bold;
-        }
-
-        main {
-            text-align: center;
-            margin: 40px 0;
-            flex: 1; /* Allow main content to expand and push footer down */
-        }
-
-        footer {
-            background-color: #4d4d4d; /* Metallic gray */
-            color: white;
-            text-align: center;
-            padding: 20px;
-            position: relative;
-        }
-
-        .socials {
-            margin-top: 10px;
-        }
-
-        .socials a {
-            margin: 0 10px;
-            color: white; /* Icon color */
-            text-decoration: none; /* Remove underline */
-            font-size: 20px; /* Icon size */
-        }
-
-        /* VPN Configuration Generator Styles */
         .config-generator {
-            background-color: #444444; /* Slightly lighter dark color */
+            background-color: #444;
             padding: 20px;
-            margin: 20px auto;
-            border-radius: 8px;
-            width: 80%;
+            border-radius: 10px;
+            width: 90%;
             max-width: 600px;
         }
 
@@ -99,8 +37,8 @@
         }
 
         .config-generator button {
-            background-color: #ff9800; /* Orange color for button */
-            color: white;
+            background-color: #ff9800;
+            color: #fff;
             cursor: pointer;
         }
 
@@ -111,142 +49,46 @@
             padding: 10px;
             border-radius: 5px;
             border: 1px solid #ccc;
-            background-color: #222; /* Dark background for textarea */
-            color: #f0f0f0; /* Text color */
-        }
-
-        /* Media Query for smaller screens */
-        @media (max-width: 768px) {
-            .hamburger {
-                display: block; /* Show hamburger icon on small screens */
-            }
-
-            nav ul {
-                display: none; /* Hide menu items */
-                flex-direction: column;
-                text-align: center;
-                background-color: #162447;
-                padding: 10px 0;
-            }
-
-            nav ul.show {
-                display: flex; /* Show menu items when hamburger is clicked */
-            }
-
-            nav ul li {
-                margin: 10px 0;
-            }
+            background-color: #222;
+            color: #f0f0f0;
         }
     </style>
 </head>
 <body>
-    <header>
-        <h1>Our Services</h1>
-        <div class="hamburger" onclick="toggleMenu()">&#9776;</div> <!-- Hamburger icon -->
-        <nav>
-            <ul id="menu" class="hidden">
-                <li><a href="index.html">Home</a></li>
-                <li><a href="services.html">Services</a></li>
-                <li><a href="contact.html">Contact</a></li>
-            </ul>
-        </nav>
-    </header>
-    
-    <main>
-        <h2>Explore Our Offerings</h2>
-        <p>At Martoo EduTech Services, we provide a range of solutions to enhance your educational journey. From typing assistance to VPN services and essential educational materials, we are dedicated to supporting your learning experience.</p>
-        <ul>
-            <li><a href="posts.html#typing_assistance">Typing Assistance</a></li>
-            <li><a href="posts.html#vpn_services">VPN Services</a></li>
-            <li><a href="posts.html#educational_materials">Educational Materials</a></li>
-        </ul>
+    <div class="config-generator">
+        <h3>VPN Configuration Generator</h3>
+        <form id="configGenerator">
+            <label for="sni">SNI (Server Name Indication):</label>
+            <input type="text" id="sni" placeholder="home.mtn.zm" required>
+            
+            <label for="protocol">Protocol:</label>
+            <select id="protocol" required>
+                <option value="vmess">VMess</option>
+                <option value="trojan">Trojan</option>
+            </select>
+            
+            <button type="button" onclick="generateConfig()">Generate Config</button>
+        </form>
 
-        <!-- VPN Configuration Generator Section -->
-        <div class="config-generator">
-            <h3>VPN Configuration Generator</h3>
-            <p>Generate your VPN configuration codes for different protocols.</p>
-            <form id="configGenerator">
-                <label for="server">Server Address:</label>
-                <input type="text" id="server" name="server" required>
-                
-                <label for="port">Port:</label>
-                <input type="number" id="port" name="port" required>
-                
-                <label for="protocol">Protocol:</label>
-                <select id="protocol" name="protocol" required>
-                    <option value="trojan">Trojan</option>
-                    <option value="vmess">VMess</option>
-                    <option value="udp">UDP</option>
-                </select>
-                
-                <button type="button" onclick="generateConfig()">Generate Config</button>
-                <button type="button" onclick="downloadConfig()">Download Config</button>
-            </form>
-
-            <h3>Generated Code:</h3>
-            <textarea id="generatedCode" readonly></textarea>
-        </div>
-    </main>
-    
-    <footer>
-        <p>&copy; 2024 Martoo EduTech Services. All rights reserved.</p>
-        <div class="socials">
-            <a href="https://www.facebook.com/profile.php?id=61561559594029" target="_blank">
-                <i class="fab fa-facebook-f"></i> <!-- Facebook Icon -->
-            </a>
-            <a href="https://youtube.com/@martootech?si=WtTmTBtO6VjvajdN" target="_blank">
-                <i class="fab fa-youtube"></i> <!-- YouTube Icon -->
-            </a>
-            <a href="https://wa.me/260950322498" target="_blank">
-                <i class="fab fa-whatsapp"></i> <!-- WhatsApp Icon -->
-            </a>
-            <a href="mailto:infomartooedutech@gmail.com">
-                <i class="fas fa-envelope"></i> <!-- Email Icon -->
-            </a>
-        </div>
-    </footer>
+        <h3>Generated Configuration:</h3>
+        <textarea id="generatedCode" readonly></textarea>
+    </div>
 
     <script>
-        function toggleMenu() {
-            const menu = document.getElementById('menu');
-            menu.classList.toggle('show'); // Toggle the 'show' class
-        }
-
         function generateConfig() {
-            const server = document.getElementById("server").value;
-            const port = document.getElementById("port").value;
+            const sni = document.getElementById("sni").value;
             const protocol = document.getElementById("protocol").value;
+            let generatedConfig = '';
 
             if (protocol === "vmess") {
-                const vmessConfig = {
-                    v: "2",
-                    ps: "Martoo VMess",
-                    add: server,
-                    port: port,
-                    id: "e.g., UUID-GOES-HERE", // Ideally, this would be dynamically generated or user-provided
-                    aid: "0",
-                    net: "tcp",
-                    type: "none",
-                    host: "",
-                    path: "",
-                    tls: "none"
-                };
-
-                const configString = JSON.stringify(vmessConfig, null, 2); // Pretty-print JSON
-                document.getElementById("generatedCode").value = configString;
-            } else {
-                let generatedConfig = `Protocol: ${protocol}\nServer: ${server}\nPort: ${port}\n`;
-                document.getElementById("generatedCode").value = generatedConfig;
+                // VMess configuration
+                generatedConfig = `vmess://eyJhZGQiOiJiZTMudm1lc3Muc2l0ZSIsImFpZCI6IjAiLCJob3N0IjoiYmUzLnZtZXNzLnNpdGUiLCJpZCI6IkI1MkU1LUY0NzgtMTI0Mi1BNEUyLUUyNTMiLCJuZXQiOiJ3cyIsInBhdGgiOiJcL3ZtZXNzI0RFVk9URVIiLCJwb3J0IjoiNDQzIiwicHMiOiJNQVJUT08gVEVDSCIsInRscyI6InRscyIsInNuaSI6IiR7c25pfSIsInR5cGUiOiJub25lIiwidiI6IjIifQ==`;
+            } else if (protocol === "trojan") {
+                // Trojan configuration
+                generatedConfig = `trojan://deb85a65-2222-436f-9b7c-9e97fd9c4ffd@is2.trojanvpn.xyz:443?security=tls&type=ws&headerType=none&path=%252F&sni=${sni}&host=is2.trojanvpn.xyz#Martoo-Trojan`;
             }
-        }
 
-        function downloadConfig() {
-            const configData = document.getElementById("generatedCode").value;
-            const blob = new Blob([configData], { type: "application/json" });
-            const link = document.createElement('a');
-            link.href = URL.createObjectURL(blob);
-            link.download = "vmess_config.json"; // File name
-            link.click();
+            document.getElementById("generatedCode").value = generatedConfig;
         }
     </script>
 </body>
