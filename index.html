@@ -5,32 +5,26 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Martoo EduTech Services</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"> <!-- Font Awesome CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"> <!-- Font Awesome -->
     <style>
-        /* General body background and layout settings */
+        /* General body background settings */
         body {
-            background-color: #333333; /* Dark earthy color */
-            color: #f0f0f0;
             margin: 0;
+            padding: 0;
             font-family: Arial, sans-serif;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            text-align: center;
-            min-height: 100vh;
-        }
-
-        /* Header styles */
-        header {
-            background-color: #4d4d4d; /* Metallic gray */
             color: white;
-            padding: 20px;
-            position: relative;
-            width: 100%;
+            background-color: #333;
         }
 
-        /* Profile Picture */
+        /* Header styling */
+        header {
+            background-color: rgba(0, 0, 0, 0.7); /* Semi-transparent background */
+            color: white;
+            padding: 15px;
+            position: relative;
+            text-align: center;
+        }
+
         .profile-pic {
             position: absolute;
             top: 10px;
@@ -40,88 +34,104 @@
             border-radius: 50%;
         }
 
-        /* Hamburger menu styling */
         .hamburger {
             font-size: 30px;
             cursor: pointer;
             position: absolute;
             top: 20px;
             right: 20px;
-            color: orange;
+            color: white;
             display: none;
         }
 
-        /* Navigation styles */
         nav ul {
             list-style-type: none;
             padding: 0;
             margin: 0;
+            display: flex;
+            justify-content: center;
         }
 
         nav ul li {
-            display: inline;
-            margin-right: 15px;
+            margin: 0 15px;
         }
 
         nav ul li a {
-            text-decoration: none;
             color: white;
-            font-weight: bold;
+            text-decoration: none;
+            font-size: 1.1rem;
         }
 
-        /* Key Services styles */
-        #key-services {
-            margin: 40px 0; /* Add margin to separate from other sections */
-        }
-
-        /* Slideshow styles */
-        .slideshow-container {
-            position: relative;
-            max-width: 100%;
-            margin: auto;
-            height: 400px; /* Height of the slideshow area */
-            overflow: hidden; /* Hide overflow for sliding effect */
-        }
-
-        /* Centering the sliding text */
-        .text {
-            position: absolute;
-            left: 50%; /* Center horizontally */
-            transform: translateX(-50%); /* Adjust for width */
-            color: white; /* White text */
-            font-size: 36px; /* Adjusted font size */
-            font-weight: bold;
-            background-color: rgba(0, 0, 0, 0.7); /* Semi-transparent background */
+        /* Main Content Styling */
+        main {
+            text-align: center;
             padding: 20px;
-            border-radius: 5px;
-            animation: slideIn 30s linear infinite; /* Smooth sliding animation */
+            background-image: url('https://source.unsplash.com/1600x900/?technology,typing');
+            background-size: cover;
+            background-position: center;
+            min-height: 70vh;
         }
 
-        @keyframes slideIn {
-            0% {
-                transform: translateX(-50%) translateY(0); /* Center vertically */
-                left: 50%; /* Stay centered */
-            }
-
-            25% {
-                transform: translateX(-50%) translateY(0); /* Stay centered */
-                left: 0%; /* Move to left edge */
-            }
-
-            75% {
-                transform: translateX(-50%) translateY(0); /* Stay centered */
-                left: 100%; /* Move to right edge */
-            }
-
-            100% {
-                transform: translateX(-50%) translateY(0); /* Center vertically */
-                left: 50%; /* Go back to center */
-            }
+        main h2 {
+            font-size: 2.5rem;
+            margin-bottom: 10px;
         }
 
-        /* Subscribe Section styles */
+        /* Category Grid */
+        .category-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            gap: 30px;
+            margin: 20px;
+        }
+
+        .category-grid div {
+            background: rgba(0, 0, 0, 0.7);
+            border-radius: 8px;
+            padding: 20px;
+            text-align: center;
+            transition: transform 0.3s ease;
+        }
+
+        .category-grid div:hover {
+            transform: scale(1.05);
+        }
+
+        .category-grid i {
+            font-size: 2.5rem;
+            color: orange;
+            margin-bottom: 10px;
+        }
+
+        /* Slideshow */
+        .slideshow-container {
+            max-width: 100%;
+            position: relative;
+            margin: 20px 0;
+        }
+
+        .text-slide {
+            font-size: 2rem;
+            color: white;
+            position: absolute;
+            bottom: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            background-color: rgba(0, 0, 0, 0.6);
+            padding: 15px;
+            border-radius: 10px;
+        }
+
+        .slideshow-container img {
+            width: 100%;
+            height: 400px;
+            object-fit: cover;
+            border-radius: 10px;
+        }
+
+        /* Subscription form */
         #subscribe {
-            margin: 40px 0;
+            margin: 30px 0;
         }
 
         #subscribe input[type="email"] {
@@ -132,87 +142,45 @@
 
         #subscribe button {
             padding: 10px 15px;
-            background-color: #4d4d4d; /* Metallic gray */
+            background-color: #4d4d4d;
             color: white;
             border: none;
             cursor: pointer;
         }
 
-        /* Category Selection styles */
-        .category-grid {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 30px;
-            background: rgba(0, 0, 0, 0.6);
-            padding: 20px;
-            border-radius: 10px;
-            margin: 40px 0; /* Add margin to separate from other sections */
-        }
-
-        .category-grid div {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            font-size: 1.2rem;
-        }
-
-        .category-grid i {
-            font-size: 2.5rem;
-            margin-bottom: 10px;
-            color: #fff;
-        }
-
-        .category-grid div:hover {
-            transform: scale(1.1);
-            transition: transform 0.3s;
-        }
-
-        /* Footer styles */
+        /* Footer */
         footer {
-            background-color: #4d4d4d; /* Metallic gray */
+            background-color: rgba(0, 0, 0, 0.8);
             color: white;
-            text-align: center;
             padding: 20px;
-            position: relative;
-            bottom: 0;
-            width: 100%;
-        }
-
-        .social-icons {
-            margin-top: 10px;
+            text-align: center;
         }
 
         .social-icons a {
             margin: 0 10px;
             color: white;
-            text-decoration: none;
-            font-size: 24px; /* Icon size */
+            font-size: 24px;
         }
 
-        /* Media Query for smaller screens */
+        /* Media Queries */
         @media (max-width: 768px) {
             .hamburger {
-                display: block; /* Show hamburger icon on small screens */
+                display: block;
             }
 
             nav ul {
-                display: none; /* Hide menu items */
                 flex-direction: column;
-                text-align: center;
-                background-color: #162447;
-                padding: 10px 0;
+                display: none;
+                background-color: #222;
+                width: 100%;
             }
 
             nav ul.show {
-                display: flex; /* Show menu items when hamburger is clicked */
+                display: flex;
             }
 
             nav ul li {
                 margin: 10px 0;
-            }
-
-            .text {
-                font-size: 24px; /* Smaller font size for mobile */
             }
         }
     </style>
@@ -220,44 +188,40 @@
 
 <body>
     <header>
-        <h1>Welcome to Martoo EduTech Services</h1>
-        <!-- Profile Picture -->
         <img src="https://drive.google.com/uc?export=view&id=1I7cgQxFrXIn9UB4_75CrQultrto6GKVK" alt="Profile Picture" class="profile-pic">
+        <h1>Welcome to Martoo EduTech Services</h1>
 
-        <div class="hamburger" onclick="toggleMenu()">&#9776;</div> <!-- Hamburger menu icon -->
+        <div class="hamburger" onclick="toggleMenu()">&#9776;</div>
         <nav>
             <ul id="menu">
                 <li><a href="index.html">Home</a></li>
                 <li><a href="services.html">Services</a></li>
                 <li><a href="about.html">About</a></li>
                 <li><a href="contact.html">Contact</a></li>
-                <li><a href="posts.html">Posts</a></li>
-                <li><a href="payment.html">Payment</a></li>
             </ul>
         </nav>
     </header>
 
     <main>
-        <h2>Your gateway to education and technology</h2>
+        <h2>Your Gateway to Education and Technology</h2>
         <p>At Martoo EduTech Services, we provide innovative educational resources and technology solutions to enhance your learning experience.</p>
-
-        <section id="key-services">
-            <h3>Key Services</h3>
-            <ul>
-                <li><a href="posts.html#vpn-files">Download VPN Configurations</a></li>
-                <li><a href="posts.html#school-files">Download School Materials</a></li>
-            </ul>
-        </section>
 
         <section class="slideshow-container">
             <div class="slideshow">
-                <div class="text">Empowering students with innovative tools for success.</div>
-                <div class="text">Access a wealth of resources to enhance your learning journey.</div>
-                <div class="text">Connecting education with technology for a brighter future.</div>
+                <img src="https://source.unsplash.com/1600x900/?vpn,network" alt="VPN Image">
+                <div class="text-slide">Secure and Fast VPN Services</div>
+            </div>
+            <div class="slideshow">
+                <img src="https://source.unsplash.com/1600x900/?typing,work" alt="Typing Image">
+                <div class="text-slide">Typing Services for Students</div>
+            </div>
+            <div class="slideshow">
+                <img src="https://source.unsplash.com/1600x900/?technology,learning" alt="Tech Image">
+                <div class="text-slide">Technology Meets Education</div>
             </div>
         </section>
 
-        <h2>Choose a Category</h2>
+        <h2>Explore Categories</h2>
         <div class="category-grid">
             <div>
                 <i class="fas fa-print"></i>
@@ -285,8 +249,32 @@
             </div>
         </div>
 
-        <!-- Subscription Section with Google Form -->
+        <!-- Subscription Section -->
         <section id="subscribe">
             <h3>Subscribe for Updates</h3>
             <p>Stay updated with our latest services and resources. Enter your email below to subscribe.</p>
-            <iframe
+            <input type="email" placeholder="Enter your email" />
+            <button>Subscribe</button>
+        </section>
+    </main>
+
+    <footer>
+        <p>Follow us on social media:</p>
+        <div class="social-icons">
+            <a href="#"><i class="fab fa-facebook-f"></i></a>
+            <a href="#"><i class="fab fa-twitter"></i></a>
+            <a href="#"><i class="fab fa-linkedin-in"></i></a>
+        </div>
+        <p>&copy; 2024 Martoo EduTech Services. All rights reserved.</p>
+    </footer>
+
+    <script>
+        // Hamburger menu toggle function
+        function toggleMenu() {
+            const menu = document.getElementById('menu');
+            menu.classList.toggle('show');
+        }
+    </script>
+</body>
+
+</html>
