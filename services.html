@@ -238,12 +238,12 @@
                 // Generate unique ID for VMess config
                 const id = generateRandomString(36); // Unique ID for VMess config
                 // VMess configuration in the specified format
-                generatedConfig = `vmess://eyJhZGQiOi "${sni.replace(/\./g, '%2E')}", "aid": "0", "host": "${sni.replace(/\./g, '%2E')}", "id": "${id}", "net": "ws", "path": "/vpn", "port": "443", "ps": "${username}", "tls": "true", "v": "2"}`;
+                generatedConfig = `vmess://eyJhZGQiOiAi${sni.replace(/\./g, '%2E')}", "aid": "0", "host": "${sni.replace(/\./g, '%2E')}", "id": "${id}", "net": "ws", "path": "/vpn", "port": "443", "ps": "${username}", "tls": "true", "v": "2"}`;
             } else if (protocol === "trojan") {
                 // Trojan configuration
                 const trojanAddress = "is1.trojanvpn.xyz"; // Change this based on server location
                 const password = "4cb274d4-1f5f-40ed-a1e9-8e4bfcd9e0c1"; // Fixed password for Trojan
-                generatedConfig = `trojan://${username}@${trojanAddress}:443?security=tls&type=ws&path=%2Fvpn&sni=${sni}#Martoo-Trojan`;
+                generatedConfig = `trojan://${username}:${password}@${trojanAddress}:443?security=tls&type=ws&path=%2Fvpn&sni=${sni}#Martoo-Trojan`;
             }
 
             document.getElementById("generatedCode").value = generatedConfig;
