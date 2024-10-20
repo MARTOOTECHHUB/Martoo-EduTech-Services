@@ -223,20 +223,24 @@
             return result;
         }
 
+        function generateUserId() {
+            const uniqueId = generateRandomString(12); // Generate a unique ID for the username
+            return `Martoo_${uniqueId}`; // Username format
+        }
+
         function generateConfig() {
             const sni = document.getElementById("sni").value;
             const protocol = document.getElementById("protocol").value;
 
             // Generate unique username and password
-            const uniqueId = generateRandomString(24); // Unique ID for username
-            const username = `Martoo_${uniqueId}`; // Username format
+            const username = generateUserId(); // Generate username
             const password = generateRandomString(36); // Password format
             
             let generatedConfig = '';
 
             if (protocol === "vmess") {
                 // VMess configuration
-                generatedConfig = `vmess://eyJhZGQiOiAi${sni},"username":"${username}","alterId":0,"id":"${password}"}`
+                generatedConfig = `vmess://{"v": "2", "ps": "${username}", "add": "${sni}", "port": "443", "id": "${password}", "aid": "0", "net": "ws", "type": "none", "host": "${sni}", "path": "/", "tls": "true"}`;
             } else if (protocol === "trojan") {
                 // Trojan configuration
                 generatedConfig = `trojan://${username}@${sni}:443?security=tls&type=ws&path=%2Fvpn&sni=${sni}#Martoo-Trojan`;
