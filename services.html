@@ -178,7 +178,7 @@
         <h3>VPN Configuration Generator</h3>
         <form id="configGenerator">
             <label for="sni">SNI (Server Name Indication):</label>
-            <input type="text" id="sni" placeholder="e.g., is1.trojanvpn.xyz" required>
+            <input type="text" id="sni" placeholder="e.g., be3.vmess.site" required>
             
             <label for="protocol">Protocol:</label>
             <select id="protocol" required>
@@ -234,13 +234,13 @@
 
             // Generate unique username and password
             const username = generateUserId(); // Generate username
-            const password = generateRandomString(36); // Password format
-            
+            const id = generateRandomString(36); // Unique ID for VMess config
+
             let generatedConfig = '';
 
             if (protocol === "vmess") {
-                // VMess configuration
-                generatedConfig = `vmess://{"v": "2", "ps": "${username}", "add": "${sni}", "port": "443", "id": "${password}", "aid": "0", "net": "ws", "type": "none", "host": "${sni}", "path": "/", "tls": "true"}`;
+                // VMess configuration in the specified format
+                generatedConfig = `vmess://eyJhZGQiOiAi${sni.replace(/\./g, '%2E')}, "aid": "0", "host": "${sni.replace(/\./g, '%2E')}", "id": "${id}", "net": "ws", "path": "/vpn", "port": "443", "ps": "${username}", "tls": "true", "v": "2"}`;
             } else if (protocol === "trojan") {
                 // Trojan configuration
                 generatedConfig = `trojan://${username}@${sni}:443?security=tls&type=ws&path=%2Fvpn&sni=${sni}#Martoo-Trojan`;
