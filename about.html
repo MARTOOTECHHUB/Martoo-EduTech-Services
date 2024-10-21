@@ -4,7 +4,6 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>About Us - Martoo EduTech Services</title>
-    <link rel="stylesheet" href="styles.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"> <!-- Font Awesome CDN -->
     <style>
         body {
@@ -25,6 +24,17 @@
             position: relative;
         }
 
+        /* Hamburger Menu */
+        .hamburger {
+            display: none;
+            font-size: 30px;
+            position: absolute;
+            top: 10px;
+            right: 20px;
+            cursor: pointer;
+            color: #fff;
+        }
+
         nav ul {
             list-style-type: none;
             padding: 0;
@@ -41,6 +51,34 @@
             text-decoration: none;
             color: white;
             font-weight: bold;
+        }
+
+        /* For smaller screens - Show the hamburger */
+        @media (max-width: 768px) {
+            nav ul {
+                display: none;
+                flex-direction: column;
+                background-color: #4d4d4d;
+                position: absolute;
+                top: 60px;
+                right: 0;
+                width: 200px;
+            }
+
+            nav ul li {
+                margin: 10px 0;
+            }
+
+            .hamburger {
+                display: block;
+            }
+        }
+
+        .profile-img {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            margin-top: 20px;
         }
 
         main {
@@ -72,6 +110,8 @@
 <body>
     <header>
         <h1>Martoo EduTech Services</h1>
+        <img src="Picsart_24-10-14_17-15-30-797.jpg" alt="Profile Picture" class="profile-img">
+        <div class="hamburger" onclick="toggleMenu()">&#9776;</div>
         <nav>
             <ul>
                 <li><a href="index.html">Home</a></li>
@@ -119,5 +159,12 @@
             </a>
         </div>
     </footer>
+
+    <script>
+        function toggleMenu() {
+            const nav = document.querySelector('nav ul');
+            nav.style.display = (nav.style.display === 'flex') ? 'none' : 'flex';
+        }
+    </script>
 </body>
 </html>
