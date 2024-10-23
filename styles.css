@@ -1,13 +1,19 @@
 /* styles.css */
 
+/* Universal Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box; /* Helps with sizing */
+}
+
 /* General styles */
 body {
     background-color: #1a1a2e; /* Dark navy blue */
     color: #f0f0f0; /* Light gray text */
     font-family: 'Arial', sans-serif;
-    margin: 0;
-    padding: 0;
     animation: backgroundAnimation 15s ease infinite; /* Animation for the background */
+    overflow-x: hidden; /* Prevent horizontal scroll */
 }
 
 @keyframes backgroundAnimation {
@@ -40,6 +46,8 @@ nav {
 }
 
 nav ul {
+    display: flex; /* Use flexbox for navigation */
+    justify-content: center; /* Center the items */
     list-style-type: none;
     padding: 0;
 }
@@ -74,6 +82,8 @@ nav ul li a:hover {
 }
 
 main {
+    max-width: 1200px; /* Set a max width for the main content */
+    margin: 0 auto; /* Center the main content */
     padding: 20px;
     text-align: center;
 }
@@ -140,4 +150,4 @@ footer {
     .hamburger {
         display: block; /* Show hamburger icon on small screens */
     }
-}
+    }
