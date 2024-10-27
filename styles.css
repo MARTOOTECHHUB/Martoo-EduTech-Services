@@ -39,8 +39,7 @@ header {
     padding: 20px;
     text-align: center;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.4);
-    width: 100%; /* Full width */
-    margin: 0; /* Remove default margin */
+    width: 100%; /* Ensure header fits the page width */
 }
 
 nav {
@@ -134,8 +133,7 @@ footer {
     padding: 10px 0;
     position: relative;
     bottom: 0;
-    width: 100%; /* Full width */
-    margin: 0; /* Remove default margin */
+    width: 100%; /* Ensure footer fits the page width */
     box-shadow: 0 -4px 8px rgba(0, 0, 0, 0.4);
 }
 
