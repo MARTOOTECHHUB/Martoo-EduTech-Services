@@ -25,20 +25,22 @@
             text-align: center;
             padding: 20px;
             position: relative;
+            width: 100vw; /* Full page width */
+            box-sizing: border-box; /* Ensures padding doesn't add extra width */
         }
 
         /* Hamburger menu styling */
         .hamburger {
             position: absolute;
             top: 10px;
-            right: 10px; /* Position it in the top-right corner */
+            right: 10px;
             font-size: 30px;
-            color: #ffcc00; /* Yellow/Gold color for better contrast */
+            color: #ffcc00;
             cursor: pointer;
-            background-color: rgba(0, 0, 0, 0.5); /* Dark transparent background */
+            background-color: rgba(0, 0, 0, 0.5);
             padding: 10px;
             border-radius: 5px;
-            border: 2px solid #ffcc00; /* Add a gold border for contrast */
+            border: 2px solid #ffcc00;
         }
 
         /* Circular profile picture in the background of the header */
@@ -49,9 +51,9 @@
             transform: translate(-50%, -50%);
             width: 150px;
             height: 150px;
-            border-radius: 50%; /* Circle shape */
+            border-radius: 50%;
             overflow: hidden;
-            opacity: 0.5; /* Make the profile picture transparent so it blends in */
+            opacity: 0.5;
         }
 
         .profile-pic img {
@@ -64,7 +66,7 @@
         nav ul {
             list-style-type: none;
             padding: 0;
-            display: none; /* Initially hide the menu */
+            display: none;
         }
 
         nav ul li {
@@ -72,16 +74,16 @@
         }
 
         nav ul li a {
-            color: #ffcc00; /* Yellow text */
+            color: #ffcc00;
             text-decoration: none;
             padding: 10px;
             display: block;
-            background-color: rgba(0, 0, 0, 0.7); /* Darker background */
+            background-color: rgba(0, 0, 0, 0.7);
             border-radius: 5px;
         }
 
         nav ul li a:hover {
-            background-color: rgba(255, 204, 0, 0.5); /* Light hover effect with yellow tint */
+            background-color: rgba(255, 204, 0, 0.5);
         }
 
         /* Show the menu when toggled */
@@ -92,17 +94,17 @@
         /* Section for key content with a background image */
         #content-section {
             position: relative;
-            background-image: url('Picsart_24-10-14_17-15-30-797.jpg'); /* Add the new image */
+            background-image: url('Picsart_24-10-14_17-15-30-797.jpg');
             background-size: cover;
             background-position: center;
-            color: #333333; /* Darker text to contrast with the white image */
+            color: #333333;
             text-align: center;
             padding: 60px 20px;
         }
 
         #content-section h2,
         #content-section p {
-            background-color: rgba(255, 255, 255, 0.7); /* Adding a white semi-transparent background for better visibility */
+            background-color: rgba(255, 255, 255, 0.7);
             padding: 20px;
             border-radius: 10px;
             display: inline-block;
@@ -113,20 +115,21 @@
         /* Section for key services */
         #key-services {
             margin: 40px 0;
-            background-color: rgba(0, 0, 0, 0.7); /* Adding a semi-transparent overlay */
+            background-color: rgba(0, 0, 0, 0.7);
             padding: 20px;
             border-radius: 5px;
         }
 
         /* Footer styles */
         footer {
-            background-color: #4d4d4d; /* Metallic gray */
+            background-color: #4d4d4d;
             color: white;
             text-align: center;
             padding: 20px;
             position: relative;
             bottom: 0;
-            width: 100%;
+            width: 100vw; /* Full page width */
+            box-sizing: border-box;
         }
 
         /* Social media icons */
@@ -134,7 +137,7 @@
             margin: 0 10px;
             color: white;
             text-decoration: none;
-            font-size: 24px; /* Icon size */
+            font-size: 24px;
         }
 
         /* Additional image section */
@@ -149,13 +152,46 @@
             max-width: 1200px;
             border-radius: 10px;
         }
+
+        /* Login form styling */
+        #login-form {
+            background-color: rgba(0, 0, 0, 0.7);
+            color: #f0f0f0;
+            padding: 20px;
+            border-radius: 5px;
+            max-width: 400px;
+            margin: 40px auto;
+            text-align: center;
+        }
+
+        #login-form input[type="text"],
+        #login-form input[type="password"] {
+            width: 100%;
+            padding: 10px;
+            margin: 10px 0;
+            border: none;
+            border-radius: 5px;
+            background-color: #fff;
+        }
+
+        #login-form button {
+            background-color: #ffcc00;
+            color: #333;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        #login-form button:hover {
+            background-color: #e6b800;
+        }
     </style>
 </head>
 <body>
     <header>
         <h1>Welcome to Martoo EduTech Services</h1>
         <div class="hamburger" onclick="toggleMenu()">&#9776;</div>
-        <!-- Profile pic as part of the header background -->
         <div class="profile-pic">
             <img src="Picsart_24-10-14_17-15-30-797.jpg" alt="Profile Picture">
         </div>
@@ -186,16 +222,20 @@
             </ul>
         </section>
 
-        <!-- Subscription Section with Google Form -->
-        <section id="subscribe">
-            <h3>Subscribe for Updates</h3>
-            <p>Stay updated with our latest services and resources. Enter your email below to subscribe.</p>
-            <iframe src="https://forms.gle/QNGy6R6UrbEZZcBC7" width="640" height="600" frameborder="0" marginheight="0" marginwidth="0">Loading…</iframe>
+        <!-- Login Form Section -->
+        <section id="login-form">
+            <h3>Subscribe to Access</h3>
+            <p>Enter your details below to access exclusive content.</p>
+            <form>
+                <input type="text" name="username" placeholder="Username" required>
+                <input type="password" name="password" placeholder="Password" required>
+                <button type="submit">Subscribe</button>
+            </form>
         </section>
 
         <!-- Additional Image Section -->
         <section class="additional-image">
-            <img src="2bAeeplNUPEkhqlhqUlJqmDZM6Y.jpg" alt="Additional Image"> <!-- Another image -->
+            <img src="2bAeeplNUPEkhqlhqUlJqmDZM6Y.jpg" alt="Additional Image">
         </section>
     </main>
 
