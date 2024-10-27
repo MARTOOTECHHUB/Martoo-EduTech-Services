@@ -39,6 +39,8 @@ header {
     padding: 20px;
     text-align: center;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.4);
+    width: 100%; /* Full width */
+    margin: 0; /* Remove default margin */
 }
 
 nav {
@@ -132,7 +134,8 @@ footer {
     padding: 10px 0;
     position: relative;
     bottom: 0;
-    width: 100%;
+    width: 100%; /* Full width */
+    margin: 0; /* Remove default margin */
     box-shadow: 0 -4px 8px rgba(0, 0, 0, 0.4);
 }
 
@@ -150,4 +153,4 @@ footer {
     .hamburger {
         display: block; /* Show hamburger icon on small screens */
     }
-    }
+}
