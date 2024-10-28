@@ -3,215 +3,194 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="canonical" href="http://www.martootechhub.wuaze.com/">
-    <title>Martoo EduTech Services</title>
+    <title>Downloads - Martoo EduTech Services</title>
     <link rel="stylesheet" href="styles.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"> <!-- Font Awesome CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"> <!-- Font Awesome for icons -->
     <style>
-        /* General body background and layout settings */
         body {
-            background-color: #333333; /* Dark earthy color */
-            color: #f0f0f0;
-            margin: 0;
             font-family: Arial, sans-serif;
+            background-color: #333333; /* Dark background for consistency */
+            color: #f0f0f0; /* Light text color for better visibility */
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh; /* Ensure footer is pushed to the bottom */
         }
-
-        /* Header styles with background image */
         header {
-            background-image: url('2iot1DLC4y3YvbNcUyOuHKNuabg.jpg'); /* Add your header background image */
-            background-size: cover;
-            background-position: center;
+            background-color: #0072c6;
             color: white;
+            padding: 10px 0;
             text-align: center;
-            padding: 20px;
-            position: relative;
         }
-
-        /* Hamburger menu styling */
-        .hamburger {
-            position: absolute;
-            top: 10px;
-            right: 10px; /* Position it in the top-right corner */
-            font-size: 30px;
-            color: #ffcc00; /* Yellow/Gold color for better contrast */
-            cursor: pointer;
-            background-color: rgba(0, 0, 0, 0.5); /* Dark transparent background */
-            padding: 10px;
-            border-radius: 5px;
-            border: 2px solid #ffcc00; /* Add a gold border for contrast */
-        }
-
-        /* Circular profile picture in the background of the header */
-        .profile-pic {
-            position: absolute;
-            top: 50%;
-            left: 5%;
-            transform: translate(-50%, -50%);
-            width: 150px;
-            height: 150px;
-            border-radius: 50%; /* Circle shape */
-            overflow: hidden;
-            opacity: 0.5; /* Make the profile picture transparent so it blends in */
-        }
-
-        .profile-pic img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-        }
-
-        /* Navigation styles */
         nav ul {
             list-style-type: none;
             padding: 0;
-            display: none; /* Initially hide the menu */
         }
-
         nav ul li {
-            margin: 10px 0;
+            display: inline;
+            margin: 0 15px;
         }
-
         nav ul li a {
-            color: #ffcc00; /* Yellow text */
+            color: white;
             text-decoration: none;
+        }
+        main {
+            padding: 20px;
+            flex: 1; /* Allow main content to expand and push footer down */
+        }
+        .payment-option {
+            background-color: #0072c6;
+            color: white;
             padding: 10px;
-            display: block;
-            background-color: rgba(0, 0, 0, 0.7); /* Darker background */
-            border-radius: 5px;
-        }
-
-        nav ul li a:hover {
-            background-color: rgba(255, 204, 0, 0.5); /* Light hover effect with yellow tint */
-        }
-
-        /* Show the menu when toggled */
-        #menu.show {
-            display: block;
-        }
-
-        /* Section for key content with a background image */
-        #content-section {
-            position: relative;
-            background-image: url('Picsart_24-10-14_17-15-30-797.jpg'); /* Add the new image */
-            background-size: cover;
-            background-position: center;
-            color: #333333; /* Darker text to contrast with the white image */
+            border: none;
+            cursor: pointer;
+            margin: 10px 0;
             text-align: center;
-            padding: 60px 20px;
-        }
-
-        #content-section h2,
-        #content-section p {
-            background-color: rgba(255, 255, 255, 0.7); /* Adding a white semi-transparent background for better visibility */
-            padding: 20px;
-            border-radius: 10px;
-            display: inline-block;
-            margin: 20px auto;
-            max-width: 800px;
-        }
-
-        /* Section for key services */
-        #key-services {
-            margin: 40px 0;
-            background-color: rgba(0, 0, 0, 0.7); /* Adding a semi-transparent overlay */
-            padding: 20px;
             border-radius: 5px;
+            transition: background-color 0.3s;
         }
-
-        /* Footer styles */
+        .payment-option:hover {
+            background-color: #005999; /* Darker blue on hover */
+        }
         footer {
-            background-color: #4d4d4d; /* Metallic gray */
+            background-color: #0072c6;
             color: white;
             text-align: center;
-            padding: 20px;
-            position: relative;
-            bottom: 0;
-            width: 100%;
+            padding: 10px;
         }
-
-        /* Social media icons */
-        .social-icons a {
+        /* Styling for social media icons in footer */
+        .social-icons {
+            list-style-type: none;
+            padding: 0;
+            margin: 10px 0;
+            display: flex;
+            justify-content: center;
+        }
+        .social-icons li {
             margin: 0 10px;
+        }
+        .social-icons a {
             color: white;
             text-decoration: none;
-            font-size: 24px; /* Icon size */
+            font-size: 24px; /* Size of the icons */
         }
-
-        /* Additional image section */
-        .additional-image {
-            margin-top: 20px;
-            text-align: center;
-        }
-
-        .additional-image img {
-            width: 100%;
-            height: auto;
-            max-width: 1200px;
-            border-radius: 10px;
+        .instruction {
+            margin-bottom: 10px; /* Space below the instruction */
+            font-size: 14px; /* Slightly smaller font for the instruction */
+            color: #FFD700; /* Gold color for visibility */
         }
     </style>
 </head>
 <body>
     <header>
-        <h1>Welcome to Martoo EduTech Services</h1>
-        <div class="hamburger" onclick="toggleMenu()">&#9776;</div>
-        <!-- Profile pic as part of the header background -->
-        <div class="profile-pic">
-            <img src="Picsart_24-10-14_17-15-30-797.jpg" alt="Profile Picture">
-        </div>
+        <h1>Martoo EduTech Services</h1>
         <nav>
-            <ul id="menu">
+            <div class="hamburger" onclick="toggleMenu()">
+                &#9776; <!-- Hamburger icon -->
+            </div>
+            <ul id="menu" class="hidden">
                 <li><a href="index.html">Home</a></li>
                 <li><a href="services.html">Services</a></li>
                 <li><a href="about.html">About</a></li>
                 <li><a href="contact.html">Contact</a></li>
                 <li><a href="posts.html">Posts</a></li>
-                <li><a href="payment.html">Payment</a></li>
             </ul>
         </nav>
     </header>
-
-    <!-- New Section with Background Image -->
-    <section id="content-section">
-        <h2>Your gateway to education and technology</h2>
-        <p>At Martoo EduTech Services, we provide innovative educational resources and technology solutions to enhance your learning experience.</p>
-    </section>
-
+    
     <main>
-        <section id="key-services">
-            <h3>Key Services</h3>
-            <ul>
-                <li><a href="posts.html#vpn-files">Download VPN Configurations</a></li>
-                <li><a href="posts.html#school-files">Download School Materials</a></li>
-            </ul>
+        <h2>Available Downloads</h2>
+
+        <section id="vpn-files">
+            <h3>VPN Configuration Files</h3>
+            <p class="instruction">After making your payment, please return here. You will be able to download the configurations after 20 seconds.</p>
+            <p class="instruction">Make payments to this number: <strong>0774766077</strong></p>
+            <button class="payment-option" onclick="redirectToPayment('vpn')">Make Payment (K 25)</button>
+            <div id="download-link-vpn" style="display: none;">
+                <p>Thank you for your payment!</p>
+                <a id="vpn-download" href="#" target="_blank">Download VPN Configurations</a>
+            </div>
         </section>
 
-        <!-- Subscription Section with Google Form -->
-        <section id="subscribe">
-            <h3>Subscribe for Updates</h3>
-            <p>Stay updated with our latest services and resources. Enter your email below to subscribe.</p>
-            <iframe src="https://forms.gle/QNGy6R6UrbEZZcBC7" width="640" height="600" frameborder="0" marginheight="0" marginwidth="0">Loading…</iframe>
+        <section id="school-files">
+            <h3>School Materials</h3>
+            <p class="instruction">After making your payment, please return here. You will be able to download the materials after 20 seconds.</p>
+            <p class="instruction">Make payments to this number: <strong>0774766077</strong></p>
+            <button class="payment-option" onclick="redirectToPayment('school')">Make Payment (K 25)</button>
+            <div id="download-link-school" style="display: none;">
+                <p>Thank you for your payment!</p>
+                <a id="school-download" href="https://martootechhub.github.io/Martoo-EduTech-Services/school-supplies78.zip" target="_blank">Download School Materials</a>
+            </div>
         </section>
 
-        <!-- Additional Image Section -->
-        <section class="additional-image">
-            <img src="2bAeeplNUPEkhqlhqUlJqmDZM6Y.jpg" alt="Additional Image"> <!-- Another image -->
+        <section id="relationship-agreement">
+            <h3>Download Relationship Agreement</h3>
+            <p class="instruction">To download the Relationship Agreement, please enter the password.</p>
+            <input type="password" id="agreement-password" placeholder="Enter Password" style="padding: 10px; width: 80%;" />
+            <button onclick="checkAgreementPassword()" style="padding: 10px; margin-top: 10px;">Download</button>
+            <div id="agreement-download-link" style="display: none;">
+                <p>Thank you for entering the correct password!</p>
+                <a id="agreement-download" href="path/to/RELA.docx" target="_blank">Download Relationship Agreement</a> <!-- Ensure the correct path is set -->
+            </div>
+        </section>
+
+        <section id="video">
+            <h3>Watch Our Video</h3>
+            <p>Learn how to create V2Ray configuration files step-by-step in this informative video!</p>
+            <iframe width="560" height="315" src="https://www.youtube.com/embed/J-DNnARdB8E" frameborder="0" allowfullscreen></iframe>
+        </section>
+
+        <section id="more-videos">
+            <h3>Watch More Videos</h3>
+            <p>Expand your knowledge with more tutorials!</p>
+            <iframe width="560" height="315" src="https://www.youtube.com/embed/Y1buMCBNh-U" frameborder="0" allowfullscreen></iframe>
+            <br><br>
+            <iframe width="560" height="315" src="https://www.youtube.com/embed/w0_sFwO1IR8" frameborder="0" allowfullscreen></iframe>
         </section>
     </main>
 
     <footer>
-        <p>&copy; 2024 Martoo EduTech Services - All rights reserved.</p>
-        <div class="social-icons">
-            <a href="https://youtube.com/@martootech?si=WtTmTBtO6VjvajdN"><i class="fab fa-youtube"></i></a>
-            <a href="https://www.facebook.com/profile.php?id=61561559594029"><i class="fab fa-facebook-f"></i></a>
-            <a href="https://wa.me/260950322498"><i class="fab fa-whatsapp"></i></a>
-        </div>
+        <p>&copy; 2024 Martoo EduTech Services. All rights reserved.</p>
+        <ul class="social-icons">
+            <li><a href="https://youtube.com/@martootech?si=WtTmTBtO6VjvajdN" target="_blank"><i class="fab fa-youtube"></i></a></li>
+            <li><a href="https://www.facebook.com/profile.php?id=61561559594029" target="_blank"><i class="fab fa-facebook"></i></a></li>
+            <li><a href="https://wa.me/260950322498" target="_blank"><i class="fab fa-whatsapp"></i></a></li>
+        </ul>
     </footer>
 
     <script>
+        function redirectToPayment(type) {
+            // Redirect to Airtel Money app
+            window.open("https://play.google.com/store/apps/details?id=com.airtel.africa.selfcare", "_blank");
+            // Simulate payment confirmation after a delay
+            setTimeout(function() {
+                confirmPayment(type);
+            }, 20000); // Wait for 20 seconds before confirming payment
+        }
+
+        function confirmPayment(type) {
+            // Show the relevant download link based on the type
+            if (type === 'vpn') {
+                document.getElementById("download-link-vpn").style.display = "block";
+                document.getElementById("vpn-download").href = "https://martootechhub.github.io/Martoo-EduTech-Services/vpn-config.78.zip";
+                alert('Payment confirmed! You can now download the VPN configurations. Please refresh the page after 20 seconds if you do not see the download link.');
+            } else if (type === 'school') {
+                document.getElementById("download-link-school").style.display = "block";
+                alert('Payment confirmed! You can now download the school materials. Please refresh the page after 20 seconds if you do not see the download link.');
+            }
+        }
+
+        function checkAgreementPassword() {
+            var password = document.getElementById("agreement-password").value;
+            if (password === "MARTOO") {  // Check if the entered password is correct
+                document.getElementById("agreement-download-link").style.display = "block"; // Show download link
+            } else {
+                alert("Incorrect password. Please try again."); // Alert for incorrect password
+            }}
+        }
+
         function toggleMenu() {
             var menu = document.getElementById("menu");
-            menu.classList.toggle("show");
+            menu.classList.toggle("hidden"); // Toggle the visibility of the menu
         }
     </script>
 </body>
