@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Downloads - Martoo EduTech Services</title>
+    <title>Martoo EduTech Services - Posts</title>
     <link rel="stylesheet" href="styles.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <style>
@@ -74,6 +74,19 @@
             color: white;
             font-size: 24px;
         }
+        .content-section {
+            margin-top: 20px;
+        }
+        .content-section h3 {
+            color: #FFD700;
+        }
+        .content-section ul {
+            list-style-type: none;
+            padding: 0;
+        }
+        .content-section ul li {
+            padding: 5px 0;
+        }
     </style>
 </head>
 <body>
@@ -97,7 +110,25 @@
     <!-- Main Content Section -->
     <main>
         <h2>Available Downloads</h2>
-        <!-- Content Sections for VPN, School Materials, etc. go here -->
+        
+        <!-- Content Section -->
+        <div class="content-section">
+            <h3>VPN Configurations</h3>
+            <ul>
+                <li><a href="vpn/vmess-config.ovpn" download>Download Vmess Configuration</a></li>
+                <li><a href="vpn/trojan-config.ovpn" download>Download Trojan Configuration</a></li>
+                <li><a href="vpn/udp-config.ovpn" download>Download UDP Configuration</a></li>
+            </ul>
+        </div>
+
+        <div class="content-section">
+            <h3>Educational Materials</h3>
+            <ul>
+                <li><a href="materials/biology-notes.pdf" download>Download Biology Notes</a></li>
+                <li><a href="materials/chemistry-notes.pdf" download>Download Chemistry Notes</a></li>
+                <li><a href="materials/physics-notes.pdf" download>Download Physics Notes</a></li>
+            </ul>
+        </div>
     </main>
 
     <!-- Footer Section -->
