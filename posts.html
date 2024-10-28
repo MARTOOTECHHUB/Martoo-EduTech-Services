@@ -5,51 +5,54 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Downloads - Martoo EduTech Services</title>
     <link rel="stylesheet" href="styles.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"> <!-- Font Awesome for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <style>
         body {
             font-family: Arial, sans-serif;
-            background-color: #333333; /* Dark background for consistency */
-            color: #f0f0f0; /* Light text color for better visibility */
+            background-color: #333333;
+            color: #f0f0f0;
             display: flex;
             flex-direction: column;
-            min-height: 100vh; /* Ensure footer is pushed to the bottom */
+            min-height: 100vh;
         }
         header {
             background-color: #0072c6;
             color: white;
-            padding: 10px 0;
+            padding: 10px;
             text-align: center;
         }
         nav ul {
             list-style-type: none;
             padding: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            display: none;
         }
         nav ul li {
-            display: inline;
-            margin: 0 15px;
+            margin: 5px 0;
         }
         nav ul li a {
             color: white;
             text-decoration: none;
         }
+        .hamburger {
+            font-size: 24px;
+            cursor: pointer;
+            display: inline-block;
+        }
+        @media (min-width: 768px) {
+            nav ul {
+                display: flex;
+                flex-direction: row;
+            }
+            .hamburger {
+                display: none;
+            }
+        }
         main {
             padding: 20px;
-            flex: 1; /* Allow main content to expand and push footer down */
-        }
-        .payment-option {
-            background-color: #0072c6;
-            color: white;
-            padding: 10px;
-            border: none;
-            cursor: pointer;
-            margin: 10px 0;
-            text-align: center;
-            border-radius: 5px;
-            transition: background-color 0.3s;
-        }
-        .payment-option:hover {
-            background-color: #005999; /* Darker blue on hover */
+            flex: 1;
         }
         footer {
             background-color: #0072c6;
@@ -57,7 +60,6 @@
             text-align: center;
             padding: 10px;
         }
-        /* Styling for social media icons in footer */
         .social-icons {
             list-style-type: none;
             padding: 0;
@@ -70,22 +72,17 @@
         }
         .social-icons a {
             color: white;
-            text-decoration: none;
-            font-size: 24px; /* Size of the icons */
-        }
-        .instruction {
-            margin-bottom: 10px; /* Space below the instruction */
-            font-size: 14px; /* Slightly smaller font for the instruction */
-            color: #FFD700; /* Gold color for visibility */
+            font-size: 24px;
         }
     </style>
 </head>
 <body>
+    <!-- Header Section -->
     <header>
         <h1>Martoo EduTech Services</h1>
         <nav>
             <div class="hamburger" onclick="toggleMenu()">
-                &#9776; <!-- Hamburger icon -->
+                &#9776;
             </div>
             <ul id="menu" class="hidden">
                 <li><a href="index.html">Home</a></li>
@@ -97,57 +94,13 @@
         </nav>
     </header>
     
+    <!-- Main Content Section -->
     <main>
         <h2>Available Downloads</h2>
-
-        <section id="vpn-files">
-            <h3>VPN Configuration Files</h3>
-            <p class="instruction">After making your payment, please return here. You will be able to download the configurations after 20 seconds.</p>
-            <p class="instruction">Make payments to this number: <strong>0774766077</strong></p>
-            <button class="payment-option" onclick="redirectToPayment('vpn')">Make Payment (K 25)</button>
-            <div id="download-link-vpn" style="display: none;">
-                <p>Thank you for your payment!</p>
-                <a id="vpn-download" href="#" target="_blank">Download VPN Configurations</a>
-            </div>
-        </section>
-
-        <section id="school-files">
-            <h3>School Materials</h3>
-            <p class="instruction">After making your payment, please return here. You will be able to download the materials after 20 seconds.</p>
-            <p class="instruction">Make payments to this number: <strong>0774766077</strong></p>
-            <button class="payment-option" onclick="redirectToPayment('school')">Make Payment (K 25)</button>
-            <div id="download-link-school" style="display: none;">
-                <p>Thank you for your payment!</p>
-                <a id="school-download" href="https://martootechhub.github.io/Martoo-EduTech-Services/school-supplies78.zip" target="_blank">Download School Materials</a>
-            </div>
-        </section>
-
-        <section id="relationship-agreement">
-            <h3>Download Relationship Agreement</h3>
-            <p class="instruction">To download the Relationship Agreement, please enter the password.</p>
-            <input type="password" id="agreement-password" placeholder="Enter Password" style="padding: 10px; width: 80%;" />
-            <button onclick="checkAgreementPassword()" style="padding: 10px; margin-top: 10px;">Download</button>
-            <div id="agreement-download-link" style="display: none;">
-                <p>Thank you for entering the correct password!</p>
-                <a id="agreement-download" href="RELA.docx" target="_blank">Download Relationship Agreement</a>
-            </div>
-        </section>
-
-        <section id="video">
-            <h3>Watch Our Video</h3>
-            <p>Learn how to create V2Ray configuration files step-by-step in this informative video!</p>
-            <iframe width="560" height="315" src="https://www.youtube.com/embed/J-DNnARdB8E" frameborder="0" allowfullscreen></iframe>
-        </section>
-
-        <section id="more-videos">
-            <h3>Watch More Videos</h3>
-            <p>Expand your knowledge with more tutorials!</p>
-            <iframe width="560" height="315" src="https://www.youtube.com/embed/Y1buMCBNh-U" frameborder="0" allowfullscreen></iframe>
-            <br><br>
-            <iframe width="560" height="315" src="https://www.youtube.com/embed/w0_sFwO1IR8" frameborder="0" allowfullscreen></iframe>
-        </section>
+        <!-- Content Sections for VPN, School Materials, etc. go here -->
     </main>
 
+    <!-- Footer Section -->
     <footer>
         <p>&copy; 2024 Martoo EduTech Services. All rights reserved.</p>
         <ul class="social-icons">
@@ -158,34 +111,9 @@
     </footer>
 
     <script>
-        function redirectToPayment(type) {
-            // Redirect to Airtel Money app
-            window.open("https://play.google.com/store/apps/details?id=com.airtel.africa.selfcare", "_blank");
-            // Simulate payment confirmation after a delay
-            setTimeout(function() {
-                confirmPayment(type);
-            }, 20000); // Wait for 20 seconds before confirming payment
-        }
-
-        function confirmPayment(type) {
-            // Show the relevant download link based on the type
-            if (type === 'vpn') {
-                document.getElementById("download-link-vpn").style.display = "block";
-                document.getElementById("vpn-download").href = "https://martootechhub.github.io/Martoo-EduTech-Services/vpn-config.78.zip";
-                alert('Payment confirmed! You can now download the VPN configurations. Please refresh the page after 20 seconds if you do not see the download link.');
-            } else if (type === 'school') {
-                document.getElementById("download-link-school").style.display = "block";
-                alert('Payment confirmed! You can now download the school materials. Please refresh the page after 20 seconds if you do not see the download link.');
-            }
-        }
-
-        function checkAgreementPassword() {
-            var password = document.getElementById("agreement-password").value;
-            if (password === "MARTOO") {  // Check if the entered password is correct
-                document.getElementById("agreement-download-link").style.display = "block"; // Show download link
-            } else {
-                alert("Incorrect password. Please try again.");
-            }
+        function toggleMenu() {
+            const menu = document.getElementById('menu');
+            menu.classList.toggle('hidden');
         }
     </script>
 </body>
