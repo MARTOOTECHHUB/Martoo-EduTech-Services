@@ -1,258 +1,327 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="canonical" href="http://www.martootechhub.wuaze.com/">
-    <title>Martoo EduTech Services</title>
-    <link rel="stylesheet" href="styles.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"> <!-- Font Awesome CSS -->
-    <style>
-        /* General body background and layout settings */
-        body {
-            background-color: #333333; /* Dark earthy color */
-            color: #f0f0f0;
-            margin: 0;
-            font-family: Arial, sans-serif;
-        }
+<!doctype html>
+    <html class="no-js" lang="">
+    <meta http-equiv="content-type" content="text/html;charset=UTF-8" />
+    <head>
+        <!-- Global site tag (gtag.js) - Google Analytics -->
+        <script async src="https://www.googletagmanager.com/gtag/js?id=UA-148711907-1"></script>
+        <script>
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments);}
+          gtag('js', new Date());
 
-        /* Header styles with background image */
-        header {
-            background-image: url('2iot1DLC4y3YvbNcUyOuHKNuabg.jpg'); /* Add your header background image */
-            background-size: cover;
-            background-position: center;
-            color: white;
-            text-align: center;
-            padding: 20px;
-            position: relative;
-            width: 100vw; /* Full page width */
-            box-sizing: border-box; /* Ensures padding doesn't add extra width */
-        }
+          gtag('config', 'UA-148711907-1');
+        //   console.log("Landing page here")
+        </script>
 
-        /* Hamburger menu styling */
-        .hamburger {
-            position: absolute;
-            top: 10px;
-            right: 10px;
-            font-size: 30px;
-            color: #ffcc00;
-            cursor: pointer;
-            background-color: rgba(0, 0, 0, 0.5);
-            padding: 10px;
-            border-radius: 5px;
-            border: 2px solid #ffcc00;
-        }
+        <meta charset="utf-8">
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+        <title>Unilus | Home</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+		<!-- Style for The Notice -->
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>	
+        <!-- Favicon -->
+        <link rel="shortcut icon" type="image/x-icon" href="img/favicon.png">
+        <!-- Normalize CSS -->
+        <link rel="stylesheet" href="css/normalize.css">
+        <!-- Main CSS -->
+        <link rel="stylesheet" href="css/main.css">
+        <!-- Bootstrap CSS -->
+        <link rel="stylesheet" href="css/bootstrap.min.css">
+        <!-- Animate CSS -->
+        <link rel="stylesheet" href="css/animate.min.css">
+        <!-- Font-awesome CS/S-->
+        <link rel="stylesheet" href="css/font-awesome.min.css">
+        <!-- Owl Caousel CSS -->
+        <link rel="stylesheet" href="vendor/OwlCarousel/owl.carousel.min.css">
+        <link rel="stylesheet" href="vendor/OwlCarousel/owl.theme.default.min.css">
+        <!-- Main Menu CSS -->
+        <link rel="stylesheet" href="css/meanmenu.min.css">
+        <!-- nivo slider CSS -->
+        <link rel="stylesheet" href="vendor/slider/css/nivo-slider.css" type="text/css" />
+        <link rel="stylesheet" href="vendor/slider/css/preview.css" type="text/css" media="screen" />
+        <!-- Datetime Picker Style CSS -->
+        <link rel="stylesheet" href="css/jquery.datetimepicker.css">
+        <!-- Magic popup CSS -->
+        <link rel="stylesheet" href="css/magnific-popup.css">
+        <!-- Switch Style CSS -->
+        <link rel="stylesheet" href="css/hover-min.css">
+        <!-- ReImageGrid CSS -->
+        <link rel="stylesheet" href="css/reImageGrid.css">
+        <!-- Custom CSS -->
+        <link rel="stylesheet" href="style.css">
+        <!-- Modernizr Js -->
+        <script src="js/modernizr-2.8.3.min.js"></script>
 
-        /* Circular profile picture in the background of the header */
-        .profile-pic {
-            position: absolute;
-            top: 50%;
-            left: 5%;
-            transform: translate(-50%, -50%);
-            width: 150px;
-            height: 150px;
-            border-radius: 50%;
+       <script src="js/scrollMove.js"></script>
+       <script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>   
+
+        <style>
+        .items{
+            white-space: nowrap;
+            margin-bottom: 0;
             overflow: hidden;
-            opacity: 0.5;
         }
-
-        .profile-pic img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-        }
-
-        /* Navigation styles */
-        nav ul {
-            list-style-type: none;
-            padding: 0;
-            display: none;
-        }
-
-        nav ul li {
-            margin: 10px 0;
-        }
-
-        nav ul li a {
-            color: #ffcc00;
-            text-decoration: none;
-            padding: 10px;
-            display: block;
-            background-color: rgba(0, 0, 0, 0.7);
-            border-radius: 5px;
-        }
-
-        nav ul li a:hover {
-            background-color: rgba(255, 204, 0, 0.5);
-        }
-
-        /* Show the menu when toggled */
-        #menu.show {
-            display: block;
-        }
-
-        /* Section for key content with a background image */
-        #content-section {
-            position: relative;
-            background-image: url('Picsart_24-10-14_17-15-30-797.jpg');
-            background-size: cover;
-            background-position: center;
-            color: #333333;
-            text-align: center;
-            padding: 60px 20px;
-        }
-
-        #content-section h2,
-        #content-section p {
-            background-color: rgba(255, 255, 255, 0.7);
-            padding: 20px;
-            border-radius: 10px;
+        .item {
             display: inline-block;
-            margin: 20px auto;
-            max-width: 800px;
+            padding: 0;
+            float: none;
         }
-
-        /* Section for key services */
-        #key-services {
-            margin: 40px 0;
-            background-color: rgba(0, 0, 0, 0.7);
-            padding: 20px;
-            border-radius: 5px;
-        }
-
-        /* Footer styles */
-        footer {
-            background-color: #4d4d4d;
-            color: white;
-            text-align: center;
-            padding: 20px;
-            position: relative;
-            bottom: 0;
-            width: 100vw; /* Full page width */
-            box-sizing: border-box;
-        }
-
-        /* Social media icons */
-        .social-icons a {
-            margin: 0 10px;
-            color: white;
-            text-decoration: none;
-            font-size: 24px;
-        }
-
-        /* Additional image section */
-        .additional-image {
-            margin-top: 20px;
-            text-align: center;
-        }
-
-        .additional-image img {
+        .imge-responsive{
             width: 100%;
-            height: auto;
-            max-width: 1200px;
-            border-radius: 10px;
         }
-
-        /* Login form styling */
-        #login-form {
-            background-color: rgba(0, 0, 0, 0.7);
-            color: #f0f0f0;
-            padding: 20px;
-            border-radius: 5px;
-            max-width: 400px;
-            margin: 40px auto;
-            text-align: center;
-        }
-
-        #login-form input[type="text"],
-        #login-form input[type="password"] {
-            width: 100%;
-            padding: 10px;
-            margin: 10px 0;
-            border: none;
-            border-radius: 5px;
-            background-color: #fff;
-        }
-
-        #login-form button {
-            background-color: #ffcc00;
-            color: #333;
-            padding: 10px 20px;
-            border: none;
-            border-radius: 5px;
-            cursor: pointer;
-        }
-
-        #login-form button:hover {
-            background-color: #e6b800;
-        }
+        h1 { margin:0px auto 30px auto; text-align:center; color:black;}
     </style>
-</head>
-<body>
-    <header>
-        <h1>Welcome to Martoo EduTech Services</h1>
-        <div class="hamburger" onclick="toggleMenu()">&#9776;</div>
-        <div class="profile-pic">
-            <img src="Picsart_24-10-14_17-15-30-797.jpg" alt="Profile Picture">
-        </div>
-        <nav>
-            <ul id="menu">
-                <li><a href="index.html">Home</a></li>
-                <li><a href="services.html">Services</a></li>
-                <li><a href="about.html">About</a></li>
-                <li><a href="contact.html">Contact</a></li>
-                <li><a href="posts.html">Posts</a></li>
-                <li><a href="payment.html">Payment</a></li>
-            </ul>
-        </nav>
-    </header>
-
-    <!-- New Section with Background Image -->
-    <section id="content-section">
-        <h2>Your gateway to education and technology</h2>
-        <p>At Martoo EduTech Services, we provide innovative educational resources and technology solutions to enhance your learning experience.</p>
-    </section>
-
-    <main>
-        <section id="key-services">
-            <h3>Key Services</h3>
-            <ul>
-                <li><a href="posts.html#vpn-files">Download VPN Configurations</a></li>
-                <li><a href="posts.html#school-files">Download School Materials</a></li>
-            </ul>
-        </section>
-
-        <!-- Login Form Section -->
-        <section id="login-form">
-            <h3>Subscribe to Access</h3>
-            <p>Enter your details below to access exclusive content.</p>
-            <form>
-                <input type="text" name="username" placeholder="Username" required>
-                <input type="password" name="password" placeholder="Password" required>
-                <button type="submit">Subscribe</button>
-            </form>
-        </section>
-
-        <!-- Additional Image Section -->
-        <section class="additional-image">
-            <img src="2bAeeplNUPEkhqlhqUlJqmDZM6Y.jpg" alt="Additional Image">
-        </section>
-    </main>
-
-    <footer>
-        <p>&copy; 2024 Martoo EduTech Services - All rights reserved.</p>
-        <div class="social-icons">
-            <a href="https://youtube.com/@martootech?si=WtTmTBtO6VjvajdN"><i class="fab fa-youtube"></i></a>
-            <a href="https://www.facebook.com/profile.php?id=61561559594029"><i class="fab fa-facebook-f"></i></a>
-            <a href="https://wa.me/260950322498"><i class="fab fa-whatsapp"></i></a>
-        </div>
-    </footer>
-
-    <script>
-        function toggleMenu() {
-            var menu = document.getElementById("menu");
-            menu.classList.toggle("show");
-        }
+        <script>
+        $(function () {
+            scrollMove('.items',60 ,1 );
+        })
     </script>
-</body>
-</html>
+    </head>
+
+    <body>
+        <!-- Add your site or application content here -->
+        <!-- Preloader Start Here -->
+        <!--div id="preloader"></div-->
+        <!-- Preloader End Here -->
+        <!-- Main Body Area Start Here -->
+        <div id="wrapper">
+            <!-- Include Header -->
+            <header>
+
+  
+            <div id="header2" class="header2-area">
+                <div class="header-top-area">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+                                <div class="header-top-left">
+                                    <ul>
+                                        <li><i class="fa fa-phone" aria-hidden="true"></i><a href="Tel:+260211258505 / +260 972 832 671"> +260211269942 / +260 972 832 671 </a></li>
+                                        <li><i class="fa fa-envelope" aria-hidden="true"></i><a href="mailto:info@unilus.ac.zm">info@unilus.ac.zm</a></li>
+
+                                       <!-- <li><i class="fa fa-envelope" aria-hidden="true"></i><a href="mailto:Postgraduate@unilus.ac.zm">Postgraduate@unilus.ac.zm</a></li> -->
+
+                                        <li><i class="fa fa-user" aria-hidden="true"></i><a href="https://www.unilus.ac.zm/research_view.php" target="_blank" Style="text-transform: capitalize;"> Research</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+                                <div class="header-top-right">
+                                    <ul>
+                                       <!-- <li>
+                                        <a class="login-btn-area" href="https://sms.unilus.ac.zm/OnlineRegistration.aspx"><i class="fa fa-lock" aria-hidden="true"></i> Online Registration</a>
+                                            <!--   <div class="login-form" id="login-form" style="display: none;">
+                                                <div class="title-default-left-bold">Portal</div>
+                                              <form>
+                                                    <label>User ID *</label>
+                                                    <input type="text" placeholder="LLB111111" />
+                                                    <label>FPassword *</label>
+                                                    <input type="password" placeholder="Password" />
+                                                    <label class="check">Lost your password?</label>
+                                                    <span><input type="checkbox" name="remember"/>Remember Me</span>
+                                                    <button class="default-big-btn" type="submit" value="Login">Login</button>
+                                                    <button class="default-big-btn form-cancel" type="submit" value="">Cancel</button>
+                                                </form>
+                                            </div>  
+                                        </li>-->
+<li>
+                                            <div class="apply-btn-area">
+                                                <a href="https://sms.unilus.ac.zm/OnlineRegistration.aspx" class="apply-now-btn">Online Registration</a>
+                                            </div>
+                                        </li>
+
+                                        <li>
+                                            <div class="apply-btn-area">
+                                                <a href="app-process.php" class="apply-now-btn">Apply Now</a>
+                                            </div>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="main-menu-area bg-textPrimary" id="sticker">
+                    <div class="container"  style=" width: 90%">
+                        <div class="row">
+                            <div class="col-lg-2 col-md-2 col-sm-2">
+                                <div class="logo-area">
+                                    <a href="index.php"><img class="img-responsive" src="img/UnilusPNG3.png" alt="logo"></a>
+                                </div>
+                            </div>
+                            <div>
+                                <nav id="desktop-nav">
+                                    <ul>
+                                        <li ><a href="index.php">Home</a></li>
+                                        <li ><a href="#">PROGRAMMES</a>
+                                          <ul>
+                                                 <li><a href="schools.php">DEGREES</a>
+                                              </li>
+                                              <li><a href="schools.php">MASTERS</a>
+                                              </li>
+                                              <li><a href="schools.php">PHD</a>
+                                              </li>
+                                              <li><a href="schools.php">DBA</a>
+											  <li><a href="phd_outline.php">PhD - Outline</a>
+                                              </li>
+<li><a href="DBA_outline.php">DBA - Outline</a>
+                                              </li>
+
+
+                                              <li><a href="shortcourse.php">Short Courses</a>
+                                              </li>
+                                             
+                                                <!--li><a href="/lms/" target="_blank">E-Learning</a>
+                                                </li-->
+                                                <li><a href="https://sms.unilus.ac.zm/OnlineRegistration.aspx">Online Registration</a></li>
+                                              <li><a href="grade.php">Grading System</a></li>
+                                              <li><a href="calendar.php">Calendars & Time-Tables</a></li>
+                                              <li><a href="downloads.php">Correspondence Forms</a></li>
+                                          </ul>
+                                        </li>
+										<!--li ><a href="https://sms.unilus.ac.zm/OnlineRegistration.aspx">Online Reg</a></li-->
+                                        <li >
+                                        <a href="#">E-Learning</a>
+                                          <ul>
+                                         <li><a href="https://moodleguide.vercel.app">E-learning Guide</a>
+                                         <li><a href="https://undergrad.unilus.app/lmslogin/login.php">Undergraduate</a>
+                                          </li>
+                                         <li><a href="https://moodle.unilus.app/login/index.php">Postgraduate</a>
+										  <li><a href="https://undergrad.unilus.app/cust/index.php">Nursing</a>
+                                          <li><a href="https://host.unilus.app/login/index.php">Online Exams</a> 
+                                          </li>  
+                                          <li><a href="faq.php">Faq</a></li>
+                                         
+                                          </ul>
+                                        </li>
+                                        <li ><a href="#">Library</a>
+                                            <ul>
+                                              <li><a href="https://www.unilus.ac.zm/aboutlib.php" target="_blank">About </a>
+                                              <li><a href="https://koha.unilus.ac.zm/" target="_blank">Library Catalogue</a>
+                                                <li><a href="https://www.turnitin.com/login_page.asp?lang=en_us">Turnitin</a>
+                                                </li>
+                                                <li><a href="https://sms.unilus.ac.zm/Students/Login.aspx">E-books</a>
+                                                </li>
+                                                <li><a href="#" target="_blank">E-Journals</a>
+                                                    <ul style="margin: -42px 0px 0px 94%">
+                                                        <li><a  href="#" target="_blank">Campus Access</a></li>
+                                                        <li><a href="https://app.myloft.xyz/user/login?institute=clv672kgw4n4jx8jyodtkqsb7" target="_blank">E-Library(MyLoft)</a></li>
+                                                    </ul>
+                                                  </li>                                               
+                                              
+                                                </li>
+                                                <li><a href="https://research.unilus.ac.zm/" target="_blank">Thesis and Publications</a>
+                                                <li><a href="https://www.unilus.ac.zm/medicalresearch.php" target="_blank">Pathology Teaching Resources</a>
+                                                </li>
+                                            </ul>
+                                        </li>
+                                        <li ><a href="#">FEES</a>
+                                            <ul>
+                                              <li><a href="bank.php">Bank Details</a>
+                                              </li>
+                                              <li><a href="feesec.php">Tuition Fees</a>
+                                              </li>
+                                              </li>
+                                              <li><a href="accommodation_fees.php">Accommodation Fees </a>
+                                              </li>
+                                              <li><a href="https://www.unilus.ac.zm/indopay/form-wizard.php">Online Payment</a></li>
+                                            
+                                         
+											  </li>
+                                            </ul>
+                                        </li>
+                                        <li ><a href="student.php">Student Life</a>
+                                            <ul>
+                                                 <!-- <li><a href="https://sms.unilus.ac.zm/Roombooking.aspx">Apply for Accommodation</a></li>
+                                               > -->
+                                                <li><a href="downloads/ORIENTATION HELP! BROCHURE (DRAFT 1).pdf" target = "_blank">Student Guide</a>
+                                                </li>
+                                                <li><a href="accomodation.php">Boarding Houses</a></li>  
+                                                                                           
+                                                 <li><a href="downloads/Handbook.pdf" target = "_blank">Handbook</a>
+                                                </li>    
+                                                
+                                                
+                                                <li><a href="downloads/ACCOMMODATION RULES.pdf" target = "_blank">ACCOMMODATION RULES</a>
+                                                </li> 
+                                            </ul>
+                                        </li>
+                                        <li ><a href="#">Portal</a>
+                                            <ul>
+                                                   <li><a href="https://sms.unilus.ac.zm/Applications/Login.aspx">New Applicants</a>
+                                                <li><a href="https://sms.unilus.ac.zm/Students/Login.aspx">Students</a>
+                                                </li>
+                                                <li><a href="https://sms.unilus.ac.zm/Lecturer/Login.aspx">Staff</a>
+                                                </li>
+                                             
+                                                </li>
+                                            </ul>
+                                        </li>
+                                        <li >
+                                        <a href="about.php">About Us</a>
+                                          <ul>
+                                              
+                                              <li><a href="contact.php">Contact Us</a></li>
+                                              <li><a href="jobs.php">Careers</a></li>
+                                              <li><a href="Researchers.php">Our Research Team</a></li>
+                                              <li><a href="sscholar.php">Senior Scholars</a></li>
+                                              <li><a href="research-cons.php">Research & Consultancy</a></li>
+                                              <li><a href="faq.php">Faq</a></li>
+                                          </ul>
+                                        </li>
+                                        
+                                       
+                                    </ul>
+                                </nav>
+                            </div>
+                            <!--div class="col-lg-1 col-md-1 hidden-sm">
+                                <div class="header-search">
+                                    <form>
+                                        <input type="text" class="search-form" placeholder="Search...." required="">
+                                        <a href="#" class="search-button" id="search-button"><i class="fa fa-search" aria-hidden="true"></i></a>
+                                    </form>
+                                </div>
+                            </div-->
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- Mobile Menu Area Start -->
+            <div class="mobile-menu-area">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div class="mobile-menu">
+                                <nav id="dropdown">
+                                    <ul>
+                                        <li ><a href="index.php">Home</a>
+                                        </li>
+                                        <li ><a href="#">PROGRAMMES</a>
+                                          <ul>
+                                              <li><a href="schools.php">DEGREES</a>
+                                              </li>
+                                              <li><a href="schools.php">MASTERS</a>
+                                              </li>
+                                              <li><a href="schools.php">PHD</a>
+                                              </li>
+                                              <li><a href="schools.php">DBA</a>
+                                              </li>
+											  <li><a href="phd_outline.php">PhD - Outline</a>
+                                              <li><a href="DBA_outline.php">DBA - Outline</a>
+                                              <li><a href="shortcourse.php">Short Courses</a>
+                                              </li>
+                                              <li><a href="https://sms.unilus.ac.zm/OnlineRegistration.aspx">Online Registration</a></li>
+                                              </li>
+                                              <!--li><a href="/lms/" target="_blank">E-Learning</a>
+                                              </li-->
+                                              <li><a href="grade.php">Grading System</a>
+                                              </li>
+                                              <li><a href="calendar.php">Calendars & Time-Tables</a>
+                                              </li>
+                                              <li><a href="downloads.php">Correspondence Forms</a></li>
+                                          </ul>
+                                        </li>
+                                        <li><a href="https://sms.unilus.ac.zm/OnlineReg
